@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
+import { Hero } from '@/components/hero';
 
 function App() {
   return (
@@ -7,13 +8,7 @@ function App() {
       <Navigation />
 
       <main className="flex-1">
-        {/* Section placeholders for testing navigation */}
-        <section id="hero" className="min-h-screen flex items-center justify-center border-b">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold mb-4">Hero Section</h1>
-            <p className="text-muted-foreground">Top of page</p>
-          </div>
-        </section>
+        <Hero />
 
         <section id="about" className="min-h-screen flex items-center justify-center border-b">
           <div className="text-center">
