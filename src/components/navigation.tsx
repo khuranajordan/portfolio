@@ -38,7 +38,7 @@ export function Navigation() {
           onClick={() => scrollToSection('hero')}
         >
           <span className="text-primary">Rohan</span>
-          <span>Patel</span>
+          <span>Khurana</span>
         </div>
 
         {/* Desktop Navigation */}
