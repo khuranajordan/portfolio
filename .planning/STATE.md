@@ -11,18 +11,18 @@ See: .planning/PROJECT.md (updated 2025-01-19)
 ## Current Position
 
 Phase: 3 of 10 (Layout Structure)
-Plan: 1 of 3 in current phase
-Status: In progress
-Last activity: 2026-01-21 — Completed 03-01-PLAN.md
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-01-21 — Completed 03-03-PLAN.md
 
-Progress: ████████████░░░░░░░ 20%
+Progress: ██████████████░░░░░░ 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: 4.5 min
-- Total execution time: 0.45 hours
+- Total plans completed: 7
+- Average duration: 4.7 min
+- Total execution time: 0.55 hours
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: ████████████░░░░░░░ 20%
 |-------|-------|-------|----------|
 | 1 (Foundation Setup) | 3 | 3 | 4 min |
 | 2 (Theme System) | 2 | 2 | 6.5 min |
-| 3 (Layout Structure) | 1 | 3 | 4 min |
+| 3 (Layout Structure) | 3 | 3 | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (5 min), 01-03 (1 min), 02-01 (5 min), 02-02 (8 min with fix), 03-01 (4 min with fix)
+- Last 5 plans: 01-03 (1 min), 02-01 (5 min), 02-02 (8 min with fix), 03-01 (4 min with fix), 03-03 (4 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -65,6 +65,10 @@ Recent decisions affecting current work:
 - Smooth scroll behavior with scrollIntoView API
 - navItems array pattern (DRY code, shared between desktop/mobile)
 - Responsive breakpoints using hidden/md:flex utilities
+- Intersection Observer for active section tracking (better performance than scroll events)
+- 50% visibility threshold (rootMargin: -50% 0px -50% 0px)
+- Visual indicators: desktop underline, mobile left bar
+- Observer cleanup on unmount (prevent memory leaks)
 
 ### Deferred Issues
 
@@ -81,5 +85,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-21
-Stopped at: Completed 03-01-PLAN.md (Responsive Navigation)
+Stopped at: Completed 03-03-PLAN.md (Section Routing with Intersection Observers)
 Resume file: None
