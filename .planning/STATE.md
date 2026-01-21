@@ -6,23 +6,23 @@ See: .planning/PROJECT.md (updated 2025-01-19)
 
 **Core value:** Make recruiters want to hire Rohan almost instantly by presenting a stunning, professional showcase of his frontend engineering skills through beautiful design, smooth interactions, and comprehensive presentation of his technical expertise and professional journey.
 
-**Current focus:** Phase 3 — Layout Structure
+**Current focus:** Phase 4 — Hero Section
 
 ## Current Position
 
-Phase: 3 of 10 (Layout Structure)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-01-21 — Completed 03-03-PLAN.md
+Phase: 4 of 10 (Hero Section)
+Plan: 1 of 3 in current phase
+Status: Plan complete
+Last activity: 2026-01-21 — Completed 04-01-PLAN.md
 
-Progress: ██████████████░░░░░░ 30%
+Progress: ███████████████░░░░░ 36%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: 4.7 min
-- Total execution time: 0.55 hours
+- Total plans completed: 8
+- Average duration: 4.6 min
+- Total execution time: 0.62 hours
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: ██████████████░░░░░░ 30%
 | 1 (Foundation Setup) | 3 | 3 | 4 min |
 | 2 (Theme System) | 2 | 2 | 6.5 min |
 | 3 (Layout Structure) | 3 | 3 | 4 min |
+| 4 (Hero Section) | 1 | 3 | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-03 (1 min), 02-01 (5 min), 02-02 (8 min with fix), 03-01 (4 min with fix), 03-03 (4 min)
+- Last 5 plans: 02-01 (5 min), 02-02 (8 min with fix), 03-01 (4 min with fix), 03-03 (4 min), 04-01 (4 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -70,6 +71,15 @@ Recent decisions affecting current work:
 - Visual indicators: desktop underline, mobile left bar
 - Observer cleanup on unmount (prevent memory leaks)
 
+**From Phase 4:**
+- Centered layout with max-width (readable, focused)
+- Gradient background for depth (subtle, professional)
+- Full-width buttons on mobile (easier to tap)
+- Primary action = View Work (portfolio-focused)
+- Bounce animation on scroll indicator (inviting)
+- Name highlighted with primary color
+- Multi-breakpoint typography (text-4xl sm:text-5xl md:text-6xl lg:text-7xl)
+
 ### Deferred Issues
 
 None yet.
@@ -85,5 +95,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-21
-Stopped at: Completed 03-03-PLAN.md (Section Routing with Intersection Observers)
+Stopped at: Completed 04-01-PLAN.md (Design Hero Layout)
 Resume file: None
