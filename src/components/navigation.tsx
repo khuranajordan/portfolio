@@ -9,9 +9,13 @@ import {
 } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
+import { useActiveSection } from '@/hooks/use-active-section';
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
+
+  const sectionIds = ['hero', 'about', 'experience', 'skills', 'projects', 'contact'];
+  const activeSection = useActiveSection(sectionIds);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -47,9 +51,16 @@ export function Navigation() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className={`text-sm font-medium transition-colors relative ${
+                activeSection === item.id
+                  ? 'text-primary'
+                  : 'hover:text-primary'
+              }`}
             >
               {item.label}
+              {activeSection === item.id && (
+                <span className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-primary" />
+              )}
             </button>
           ))}
         </nav>
@@ -75,9 +86,16 @@ export function Navigation() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-lg font-medium transition-colors hover:text-primary text-left"
+                    className={`text-lg font-medium transition-colors text-left relative ${
+                      activeSection === item.id
+                        ? 'text-primary'
+                        : 'hover:text-primary'
+                    }`}
                   >
                     {item.label}
+                    {activeSection === item.id && (
+                      <span className="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-full" />
+                    )}
                   </button>
                 ))}
               </nav>
