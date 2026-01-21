@@ -1,11 +1,12 @@
 import { Navigation } from '@/components/navigation';
+import { Footer } from '@/components/footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Navigation />
 
-      <main>
+      <main className="flex-1">
         {/* Section placeholders for testing navigation */}
         <section id="hero" className="min-h-screen flex items-center justify-center border-b">
           <div className="text-center">
@@ -49,6 +50,8 @@ function App() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
