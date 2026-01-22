@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
 import { CaseStudy } from '@/components/case-study';
+import { ProjectCard } from '@/components/project-card';
 
 export function ProjectsSection() {
   // Separate projects by format
@@ -221,59 +222,12 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Card Projects - Grid Layout */}
+        {/* Card Projects - Grid Layout with ProjectCard */}
         <div>
           <h3 className="text-2xl font-bold mb-8">Other Projects</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {cardProjects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-card border rounded-xl p-6 hover:shadow-md transition-all hover:border-primary/50 group"
-              >
-                {/* Project Icon/Header */}
-                <div className="mb-4">
-                  <Badge variant="secondary" className="mb-3">
-                    {project.category}
-                  </Badge>
-                  <h4 className="text-lg font-bold mb-2">
-                    {project.title}
-                  </h4>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {project.techStack.slice(0, 4).map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.techStack.length > 4 && (
-                    <Badge variant="outline" className="text-xs">
-                      +{project.techStack.length - 4}
-                    </Badge>
-                  )}
-                </div>
-
-                {/* Links */}
-                <div className="flex gap-2 pt-2">
-                  {project.githubUrl && (
-                    <Button size="sm" variant="outline" asChild>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full"
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                  )}
-                </div>
-              </div>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
