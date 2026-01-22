@@ -70,6 +70,11 @@ export const projects: Project[] = [
       'Served 50+ active users',
       '99.9% uptime during peak usage'
     ],
+    challenges: [
+      'Implementing real-time updates without performance degradation',
+      'Managing complex drag-and-drop state across multiple users',
+      'Designing intuitive workspace hierarchy with flexible permissions'
+    ],
     status: 'Completed',
     startDate: 'May 2022',
     endDate: 'Dec 2022',
