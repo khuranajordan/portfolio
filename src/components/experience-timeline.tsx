@@ -12,10 +12,9 @@ import { useState } from 'react';
 interface TimelineEntryProps {
   children: React.ReactNode;
   index: number;
-  isAlternate: boolean;
 }
 
-function TimelineEntry({ children, index, isAlternate }: TimelineEntryProps) {
+function TimelineEntry({ children, index }: TimelineEntryProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -65,11 +64,10 @@ export function ExperienceTimeline() {
               {experiences.map((exp, index) => {
                 const isFirst = index === 0;
                 const isLast = index === experiences.length - 1;
-                const isAlternate = index % 2 === 0;
                 const [isOpen, setIsOpen] = useState(false);
 
                 return (
-                  <TimelineEntry key={exp.id} index={index} isAlternate={isAlternate}>
+                  <TimelineEntry key={exp.id} index={index}>
                     {/* Enhanced dot indicator - animated */}
                     <motion.div
                       initial={{ scale: 0 }}
