@@ -2,6 +2,7 @@ import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { Hero } from '@/components/hero';
 import { ExperienceTimeline } from '@/components/experience-timeline';
+import { SkillsSection } from '@/components/skills-section';
 
 function App() {
   return (
@@ -20,12 +21,7 @@ function App() {
 
         <ExperienceTimeline />
 
-        <section id="skills" className="min-h-screen flex items-center justify-center border-b">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Skills Section</h2>
-            <p className="text-muted-foreground">Tech stack visualization</p>
-          </div>
-        </section>
+        <SkillsSection />
 
         <section id="projects" className="min-h-screen flex items-center justify-center border-b">
           <div className="text-center">
