@@ -1,5 +1,6 @@
 import { skillCategories } from '@/types/skills';
 import { Badge } from '@/components/ui/badge';
+import { getIconComponent } from '@/lib/icons';
 
 export function SkillsSection() {
   return (
@@ -33,45 +34,53 @@ export function SkillsSection() {
 
               {/* Skills Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="bg-card border rounded-lg p-4 hover:border-primary/50 transition-colors group"
-                  >
-                    <div className="flex flex-col items-center gap-3">
-                      {/* Skill Icon Placeholder */}
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <span className="text-2xl">⚡</span>
-                      </div>
+                {category.skills.map((skill) => {
+                  const IconComponent = getIconComponent(skill.icon);
 
-                      {/* Skill Name */}
-                      <div className="text-center space-y-1">
-                        <p className="font-semibold text-sm">{skill.name}</p>
-
-                        {/* Proficiency Indicator */}
-                        <div className="flex items-center gap-1">
-                          {[1, 2, 3, 4, 5].map((level) => (
-                            <div
-                              key={level}
-                              className={`h-1.5 w-1.5 rounded-full ${
-                                level <= skill.proficiency
-                                  ? 'bg-primary'
-                                  : 'bg-muted'
-                              }`}
-                            />
-                          ))}
+                  return (
+                    <div
+                      key={skill.name}
+                      className="bg-card border rounded-lg p-4 hover:border-primary/50 transition-all hover:shadow-md group"
+                    >
+                      <div className="flex flex-col items-center gap-3">
+                        {/* Skill Icon */}
+                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          {IconComponent ? (
+                            <IconComponent className="w-6 h-6 text-primary" />
+                          ) : (
+                            <span className="text-2xl">⚡</span>
+                          )}
                         </div>
 
-                        {/* Years (if applicable) */}
-                        {skill.years && (
-                          <p className="text-xs text-muted-foreground">
-                            {skill.years} {skill.years === 1 ? 'year' : 'years'}
-                          </p>
-                        )}
+                        {/* Skill Name */}
+                        <div className="text-center space-y-1">
+                          <p className="font-semibold text-sm">{skill.name}</p>
+
+                          {/* Proficiency Indicator */}
+                          <div className="flex items-center gap-1">
+                            {[1, 2, 3, 4, 5].map((level) => (
+                              <div
+                                key={level}
+                                className={`h-1.5 w-1.5 rounded-full ${
+                                  level <= skill.proficiency
+                                    ? 'bg-primary'
+                                    : 'bg-muted'
+                                }`}
+                              />
+                            ))}
+                          </div>
+
+                          {/* Years (if applicable) */}
+                          {skill.years && (
+                            <p className="text-xs text-muted-foreground">
+                              {skill.years} {skill.years === 1 ? 'year' : 'years'}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}
