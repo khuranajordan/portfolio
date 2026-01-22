@@ -173,6 +173,42 @@ export function ProjectsSection() {
                   </div>
                 )}
               </div>
+
+              {/* CTA Section */}
+              <div className="bg-muted/30 p-6 md:p-8">
+                <div className="text-center space-y-4">
+                  <h4 className="text-xl font-semibold">Interested in this project?</h4>
+                  <p className="text-muted-foreground">
+                    Check out the code on GitHub or reach out to discuss
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    {project.githubUrl && (
+                      <Button size="lg" asChild>
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          View Code
+                        </a>
+                      </Button>
+                    )}
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      onClick={() => {
+                        const element = document.getElementById('contact');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      Get In Touch
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
