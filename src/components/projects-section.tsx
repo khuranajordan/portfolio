@@ -2,6 +2,7 @@ import { projects } from '@/types/projects';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
+import { CaseStudy } from '@/components/case-study';
 
 export function ProjectsSection() {
   // Separate projects by format
@@ -25,11 +26,16 @@ export function ProjectsSection() {
         {/* Showcase Projects - Full Featured */}
         <div className="space-y-16 mb-16">
           {showcaseProjects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-card border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              {project.id === '1' ? (
+            <div key={project.id}>
+              {/* Use CaseStudy for Task Management (id: '2') */}
+              {project.id === '2' ? (
+                <CaseStudy project={project} />
+              ) : (
+                <div
+                  key={project.id}
+                  className="bg-card border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                >
+                  {project.id === '1' ? (
                 <>
                   {/* Hero Image Section for E-commerce */}
                   <div className="relative h-64 md:h-80 bg-gradient-to-br from-primary/20 via-background to-primary/5 flex items-center justify-center">
@@ -209,6 +215,8 @@ export function ProjectsSection() {
                   </div>
                 </div>
               </div>
+            </div>
+              )}
             </div>
           ))}
         </div>
