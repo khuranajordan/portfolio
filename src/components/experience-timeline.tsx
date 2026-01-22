@@ -81,6 +81,14 @@ export function ExperienceTimeline() {
                         type: 'spring',
                         stiffness: 300
                       }}
+                      animate={isFirst ? {
+                        scale: [1, 1.1, 1],
+                        transition: {
+                          duration: 2,
+                          repeat: Infinity,
+                          repeatDelay: 1
+                        }
+                      } : {}}
                       className={`absolute left-0 md:left-1/2 w-4 h-4 rounded-full border-4 border-background z-10 transform -translate-x-1/2 ${
                         isFirst ? 'bg-primary' : 'bg-background'
                       } ${!isLast ? 'top-8 md:top-6' : 'top-8 md:top-6'}`}
@@ -113,11 +121,11 @@ export function ExperienceTimeline() {
                               duration: 0.5,
                               delay: index * 0.1 + 0.2
                             }}
-                            className="bg-card border rounded-lg p-6 shadow-sm hover:shadow-md transition-all cursor-pointer group"
+                            className="bg-card border rounded-lg p-4 md:p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all cursor-pointer group"
                           >
                             <div className="flex items-start justify-between gap-4">
                               <div className="flex-1">
-                                <h3 className="text-xl md:text-2xl font-bold mb-2">
+                                <h3 className="text-base md:text-xl lg:text-2xl font-bold mb-2">
                                   {exp.title}
                                 </h3>
                                 <p className="text-primary font-semibold text-base mb-2">
@@ -131,11 +139,16 @@ export function ExperienceTimeline() {
                                   {exp.description}
                                 </p>
                               </div>
-                              <ChevronDown
-                                className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${
-                                  isOpen ? 'rotate-180' : ''
-                                }`}
-                              />
+                              <div className="flex items-center gap-2 flex-shrink-0">
+                                <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors hidden sm:inline-block">
+                                  {isOpen ? 'Hide' : 'View'} Details
+                                </span>
+                                <ChevronDown
+                                  className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+                                    isOpen ? 'rotate-180' : ''
+                                  }`}
+                                />
+                              </div>
                             </div>
                           </motion.div>
                         </CollapsibleTrigger>
