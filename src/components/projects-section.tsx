@@ -27,45 +27,107 @@ export function ProjectsSection() {
           {showcaseProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-card border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
-              {/* Project Header */}
-              <div className="p-6 md:p-8 border-b">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                  <div>
-                    <Badge variant="secondary" className="mb-2">
-                      {project.category}
-                    </Badge>
-                    <h3 className="text-2xl md:text-3xl font-bold">
-                      {project.title}
-                    </h3>
+              {project.id === '1' ? (
+                <>
+                  {/* Hero Image Section for E-commerce */}
+                  <div className="relative h-64 md:h-80 bg-gradient-to-br from-primary/20 via-background to-primary/5 flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <h3 className="text-4xl md:text-5xl font-bold mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-lg text-muted-foreground">
+                        Flagship E-commerce Platform
+                      </p>
+                      <Badge variant="default" className="mt-4">
+                        {project.category}
+                      </Badge>
+                    </div>
                   </div>
-                  <div className="flex gap-2">
-                    {project.githubUrl && (
-                      <Button variant="outline" size="icon" asChild>
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="View on GitHub"
-                        >
-                          <Github className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    )}
+
+                  {/* Project Content */}
+                  <div className="p-6 md:p-8 border-b space-y-6">
+                    {/* Project meta */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-4 text-sm text-muted-foreground mb-4">
+                      <span>📅 {project.startDate} - {project.endDate}</span>
+                      <span>•</span>
+                      <span>⚡ React, TypeScript, Redux Toolkit</span>
+                    </div>
+
+                    <p className="text-base leading-relaxed">
+                      {project.longDescription}
+                    </p>
+
+                    {/* Quick Stats */}
+                    <div className="grid grid-cols-3 gap-4 py-4 border rounded-lg bg-muted/30">
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-primary">10K+</p>
+                        <p className="text-xs text-muted-foreground">Products</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-primary">40%</p>
+                        <p className="text-xs text-muted-foreground">Faster Load</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-primary">100%</p>
+                        <p className="text-xs text-muted-foreground">Test Coverage</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  {project.longDescription}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
-                    <Badge key={tech} variant="outline">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+
+                  {/* Tech Stack */}
+                  <div className="px-6 md:px-8 py-4 border-b bg-muted/20">
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech) => (
+                        <Badge key={tech} variant="outline">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* Standard Project Header for other showcase projects */}
+                  <div className="p-6 md:p-8 border-b">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                      <div>
+                        <Badge variant="secondary" className="mb-2">
+                          {project.category}
+                        </Badge>
+                        <h3 className="text-2xl md:text-3xl font-bold">
+                          {project.title}
+                        </h3>
+                      </div>
+                      <div className="flex gap-2">
+                        {project.githubUrl && (
+                          <Button variant="outline" size="icon" asChild>
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="View on GitHub"
+                            >
+                              <Github className="w-4 h-4" />
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground mb-4">
+                      {project.longDescription}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech) => (
+                        <Badge key={tech} variant="outline">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
 
               {/* Project Details */}
               <div className="p-6 md:p-8 space-y-6">
