@@ -1,6 +1,7 @@
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { Hero } from '@/components/hero';
+import { ExperienceTimeline } from '@/components/experience-timeline';
 
 function App() {
   return (
@@ -17,12 +18,7 @@ function App() {
           </div>
         </section>
 
-        <section id="experience" className="min-h-screen flex items-center justify-center border-b">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Experience Section</h2>
-            <p className="text-muted-foreground">Work timeline</p>
-          </div>
-        </section>
+        <ExperienceTimeline />
 
         <section id="skills" className="min-h-screen flex items-center justify-center border-b">
           <div className="text-center">
