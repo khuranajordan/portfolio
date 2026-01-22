@@ -1,45 +1,52 @@
-import { ThemeToggle } from '@/components/theme-toggle';
-import { Button } from '@/components/ui/button';
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
-import { useState } from 'react';
-import { useActiveSection } from '@/hooks/use-active-section';
+} from "@/components/ui/sheet";
+import { useActiveSection } from "@/hooks/use-active-section";
+import { Menu } from "lucide-react";
+import { useState } from "react";
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
 
-  const sectionIds = ['hero', 'about', 'experience', 'skills', 'projects', 'contact'];
+  const sectionIds = [
+    "hero",
+    "about",
+    "experience",
+    "skills",
+    "projects",
+    "contact",
+  ];
   const activeSection = useActiveSection(sectionIds);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setOpen(false);
     }
   };
 
   const navItems = [
-    { label: 'About', id: 'about' },
-    { label: 'Experience', id: 'experience' },
-    { label: 'Skills', id: 'skills' },
-    { label: 'Projects', id: 'projects' },
-    { label: 'Contact', id: 'contact' },
+    { label: "About", id: "about" },
+    { label: "Experience", id: "experience" },
+    { label: "Skills", id: "skills" },
+    { label: "Projects", id: "projects" },
+    { label: "Contact", id: "contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60`">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo/Name */}
         <div
           className="flex items-center gap-2 font-bold text-xl cursor-pointer"
-          onClick={() => scrollToSection('hero')}
+          onClick={() => scrollToSection("hero")}
         >
           <span className="text-primary">Rohan</span>
           <span>Khurana</span>
@@ -53,13 +60,13 @@ export function Navigation() {
               onClick={() => scrollToSection(item.id)}
               className={`text-sm font-medium transition-colors relative ${
                 activeSection === item.id
-                  ? 'text-primary'
-                  : 'hover:text-primary'
+                  ? "text-primary"
+                  : "hover:text-primary"
               }`}
             >
               {item.label}
               {activeSection === item.id && (
-                <span className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-primary" />
+                <span className="absolute -bottom-5.25 left-0 right-0 h-0.5 bg-primary" />
               )}
             </button>
           ))}
@@ -88,8 +95,8 @@ export function Navigation() {
                     onClick={() => scrollToSection(item.id)}
                     className={`text-lg font-medium transition-colors text-left relative ${
                       activeSection === item.id
-                        ? 'text-primary'
-                        : 'hover:text-primary'
+                        ? "text-primary"
+                        : "hover:text-primary"
                     }`}
                   >
                     {item.label}

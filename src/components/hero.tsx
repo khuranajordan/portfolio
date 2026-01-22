@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui/button';
-import { ArrowDown } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   const scrollToProjects = () => {
-    const element = document.getElementById('projects');
+    const element = document.getElementById("projects");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -17,17 +17,17 @@ export function Hero() {
     >
       {/* Animated background gradient */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background -z-10"
+        className="absolute inset-0 bg-linear-to-br from-primary/5 via-background to-background -z-10"
         animate={{
-          backgroundPosition: ['0% 0%', '100% 100%'],
+          backgroundPosition: ["0% 0%", "100% 100%"],
         }}
         transition={{
           duration: 20,
           repeat: Infinity,
-          repeatType: 'reverse',
+          repeatType: "reverse",
         }}
         style={{
-          backgroundSize: '200% 200%',
+          backgroundSize: "200% 200%",
         }}
       />
 
@@ -41,7 +41,7 @@ export function Hero() {
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
       />
       <motion.div
@@ -53,7 +53,7 @@ export function Hero() {
         transition={{
           duration: 10,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
       />
 
@@ -79,7 +79,7 @@ export function Hero() {
                 className="text-primary inline-block"
               >
                 Rohan
-              </motion.span>{' '}
+              </motion.span>{" "}
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -99,7 +99,7 @@ export function Hero() {
                 className="inline-block"
               >
                 Senior
-              </motion.span>{' '}
+              </motion.span>{" "}
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -107,7 +107,7 @@ export function Hero() {
                 className="inline-block"
               >
                 Frontend
-              </motion.span>{' '}
+              </motion.span>{" "}
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -126,8 +126,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4"
           >
-            I build exceptional digital experiences with React, TypeScript, and modern web technologies.
-            Transforming ideas into polished, performant applications.
+            I build exceptional digital experiences with React, TypeScript, and
+            modern web technologies. Transforming ideas into polished,
+            performant applications.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -151,9 +152,9 @@ export function Hero() {
                 size="lg"
                 variant="outline"
                 onClick={() => {
-                  const element = document.getElementById('contact');
+                  const element = document.getElementById("contact");
                   if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+                    element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
                 className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto"
@@ -174,9 +175,9 @@ export function Hero() {
               variant="ghost"
               size="icon"
               onClick={() => {
-                const element = document.getElementById('about');
+                const element = document.getElementById("about");
                 if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                  element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
               aria-label="Scroll to about section"
