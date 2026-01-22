@@ -6,23 +6,23 @@ See: .planning/PROJECT.md (updated 2025-01-19)
 
 **Core value:** Make recruiters want to hire Rohan almost instantly by presenting a stunning, professional showcase of his frontend engineering skills through beautiful design, smooth interactions, and comprehensive presentation of his technical expertise and professional journey.
 
-**Current focus:** Phase 4 — Hero Section
+**Current focus:** Phase 5 — Experience Timeline (starting)
 
 ## Current Position
 
-Phase: 4 of 10 (Hero Section)
-Plan: 2 of 3 in current phase
-Status: Plan complete
-Last activity: 2026-01-21 — Completed 04-02-PLAN.md
+Phase: 5 of 10 (Experience Timeline)
+Plan: 1 of 4 in next phase
+Status: Phase 4 complete, ready to start Phase 5
+Last activity: 2026-01-22 — Completed Phase 4 (04-03-PLAN.md)
 
-Progress: ███████████████░░░░░ 30%
+Progress: ████████████████░░░░ 33%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
-- Average duration: 4.4 min
-- Total execution time: 0.67 hours
+- Total plans completed: 10
+- Average duration: 4.6 min
+- Total execution time: 0.77 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: ███████████████░░░░░ 30%
 | 1 (Foundation Setup) | 3 | 3 | 4 min |
 | 2 (Theme System) | 2 | 2 | 6.5 min |
 | 3 (Layout Structure) | 3 | 3 | 4 min |
-| 4 (Hero Section) | 2 | 3 | 4 min |
+| 4 (Hero Section) | 3 | 3 | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (8 min with fix), 03-01 (4 min with fix), 03-03 (4 min), 04-01 (4 min), 04-02 (4 min with fix)
+- Last 5 plans: 03-01 (4 min), 03-03 (4 min), 04-01 (4 min), 04-02 (4 min), 04-03 (4 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -83,6 +83,11 @@ Recent decisions affecting current work:
 - Animated gradient background with floating shapes
 - Staggered text entrance animations
 - Component-based animation composition pattern
+- Icons on CTA buttons (FolderOpen, Mail) for visual clarity
+- Shimmer effect on primary button only (creates visual hierarchy)
+- Arrow icon reveal on hover (adds playful micro-interaction)
+- Focus-visible rings for keyboard navigation (WCAG compliance)
+- Icon micro-animations (rotate, scale) and spacing transitions (300ms)
 
 ### Deferred Issues
 
@@ -98,12 +103,10 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-21
-Stopped at: Completed 04-02-PLAN.md (Add Entrance Animations)
+Last session: 2026-01-22
+Stopped at: Completed Phase 4 (04-03-PLAN.md - Implement CTA Buttons)
 Resume file: None
 
 **Commits this session:**
-- `9e9ac89` - feat(04-02): install framer-motion and create animated background
-- `74d6b5e` - feat(04-02): implement text entrance animations
-- `d9118f9` - fix(04-02): correct last name from Patel to Khurana
-- `e205fe3` - fix(04-02): correct last name in footer from Patel to Khurana
+- `1751efe` - feat(04-03): add icons and shimmer effect to CTA buttons
+- `dea37ab` - feat(04-03): add micro-interactions and accessibility to CTA buttons
