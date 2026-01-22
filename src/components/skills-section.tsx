@@ -75,17 +75,28 @@ export function SkillsSection() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.2 }}
-                    className="bg-card border rounded-xl p-5 hover:border-primary/50 hover:shadow-lg transition-all duration-300 group cursor-default"
+                    whileHover={{
+                      y: -5,
+                      transition: { duration: 0.2 }
+                    }}
+                    className="bg-card border rounded-xl p-5 hover:border-primary hover:shadow-xl transition-all duration-300 group cursor-default relative overflow-hidden"
                   >
-                    <div className="flex flex-col items-center gap-3 text-center">
-                      {/* Skill Icon with better container */}
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                    {/* Shine effect on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+
+                    <div className="relative z-10 flex flex-col items-center gap-3 text-center">
+                      {/* Icon with enhanced hover */}
+                      <motion.div
+                        whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                        transition={{ duration: 0.5 }}
+                        className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300"
+                      >
                         {IconComponent ? (
-                          <IconComponent className="w-7 h-7 text-primary" />
+                          <IconComponent className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
                         ) : (
                           <span className="text-2xl">⚡</span>
                         )}
-                      </div>
+                      </motion.div>
 
                       {/* Skill Info */}
                       <div className="space-y-2 w-full">
