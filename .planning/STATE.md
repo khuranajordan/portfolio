@@ -6,23 +6,23 @@ See: .planning/PROJECT.md (updated 2025-01-19)
 
 **Core value:** Make recruiters want to hire Rohan almost instantly by presenting a stunning, professional showcase of his frontend engineering skills through beautiful design, smooth interactions, and comprehensive presentation of his technical expertise and professional journey.
 
-**Current focus:** Phase 5 — Experience Timeline (in progress)
+**Current focus:** Phase 6 — Skills Visualization (ready to start)
 
 ## Current Position
 
-Phase: 5 of 10 (Experience Timeline)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-01-22 — Completed 05-02-PLAN.md
+Phase: 6 of 10 (Skills Visualization)
+Plan: 1 of 3 in upcoming phase
+Status: Ready to start
+Last activity: 2026-01-22 — Completed 05-03-PLAN.md
 
-Progress: ████████████████░░░░ 40%
+Progress: ███████████████████░ 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
-- Average duration: 5.3 min
-- Total execution time: 1.06 hours
+- Total plans completed: 15
+- Average duration: 5.5 min
+- Total execution time: 1.38 hours
 
 **By Phase:**
 
@@ -32,11 +32,11 @@ Progress: ████████████████░░░░ 40%
 | 2 (Theme System) | 2 | 2 | 6.5 min |
 | 3 (Layout Structure) | 3 | 3 | 4 min |
 | 4 (Hero Section) | 3 | 3 | 4 min |
-| 5 (Experience Timeline) | 2 | 3 | 8 min |
+| 5 (Experience Timeline) | 3 | 3 | 6.3 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (4 min), 04-02 (4 min), 04-03 (4 min), 05-01 (3 min), 05-02 (13 min)
-- Trend: Stable (05-02 included checkpoint verification)
+- Last 5 plans: 04-03 (4 min), 05-01 (3 min), 05-02 (13 min), 05-03 (8 min)
+- Trend: Stable
 
 *Updated after each plan completion*
 
@@ -108,6 +108,16 @@ Recent decisions affecting current work:
 - viewport once: true to prevent animations from replaying on scroll up
 - Scale animation on cards (0.95 → 1) for subtle depth effect
 - Smooth easing functions (easeOut, easeInOut) for natural motion feel
+- shadcn Collapsible component for expandable role cards
+- Click anywhere on card to expand (better UX than small trigger)
+- Green checkmarks (✓) for achievements (visual positivity)
+- Tech stack badges (React, TypeScript, Tailwind CSS) for context
+- "View/Hide Details" text desktop only (mobile space constraints)
+- Pulse animation on first dot (scale: [1, 1.1, 1]) draws attention to current role
+- Border hover effect (hover:border-primary/50) for interactive feedback
+- Full details on demand (avoid clutter, show responsibilities when requested)
+- Mobile padding reduction (p-4 md:p-6) for comfortable spacing
+- Responsive text sizing (text-base md:text-xl lg:text-2xl) across all screen sizes
 
 ### Deferred Issues
 
@@ -124,10 +134,9 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-22
-Stopped at: Completed Phase 5 Plan 2 (05-02-PLAN.md - Implement Scroll Animations)
+Stopped at: Completed Phase 5 Plan 3 (05-03-PLAN.md - Add Role Details)
 Resume file: None
 
 **Commits this session:**
-- `444a4af` - feat(05-02): create animated wrapper for timeline entries
-- `16d70e7` - feat(05-02): add timeline line and dot animations
-- `ae48d78` - docs(05-02): complete scroll animations plan
+- `ac54b82` - feat(05-03): add achievements and expandable details
+- `d4bd4e7` - feat(05-03): add visual enhancements and interactions
