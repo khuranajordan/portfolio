@@ -31,17 +31,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </p>
       </div>
 
-      {/* Tech Stack - Show all on hover, preview default */}
+      {/* Tech Stack - All badges with enhanced styling */}
       <div className="mb-4 flex-1">
         <p className="text-xs font-semibold text-muted-foreground mb-2">
           Tech Stack
         </p>
         <div className="flex flex-wrap gap-1.5">
-          {project.techStack.map((tech) => (
+          {project.techStack.map((tech, index) => (
             <Badge
-              key={tech}
+              key={`${tech}-${index}`}
               variant="outline"
-              className="text-xs"
+              className="hover:bg-primary/10 hover:border-primary transition-colors text-xs"
             >
               {tech}
             </Badge>
@@ -61,7 +61,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <Button
             size="sm"
             variant="outline"
-            className="flex-1"
+            className="flex-1 group"
             asChild
           >
             <a
@@ -69,16 +69,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="w-full"
+              aria-label={`View ${project.title} on GitHub`}
             >
-              <Github className="w-4 h-4 mr-2" />
+              <Github className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
               Code
+              <ExternalLink className="w-3 h-3 ml-2 opacity-60" />
             </a>
           </Button>
         )}
         {project.liveUrl && (
           <Button
             size="sm"
-            className="flex-1"
+            className="flex-1 group"
             asChild
           >
             <a
@@ -86,8 +88,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="w-full"
+              aria-label={`View live demo of ${project.title}`}
             >
-              <ExternalLink className="w-4 h-4 mr-2" />
+              <ExternalLink className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
               Live
             </a>
           </Button>

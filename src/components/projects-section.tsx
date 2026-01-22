@@ -83,11 +83,15 @@ export function ProjectsSection() {
                     </div>
                   </div>
 
-                  {/* Tech Stack */}
+                  {/* Tech Stack - Enhanced */}
                   <div className="px-6 md:px-8 py-4 border-b bg-muted/20">
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.map((tech) => (
-                        <Badge key={tech} variant="outline">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.techStack.map((tech, index) => (
+                        <Badge
+                          key={`${tech}-${index}`}
+                          variant="outline"
+                          className="hover:bg-primary/10 hover:border-primary transition-colors cursor-default"
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -125,9 +129,14 @@ export function ProjectsSection() {
                     <p className="text-muted-foreground mb-4">
                       {project.longDescription}
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.map((tech) => (
-                        <Badge key={tech} variant="outline">
+                    {/* Tech Stack - Enhanced */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.techStack.map((tech, index) => (
+                        <Badge
+                          key={`${tech}-${index}`}
+                          variant="outline"
+                          className="hover:bg-primary/10 hover:border-primary transition-colors cursor-default"
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -190,14 +199,20 @@ export function ProjectsSection() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     {project.githubUrl && (
-                      <Button size="lg" asChild>
+                      <Button
+                        size="lg"
+                        className="group"
+                        asChild
+                      >
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="w-full sm:w-auto"
                         >
-                          <Github className="w-4 h-4 mr-2" />
+                          <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                           View Code
+                          <ExternalLink className="w-4 h-4 ml-2 opacity-60" />
                         </a>
                       </Button>
                     )}
