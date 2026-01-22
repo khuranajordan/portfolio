@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, FolderOpen, Mail } from "lucide-react";
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -138,16 +138,27 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4 px-4"
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button
                 size="lg"
                 onClick={scrollToProjects}
-                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group relative overflow-hidden"
               >
-                View My Work
+                <span className="relative z-10 flex items-center gap-2">
+                  <FolderOpen className="w-5 h-5" />
+                  View My Work
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button
                 size="lg"
                 variant="outline"
@@ -157,9 +168,12 @@ export function Hero() {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group relative"
               >
-                Get In Touch
+                <span className="flex items-center gap-2">
+                  <Mail className="w-5 h-5" />
+                  Get In Touch
+                </span>
               </Button>
             </motion.div>
           </motion.div>
