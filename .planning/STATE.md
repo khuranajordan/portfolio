@@ -11,18 +11,18 @@ See: .planning/PROJECT.md (updated 2025-01-19)
 ## Current Position
 
 Phase: 5 of 10 (Experience Timeline)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-22 — Completed 05-01-PLAN.md
+Last activity: 2026-01-22 — Completed 05-02-PLAN.md
 
-Progress: ████████████████░░░░ 37%
+Progress: ████████████████░░░░ 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
-- Average duration: 4.5 min
-- Total execution time: 0.83 hours
+- Total plans completed: 12
+- Average duration: 5.3 min
+- Total execution time: 1.06 hours
 
 **By Phase:**
 
@@ -32,11 +32,11 @@ Progress: ████████████████░░░░ 37%
 | 2 (Theme System) | 2 | 2 | 6.5 min |
 | 3 (Layout Structure) | 3 | 3 | 4 min |
 | 4 (Hero Section) | 3 | 3 | 4 min |
-| 5 (Experience Timeline) | 1 | 3 | 3 min |
+| 5 (Experience Timeline) | 2 | 3 | 8 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-03 (4 min), 04-01 (4 min), 04-02 (4 min), 04-03 (4 min), 05-01 (3 min)
-- Trend: Stable
+- Last 5 plans: 04-01 (4 min), 04-02 (4 min), 04-03 (4 min), 05-01 (3 min), 05-02 (13 min)
+- Trend: Stable (05-02 included checkpoint verification)
 
 *Updated after each plan completion*
 
@@ -99,6 +99,15 @@ Recent decisions affecting current work:
 - Hover shadow effect on cards for interactive feedback
 - MapPin icon for location clarity
 - Gradient vertical line connecting entries (from-primary/50 via-border to-border)
+- TimelineEntry wrapper component for reusable animation logic
+- Scroll-triggered animations with Framer Motion whileInView API
+- Staggered timing system using index-based delays (0.1-0.15s increments)
+- Timeline line growth from top using scaleY with origin-top transform
+- Spring animation for dot indicators (stiffness: 300) for playful bounce
+- Early trigger margins (-100px) for better UX (animations start before fully visible)
+- viewport once: true to prevent animations from replaying on scroll up
+- Scale animation on cards (0.95 → 1) for subtle depth effect
+- Smooth easing functions (easeOut, easeInOut) for natural motion feel
 
 ### Deferred Issues
 
@@ -115,10 +124,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-22
-Stopped at: Completed Phase 5 Plan 1 (05-01-PLAN.md - Design Timeline Component)
+Stopped at: Completed Phase 5 Plan 2 (05-02-PLAN.md - Implement Scroll Animations)
 Resume file: None
 
 **Commits this session:**
-- `a1b51eb` - feat(05-01): create timeline structure with Logicwind experience
-- `526dd16` - feat(05-01): style timeline with responsive design and visual polish
-- `0338ed9` - docs(05-01): complete timeline component structure plan
+- `444a4af` - feat(05-02): create animated wrapper for timeline entries
+- `16d70e7` - feat(05-02): add timeline line and dot animations
+- `ae48d78` - docs(05-02): complete scroll animations plan
