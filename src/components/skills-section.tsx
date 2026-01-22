@@ -40,41 +40,51 @@ export function SkillsSection() {
                   return (
                     <div
                       key={skill.name}
-                      className="bg-card border rounded-lg p-4 hover:border-primary/50 transition-all hover:shadow-md group"
+                      className="bg-card border rounded-xl p-5 hover:border-primary/50 hover:shadow-lg transition-all duration-300 group cursor-default"
                     >
-                      <div className="flex flex-col items-center gap-3">
-                        {/* Skill Icon */}
-                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <div className="flex flex-col items-center gap-3 text-center">
+                        {/* Skill Icon with better container */}
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
                           {IconComponent ? (
-                            <IconComponent className="w-6 h-6 text-primary" />
+                            <IconComponent className="w-7 h-7 text-primary" />
                           ) : (
                             <span className="text-2xl">⚡</span>
                           )}
                         </div>
 
-                        {/* Skill Name */}
-                        <div className="text-center space-y-1">
-                          <p className="font-semibold text-sm">{skill.name}</p>
+                        {/* Skill Info */}
+                        <div className="space-y-2 w-full">
+                          <p className="font-semibold text-sm md:text-base leading-tight">
+                            {skill.name}
+                          </p>
 
-                          {/* Proficiency Indicator */}
-                          <div className="flex items-center gap-1">
-                            {[1, 2, 3, 4, 5].map((level) => (
-                              <div
-                                key={level}
-                                className={`h-1.5 w-1.5 rounded-full ${
-                                  level <= skill.proficiency
-                                    ? 'bg-primary'
-                                    : 'bg-muted'
-                                }`}
-                              />
-                            ))}
+                          {/* Proficiency Indicator with Label */}
+                          <div className="space-y-1">
+                            <div className="flex items-center justify-between gap-2 text-xs">
+                              <span className="text-muted-foreground">Level</span>
+                              <span className="font-medium text-foreground">
+                                {['Beginner', 'Basic', 'Intermediate', 'Advanced', 'Expert'][skill.proficiency - 1]}
+                              </span>
+                            </div>
+                            <div className="flex items-center justify-center gap-1">
+                              {[1, 2, 3, 4, 5].map((level) => (
+                                <div
+                                  key={level}
+                                  className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                                    level <= skill.proficiency
+                                      ? 'bg-primary'
+                                      : 'bg-muted-foreground/30'
+                                  }`}
+                                />
+                              ))}
+                            </div>
                           </div>
 
                           {/* Years (if applicable) */}
                           {skill.years && (
-                            <p className="text-xs text-muted-foreground">
+                            <Badge variant="secondary" className="text-xs">
                               {skill.years} {skill.years === 1 ? 'year' : 'years'}
-                            </p>
+                            </Badge>
                           )}
                         </div>
                       </div>
