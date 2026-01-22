@@ -145,11 +145,12 @@ export function Hero() {
               <Button
                 size="lg"
                 onClick={scrollToProjects}
-                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group relative overflow-hidden"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group relative overflow-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  <FolderOpen className="w-5 h-5" />
+                <span className="relative z-10 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                  <FolderOpen className="w-5 h-5 transition-transform group-hover:rotate-12" />
                   View My Work
+                  <ArrowDown className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               </Button>
@@ -168,10 +169,10 @@ export function Hero() {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group relative"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                <span className="flex items-center gap-2">
-                  <Mail className="w-5 h-5" />
+                <span className="flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                  <Mail className="w-5 h-5 transition-transform group-hover:scale-110" />
                   Get In Touch
                 </span>
               </Button>
