@@ -45,8 +45,14 @@ export function ExperienceTimeline() {
         {/* Timeline */}
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            {/* Vertical line with gradient */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-border to-border transform md:-translate-x-px" />
+            {/* Vertical line with gradient - animated */}
+            <motion.div
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: 'easeInOut' }}
+              className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-border to-border origin-top transform md:-translate-x-px"
+            />
 
             {/* Timeline entries */}
             <div className="space-y-12 md:space-y-16">
@@ -57,8 +63,17 @@ export function ExperienceTimeline() {
 
                 return (
                   <TimelineEntry key={exp.id} index={index} isAlternate={isAlternate}>
-                    {/* Enhanced dot indicator */}
-                    <div
+                    {/* Enhanced dot indicator - animated */}
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true, margin: '-50px' }}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.15,
+                        type: 'spring',
+                        stiffness: 300
+                      }}
                       className={`absolute left-0 md:left-1/2 w-4 h-4 rounded-full border-4 border-background z-10 transform -translate-x-1/2 ${
                         isFirst ? 'bg-primary' : 'bg-background'
                       } ${!isLast ? 'top-8 md:top-6' : 'top-8 md:top-6'}`}
@@ -80,8 +95,17 @@ export function ExperienceTimeline() {
                         </span>
                       </div>
 
-                      {/* Role Card */}
-                      <div className="bg-card border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                      {/* Role Card - animated */}
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, margin: '-100px' }}
+                        transition={{
+                          duration: 0.5,
+                          delay: index * 0.1 + 0.2
+                        }}
+                        className="bg-card border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+                      >
                         <h3 className="text-xl md:text-2xl font-bold mb-2">
                           {exp.title}
                         </h3>
@@ -115,7 +139,7 @@ export function ExperienceTimeline() {
                             </p>
                           )}
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
                   </TimelineEntry>
                 );
