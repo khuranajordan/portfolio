@@ -1,7 +1,13 @@
 import { experiences } from '@/types/experience';
-import { Building2, MapPin } from 'lucide-react';
+import { Building2, MapPin, ChevronDown } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface TimelineEntryProps {
   children: React.ReactNode;
@@ -60,6 +66,7 @@ export function ExperienceTimeline() {
                 const isFirst = index === 0;
                 const isLast = index === experiences.length - 1;
                 const isAlternate = index % 2 === 0;
+                const [isOpen, setIsOpen] = useState(false);
 
                 return (
                   <TimelineEntry key={exp.id} index={index} isAlternate={isAlternate}>
@@ -95,51 +102,85 @@ export function ExperienceTimeline() {
                         </span>
                       </div>
 
-                      {/* Role Card - animated */}
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, margin: '-100px' }}
-                        transition={{
-                          duration: 0.5,
-                          delay: index * 0.1 + 0.2
-                        }}
-                        className="bg-card border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
-                      >
-                        <h3 className="text-xl md:text-2xl font-bold mb-2">
-                          {exp.title}
-                        </h3>
-                        <p className="text-primary font-semibold text-base mb-2">
-                          {exp.company}
-                        </p>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                          <MapPin className="w-3 h-3" />
-                          <span>{exp.location}</span>
-                        </div>
-                        <p className="text-sm text-foreground mb-4 leading-relaxed">
-                          {exp.description}
-                        </p>
+                      {/* Role Card with Collapsible */}
+                      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+                        <CollapsibleTrigger asChild>
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, margin: '-100px' }}
+                            transition={{
+                              duration: 0.5,
+                              delay: index * 0.1 + 0.2
+                            }}
+                            className="bg-card border rounded-lg p-6 shadow-sm hover:shadow-md transition-all cursor-pointer group"
+                          >
+                            <div className="flex items-start justify-between gap-4">
+                              <div className="flex-1">
+                                <h3 className="text-xl md:text-2xl font-bold mb-2">
+                                  {exp.title}
+                                </h3>
+                                <p className="text-primary font-semibold text-base mb-2">
+                                  {exp.company}
+                                </p>
+                                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                                  <MapPin className="w-3 h-3" />
+                                  <span>{exp.location}</span>
+                                </div>
+                                <p className="text-sm text-foreground mb-4 leading-relaxed">
+                                  {exp.description}
+                                </p>
+                              </div>
+                              <ChevronDown
+                                className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${
+                                  isOpen ? 'rotate-180' : ''
+                                }`}
+                              />
+                            </div>
+                          </motion.div>
+                        </CollapsibleTrigger>
 
-                        {/* Responsibilities preview */}
-                        <div className="space-y-1">
-                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                            Key Responsibilities
-                          </p>
-                          <ul className="text-sm text-muted-foreground space-y-1">
-                            {exp.responsibilities.slice(0, 2).map((resp, i) => (
-                              <li key={i} className="flex items-start gap-2">
-                                <span className="text-primary mt-1">•</span>
-                                <span>{resp}</span>
-                              </li>
-                            ))}
-                          </ul>
-                          {exp.responsibilities.length > 2 && (
-                            <p className="text-xs text-muted-foreground italic pt-1">
-                              +{exp.responsibilities.length - 2} more
+                        <CollapsibleContent className="mt-4 pt-4 border-t space-y-4">
+                          {/* Full Responsibilities */}
+                          <div>
+                            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                              Responsibilities
                             </p>
+                            <ul className="text-sm text-foreground space-y-2">
+                              {exp.responsibilities.map((resp, i) => (
+                                <li key={i} className="flex items-start gap-2">
+                                  <span className="text-primary mt-0.5 flex-shrink-0">•</span>
+                                  <span>{resp}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* Achievements */}
+                          {exp.achievements && exp.achievements.length > 0 && (
+                            <div>
+                              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                                Key Achievements
+                              </p>
+                              <ul className="text-sm text-foreground space-y-2">
+                                {exp.achievements.map((achievement, i) => (
+                                  <li key={i} className="flex items-start gap-2">
+                                    <span className="text-green-500 mt-0.5 flex-shrink-0">✓</span>
+                                    <span>{achievement}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           )}
-                        </div>
-                      </motion.div>
+
+                          {/* Tech Stack Badge */}
+                          <div className="flex flex-wrap gap-2">
+                            <Badge variant="secondary">React</Badge>
+                            <Badge variant="secondary">TypeScript</Badge>
+                            <Badge variant="secondary">Tailwind CSS</Badge>
+                          </div>
+                        </CollapsibleContent>
+                      </Collapsible>
                     </div>
                   </TimelineEntry>
                 );

@@ -7,6 +7,7 @@ export interface Experience {
   endDate: string | null;
   description: string;
   responsibilities: string[];
+  achievements?: string[];
 }
 
 export const experiences: Experience[] = [
@@ -22,6 +23,11 @@ export const experiences: Experience[] = [
       'Architecting and implementing scalable frontend solutions',
       'Mentoring junior developers and conducting code reviews',
       'Collaborating with design and backend teams on feature development'
+    ],
+    achievements: [
+      'Promoted to Senior role within 1 year',
+      'Led development of key frontend features',
+      'Mentored 3 junior developers'
     ]
   },
   {
