@@ -1,5 +1,5 @@
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,10 +11,11 @@ export function Footer() {
           {/* Branding */}
           <div className="space-y-3">
             <h3 className="font-bold text-lg">
-              <span className="text-primary">Rohan</span> Patel
+              <span className="text-primary">Rohan</span> Khurana
             </h3>
             <p className="text-sm text-muted-foreground">
-              Senior Frontend Developer specializing in React, TypeScript, and modern web technologies.
+              Senior Frontend Developer specializing in React, TypeScript, and
+              modern web technologies.
             </p>
           </div>
 
@@ -27,8 +28,8 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const el = document.getElementById('about');
-                    el?.scrollIntoView({ behavior: 'smooth' });
+                    const el = document.getElementById("about");
+                    el?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -38,8 +39,8 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const el = document.getElementById('experience');
-                    el?.scrollIntoView({ behavior: 'smooth' });
+                    const el = document.getElementById("experience");
+                    el?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -49,8 +50,8 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const el = document.getElementById('projects');
-                    el?.scrollIntoView({ behavior: 'smooth' });
+                    const el = document.getElementById("projects");
+                    el?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -60,8 +61,8 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const el = document.getElementById('contact');
-                    el?.scrollIntoView({ behavior: 'smooth' });
+                    const el = document.getElementById("contact");
+                    el?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -79,7 +80,7 @@ export function Footer() {
             <div className="flex gap-2">
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://github.com/rohanpatel"
+                  href="https://github.com/khuranajordan"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -89,7 +90,7 @@ export function Footer() {
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://linkedin.com/in/rohanpatel"
+                  href="https://linkedin.com/in/rohan-khurana-india"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -99,7 +100,7 @@ export function Footer() {
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://twitter.com/rohanpatel"
+                  href="https://x.com/Rohank201099"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Twitter"
@@ -108,10 +109,7 @@ export function Footer() {
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="mailto:rohan@example.com"
-                  aria-label="Email"
-                >
+                <a href="mailto:rohan@example.com" aria-label="Email">
                   <Mail className="h-4 w-4" />
                 </a>
               </Button>
@@ -124,10 +122,8 @@ export function Footer() {
 
         {/* Copyright Bar */}
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© {currentYear} Rohan Patel. All rights reserved.</p>
-          <p className="mt-2">
-            Built with React, TypeScript, and Tailwind CSS
-          </p>
+          <p>© {currentYear} Rohan Khurana. All rights reserved.</p>
+          <p className="mt-2">Built with React, TypeScript, and Tailwind CSS</p>
         </div>
       </div>
     </footer>
