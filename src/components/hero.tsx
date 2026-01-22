@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -14,13 +15,57 @@ export function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background -z-10" />
+      {/* Animated background gradient */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background -z-10"
+        animate={{
+          backgroundPosition: ['0% 0%', '100% 100%'],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
+        style={{
+          backgroundSize: '200% 200%',
+        }}
+      />
+
+      {/* Floating orbs */}
+      <motion.div
+        className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl -z-10"
+        animate={{
+          y: [0, -30, 0],
+          x: [0, 20, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"
+        animate={{
+          y: [0, 30, 0],
+          x: [0, -20, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
 
       <div className="container mx-auto px-4 py-20 md:py-0">
         <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
           {/* Greeting */}
-          <div className="space-y-2 md:space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-2 md:space-y-4"
+          >
             <p className="text-base md:text-lg text-primary font-medium">
               Hi, I'm
             </p>
@@ -34,16 +79,26 @@ export function Hero() {
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground">
               Senior Frontend Developer
             </h2>
-          </div>
+          </motion.div>
 
           {/* Value Proposition */}
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4"
+          >
             I build exceptional digital experiences with React, TypeScript, and modern web technologies.
             Transforming ideas into polished, performant applications.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4 px-4"
+          >
             <Button
               size="lg"
               onClick={scrollToProjects}
@@ -64,10 +119,15 @@ export function Hero() {
             >
               Get In Touch
             </Button>
-          </div>
+          </motion.div>
 
           {/* Scroll Indicator */}
-          <div className="pt-8 md:pt-12 animate-bounce">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="pt-8 md:pt-12"
+          >
             <Button
               variant="ghost"
               size="icon"
@@ -78,11 +138,11 @@ export function Hero() {
                 }
               }}
               aria-label="Scroll to about section"
-              className="h-10 w-10"
+              className="h-10 w-10 animate-bounce"
             >
               <ArrowDown className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
