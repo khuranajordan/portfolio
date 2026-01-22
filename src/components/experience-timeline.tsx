@@ -1,6 +1,31 @@
 import { experiences } from '@/types/experience';
 import { Building2, MapPin } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { motion } from 'framer-motion';
+
+interface TimelineEntryProps {
+  children: React.ReactNode;
+  index: number;
+  isAlternate: boolean;
+}
+
+function TimelineEntry({ children, index, isAlternate }: TimelineEntryProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: 'easeOut'
+      }}
+      className="relative md:grid md:grid-cols-2 md:gap-8 md:items-start"
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export function ExperienceTimeline() {
   return (
@@ -28,12 +53,10 @@ export function ExperienceTimeline() {
               {experiences.map((exp, index) => {
                 const isFirst = index === 0;
                 const isLast = index === experiences.length - 1;
+                const isAlternate = index % 2 === 0;
 
                 return (
-                  <div
-                    key={exp.id}
-                    className="relative md:grid md:grid-cols-2 md:gap-8 md:items-start"
-                  >
+                  <TimelineEntry key={exp.id} index={index} isAlternate={isAlternate}>
                     {/* Enhanced dot indicator */}
                     <div
                       className={`absolute left-0 md:left-1/2 w-4 h-4 rounded-full border-4 border-background z-10 transform -translate-x-1/2 ${
@@ -94,7 +117,7 @@ export function ExperienceTimeline() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </TimelineEntry>
                 );
               })}
             </div>
