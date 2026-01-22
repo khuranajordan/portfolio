@@ -86,7 +86,7 @@ export function Hero() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="inline-block"
               >
-                Patel
+                Khurana
               </motion.span>
             </h1>
 
