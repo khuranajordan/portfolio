@@ -1,8 +1,10 @@
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { Hero } from '@/components/hero';
+import { AboutSection } from '@/components/about-section';
 import { ExperienceTimeline } from '@/components/experience-timeline';
 import { SkillsSection } from '@/components/skills-section';
+import { ProjectsSection } from '@/components/projects-section';
 
 function App() {
   return (
@@ -11,24 +13,10 @@ function App() {
 
       <main className="flex-1">
         <Hero />
-
-        <section id="about" className="min-h-screen flex items-center justify-center border-b">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">About Section</h2>
-            <p className="text-muted-foreground">Professional journey</p>
-          </div>
-        </section>
-
+        <AboutSection />
         <ExperienceTimeline />
-
         <SkillsSection />
-
-        <section id="projects" className="min-h-screen flex items-center justify-center border-b">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Projects Section</h2>
-            <p className="text-muted-foreground">Portfolio showcase</p>
-          </div>
-        </section>
+        <ProjectsSection />
 
         <section id="contact" className="min-h-screen flex items-center justify-center">
           <div className="text-center">
