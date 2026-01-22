@@ -6,23 +6,23 @@ See: .planning/PROJECT.md (updated 2025-01-19)
 
 **Core value:** Make recruiters want to hire Rohan almost instantly by presenting a stunning, professional showcase of his frontend engineering skills through beautiful design, smooth interactions, and comprehensive presentation of his technical expertise and professional journey.
 
-**Current focus:** Phase 5 — Experience Timeline (starting)
+**Current focus:** Phase 5 — Experience Timeline (in progress)
 
 ## Current Position
 
 Phase: 5 of 10 (Experience Timeline)
-Plan: 1 of 4 in next phase
-Status: Phase 4 complete, ready to start Phase 5
-Last activity: 2026-01-22 — Completed Phase 4 (04-03-PLAN.md)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-01-22 — Completed 05-01-PLAN.md
 
-Progress: ████████████████░░░░ 33%
+Progress: ████████████████░░░░ 37%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
-- Average duration: 4.6 min
-- Total execution time: 0.77 hours
+- Total plans completed: 11
+- Average duration: 4.5 min
+- Total execution time: 0.83 hours
 
 **By Phase:**
 
@@ -32,9 +32,10 @@ Progress: ████████████████░░░░ 33%
 | 2 (Theme System) | 2 | 2 | 6.5 min |
 | 3 (Layout Structure) | 3 | 3 | 4 min |
 | 4 (Hero Section) | 3 | 3 | 4 min |
+| 5 (Experience Timeline) | 1 | 3 | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-01 (4 min), 03-03 (4 min), 04-01 (4 min), 04-02 (4 min), 04-03 (4 min)
+- Last 5 plans: 03-03 (4 min), 04-01 (4 min), 04-02 (4 min), 04-03 (4 min), 05-01 (3 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -89,6 +90,16 @@ Recent decisions affecting current work:
 - Focus-visible rings for keyboard navigation (WCAG compliance)
 - Icon micro-animations (rotate, scale) and spacing transitions (300ms)
 
+**From Phase 5:**
+- Alternating timeline layout for visual interest (desktop)
+- Stacked layout on mobile for readability
+- First dot highlighted with primary color (current role emphasis)
+- Preview only 2 responsibilities to avoid clutter
+- Muted section background for visual separation
+- Hover shadow effect on cards for interactive feedback
+- MapPin icon for location clarity
+- Gradient vertical line connecting entries (from-primary/50 via-border to-border)
+
 ### Deferred Issues
 
 None yet.
@@ -104,9 +115,10 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-22
-Stopped at: Completed Phase 4 (04-03-PLAN.md - Implement CTA Buttons)
+Stopped at: Completed Phase 5 Plan 1 (05-01-PLAN.md - Design Timeline Component)
 Resume file: None
 
 **Commits this session:**
-- `1751efe` - feat(04-03): add icons and shimmer effect to CTA buttons
-- `dea37ab` - feat(04-03): add micro-interactions and accessibility to CTA buttons
+- `a1b51eb` - feat(05-01): create timeline structure with Logicwind experience
+- `526dd16` - feat(05-01): style timeline with responsive design and visual polish
+- `0338ed9` - docs(05-01): complete timeline component structure plan
