@@ -10,6 +10,7 @@ import {
 import { useActiveSection } from "@/hooks/use-active-section";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
@@ -55,26 +56,40 @@ export function Navigation() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <button
+            <Button
               key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`text-sm font-medium transition-colors relative ${
+              variant="ghost"
+              className={`relative group transition-all duration-300 ${
                 activeSection === item.id
-                  ? "text-primary"
-                  : "hover:text-primary"
+                  ? 'text-primary bg-primary/10'
+                  : 'hover:text-primary hover:bg-primary/5'
               }`}
+              onClick={() => scrollToSection(item.id)}
             >
               {item.label}
+              {/* Active underline */}
               {activeSection === item.id && (
-                <span className="absolute -bottom-5.25 left-0 right-0 h-0.5 bg-primary" />
+                <motion.div
+                  layoutId="activeNav"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
               )}
-            </button>
+              {/* Hover arrow */}
+              <motion.span
+                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                ↓
+              </motion.span>
+            </Button>
           ))}
         </nav>
 
         {/* Right Side Actions */}
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <motion.div whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
+            <ThemeToggle />
+          </motion.div>
 
           {/* Mobile Menu Button */}
           <Sheet open={open} onOpenChange={setOpen}>

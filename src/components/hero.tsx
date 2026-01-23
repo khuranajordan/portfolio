@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowDown, FolderOpen, Mail } from "lucide-react";
+import { ArrowDown, ArrowRight, FolderOpen, Mail } from "lucide-react";
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -150,9 +150,9 @@ export function Hero() {
                 <span className="relative z-10 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   <FolderOpen className="w-5 h-5 transition-transform group-hover:rotate-12" />
                   View My Work
-                  <ArrowDown className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                  <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               </Button>
             </motion.div>
 
