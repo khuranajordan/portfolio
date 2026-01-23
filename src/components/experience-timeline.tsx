@@ -65,7 +65,6 @@ export function ExperienceTimeline() {
             <div className="space-y-12 md:space-y-16">
               {experiences.map((exp, index) => {
                 const isFirst = index === 0;
-                const isLast = index === experiences.length - 1;
                 const [isOpen, setIsOpen] = useState(false);
 
                 return (
