@@ -25,7 +25,9 @@ function TimelineEntry({ children, index }: TimelineEntryProps) {
         delay: index * 0.1,
         ease: 'easeOut'
       }}
-      className="relative md:grid md:grid-cols-2 md:gap-8 md:items-start"
+      className={`relative flex flex-col gap-4 md:gap-6 ${
+        index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+      }`}
     >
       {children}
     </motion.div>
@@ -56,7 +58,7 @@ export function ExperienceTimeline() {
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, ease: 'easeInOut' }}
-              className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-border to-border origin-top transform md:-translate-x-px"
+              className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 h-full w-0.5 bg-primary/20"
             />
 
             {/* Timeline entries */}
@@ -87,19 +89,11 @@ export function ExperienceTimeline() {
                           repeatDelay: 1
                         }
                       } : {}}
-                      className={`absolute left-0 md:left-1/2 w-4 h-4 rounded-full border-4 border-background z-10 transform -translate-x-1/2 ${
-                        isFirst ? 'bg-primary' : 'bg-background'
-                      } ${!isLast ? 'top-8 md:top-6' : 'top-8 md:top-6'}`}
+                      className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"
                     />
 
                     {/* Content - alternates left/right on desktop */}
-                    <div
-                      className={`ml-8 md:ml-0 ${
-                        index % 2 === 0
-                          ? 'md:text-right md:pr-8'
-                          : 'md:col-start-2 md:pl-8'
-                      }`}
-                    >
+                    <div className="ml-12 md:ml-0 flex-1">
                       {/* Date Badge */}
                       <div className="inline-flex items-center gap-2 text-sm font-medium text-primary mb-3">
                         <Building2 className="w-4 h-4" />
@@ -119,14 +113,14 @@ export function ExperienceTimeline() {
                               duration: 0.5,
                               delay: index * 0.1 + 0.2
                             }}
-                            className="bg-card border rounded-lg p-4 md:p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all cursor-pointer group"
+                            className="bg-card border rounded-lg p-4 md:p-6 lg:p-8 shadow-sm hover:shadow-md hover:border-primary/50 transition-all cursor-pointer group"
                           >
                             <div className="flex items-start justify-between gap-4">
                               <div className="flex-1">
-                                <h3 className="text-base md:text-xl lg:text-2xl font-bold mb-2">
+                                <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-2">
                                   {exp.title}
                                 </h3>
-                                <p className="text-primary font-semibold text-base mb-2">
+                                <p className="text-sm md:text-base text-primary font-semibold mb-2">
                                   {exp.company}
                                 </p>
                                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
