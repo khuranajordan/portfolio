@@ -8,7 +8,8 @@ import {
   Github,
   Send,
   MessageCircle,
-  MapPin
+  MapPin,
+  ExternalLink
 } from 'lucide-react';
 
 export function ContactSection() {
@@ -101,17 +102,40 @@ export function ContactSection() {
                 <p className="text-sm">{contactInfo.location}</p>
               </div>
 
-              {/* Primary CTA */}
-              <Button
-                size="lg"
-                className="w-full mt-6 group"
-                asChild
+              {/* Primary CTA with Enhanced Effects */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <a href={`mailto:${contactInfo.email}`}>
-                  <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-                  Send Me an Email
-                </a>
-              </Button>
+                <Button
+                  size="lg"
+                  className="w-full mt-6 group relative overflow-hidden"
+                  asChild
+                >
+                  <a href={`mailto:${contactInfo.email}`}>
+                    {/* Ripple Effect Background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+
+                    {/* Button Content */}
+                    <span className="relative flex items-center justify-center">
+                      <motion.div
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                      >
+                        <Mail className="w-5 h-5 mr-2" />
+                      </motion.div>
+                      Send Me an Email
+                      <motion.div
+                        className="ml-2"
+                        animate={{ opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        <Send className="w-4 h-4" />
+                      </motion.div>
+                    </span>
+                  </a>
+                </Button>
+              </motion.div>
             </Card>
           </motion.div>
 
@@ -132,7 +156,7 @@ export function ContactSection() {
                 Find me on social media and platforms where I share my work and knowledge
               </p>
 
-              {/* Social Links Grid */}
+              {/* Enhanced Social Links Grid */}
               <div className="space-y-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
@@ -144,15 +168,33 @@ export function ContactSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                    className={`block p-4 border rounded-lg transition-all duration-300 ${link.color} hover:shadow-lg group`}
+                    whileHover={{ scale: 1.02 }}
+                    className={`relative block p-4 border rounded-lg overflow-hidden transition-all duration-300 ${link.color} hover:shadow-xl group`}
                   >
-                    <div className="flex items-center gap-4">
-                      <link.icon className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+
+                    {/* Glow Effect */}
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r ${link.color.replace('hover:text-', 'from-').replace(' hover:border-', ' to-')} blur-xl`} />
+
+                    <div className="relative flex items-center gap-4">
+                      <motion.div
+                        className="p-2 bg-background rounded-lg"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <link.icon className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                      </motion.div>
                       <div className="flex-1">
-                        <p className="font-semibold">{link.name}</p>
+                        <p className="font-semibold group-hover:text-primary transition-colors duration-300">{link.name}</p>
                         <p className="text-xs text-muted-foreground">{link.description}</p>
                       </div>
-                      <Send className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <motion.div
+                        className="p-2 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        whileHover={{ scale: 1.2, rotate: 45 }}
+                      >
+                        <Send className="w-4 h-4 text-primary" />
+                      </motion.div>
                     </div>
                   </motion.a>
                 ))}
@@ -185,18 +227,41 @@ export function ContactSection() {
               Let's create something amazing together!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button size="lg" asChild>
-                <a href={`mailto:${contactInfo.email}`}>
-                  <Mail className="w-5 h-5 mr-2" />
-                  Hire Me
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href={contactInfo.github} target="_blank" rel="noopener noreferrer">
-                  <Github className="w-5 h-5 mr-2" />
-                  View My Work
-                </a>
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" className="group relative overflow-hidden" asChild>
+                  <a href={`mailto:${contactInfo.email}`}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <span className="relative flex items-center">
+                      <motion.div
+                        whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Mail className="w-5 h-5 mr-2" />
+                      </motion.div>
+                      Hire Me
+                      <Send className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 transition-opacity" />
+                    </span>
+                  </a>
+                </Button>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" variant="outline" className="group relative overflow-hidden" asChild>
+                  <a href={contactInfo.github} target="_blank" rel="noopener noreferrer">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <span className="relative flex items-center">
+                      <motion.div
+                        whileHover={{ rotate: [0, 360] }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <Github className="w-5 h-5 mr-2" />
+                      </motion.div>
+                      View My Work
+                      <ExternalLink className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    </span>
+                  </a>
+                </Button>
+              </motion.div>
             </div>
           </Card>
         </motion.div>
