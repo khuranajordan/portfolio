@@ -5,6 +5,7 @@ import { AboutSection } from '@/components/about-section';
 import { ExperienceTimeline } from '@/components/experience-timeline';
 import { SkillsSection } from '@/components/skills-section';
 import { ProjectsSection } from '@/components/projects-section';
+import { ContactSection } from '@/components/contact-section';
 
 function App() {
   return (
@@ -17,13 +18,7 @@ function App() {
         <ExperienceTimeline />
         <SkillsSection />
         <ProjectsSection />
-
-        <section id="contact" className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Contact Section</h2>
-            <p className="text-muted-foreground">Get in touch</p>
-          </div>
-        </section>
+        <ContactSection />
       </main>
 
       <Footer />
