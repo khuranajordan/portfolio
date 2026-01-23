@@ -42,23 +42,31 @@ export function Navigation() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60`">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/80 backdrop-blur-lg">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
         {/* Logo/Name */}
-        <div
-          className="flex items-center gap-2 font-bold text-xl cursor-pointer"
-          onClick={() => scrollToSection("hero")}
+        <motion.a
+          href="#hero"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="text-lg md:text-xl font-bold"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("hero");
+          }}
         >
           <span className="text-primary">Rohan</span>
           <span>Khurana</span>
-        </div>
+        </motion.a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <Button
               key={item.id}
               variant="ghost"
+              size="sm"
               className={`relative group transition-all duration-300 ${
                 activeSection === item.id
                   ? 'text-primary bg-primary/10'
@@ -83,7 +91,7 @@ export function Navigation() {
               </motion.span>
             </Button>
           ))}
-        </nav>
+        </div>
 
         {/* Right Side Actions */}
         <div className="flex items-center gap-2">
@@ -94,35 +102,40 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-5 w-5" />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+                aria-label="Open menu"
+              >
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <SheetHeader>
                 <SheetTitle>Navigation</SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-col gap-4 mt-8">
+              <div className="mt-8 flex flex-col gap-2">
                 {navItems.map((item) => (
-                  <button
+                  <Button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`text-lg font-medium transition-colors text-left relative ${
+                    variant="ghost"
+                    size="lg"
+                    className={`justify-start transition-all duration-300 ${
                       activeSection === item.id
-                        ? "text-primary"
-                        : "hover:text-primary"
+                        ? 'text-primary bg-primary/10'
+                        : 'hover:text-primary hover:bg-primary/5'
                     }`}
+                    onClick={() => scrollToSection(item.id)}
                   >
                     {item.label}
-                    {activeSection === item.id && (
-                      <span className="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-full" />
-                    )}
-                  </button>
+                  </Button>
                 ))}
-              </nav>
+              </div>
             </SheetContent>
           </Sheet>
+        </div>
         </div>
       </div>
     </header>
