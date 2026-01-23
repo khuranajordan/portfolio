@@ -113,9 +113,12 @@ export function SkillsSection() {
                             </span>
                           </div>
                           <div className="flex items-center justify-center gap-1">
-                            {[1, 2, 3, 4, 5].map((level) => (
-                              <div
+                            {[1, 2, 3, 4, 5].map((level, idx) => (
+                              <motion.div
                                 key={level}
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ delay: idx * 0.05, type: 'spring' }}
                                 className={`h-2 w-2 rounded-full transition-all duration-300 ${
                                   level <= skill.proficiency
                                     ? 'bg-primary'
