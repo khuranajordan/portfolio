@@ -4,6 +4,14 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
       colors: {
         // Primary colors for CTAs and highlights
         primary: {
@@ -39,6 +47,7 @@ export default {
       fontSize: {
         'hero': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         'section': ['2.5rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'xxs': '0.65rem',
       },
       spacing: {
         '128': '32rem',
