@@ -2,6 +2,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { GraduationCap, Briefcase, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { ProfessionalJourney } from '@/components/professional-journey';
 
 export function AboutSection() {
   const education = [
@@ -130,7 +131,7 @@ export function AboutSection() {
         </div>
 
         {/* Career Summary Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           {careerSummary.map((section, index) => (
             <motion.div
               key={section.title}
@@ -153,6 +154,9 @@ export function AboutSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Professional Journey Timeline */}
+        <ProfessionalJourney />
       </div>
     </section>
   );
