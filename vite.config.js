@@ -20,12 +20,17 @@ export default defineConfig({
     outDir: 'dist',
     // Generate sourcemaps for production (optional, disable for smaller bundles)
     sourcemap: false,
+    // Enable CSS minification
+    cssMinify: true,
+    // Target modern browsers
+    target: 'es2015',
     // Minify
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info']
       }
     },
     // Chunk size warnings
