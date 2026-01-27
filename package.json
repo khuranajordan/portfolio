@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "analyze": "vite-bundle-visualizer"
+    "analyze": "vite-bundle-visualizer",
+    "test:browsers": "npm run build && npm run preview"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
