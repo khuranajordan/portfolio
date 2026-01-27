@@ -90,7 +90,7 @@ export function ContactSection() {
                 <p className="text-sm text-muted-foreground mb-2">Email me at</p>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="text-lg font-semibold text-primary hover:underline break-all"
+                  className="text-lg font-semibold text-primary hover:underline break-all focus:outline-none focus:ring-2 focus:ring-primary rounded"
                 >
                   {contactInfo.email}
                 </a>
@@ -109,12 +109,12 @@ export function ContactSection() {
               >
                 <Button
                   size="lg"
-                  className="w-full mt-6 group relative overflow-hidden"
+                  className="w-full mt-6 group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
                   asChild
                 >
                   <a href={`mailto:${contactInfo.email}`}>
                     {/* Ripple Effect Background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
 
                     {/* Button Content */}
                     <span className="relative flex items-center justify-center">
@@ -122,7 +122,7 @@ export function ContactSection() {
                         animate={{ x: [0, 5, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
                       >
-                        <Mail className="w-5 h-5 mr-2" />
+                        <Mail className="w-5 h-5 mr-2" aria-hidden="true" />
                       </motion.div>
                       Send Me an Email
                       <motion.div
@@ -130,7 +130,7 @@ export function ContactSection() {
                         animate={{ opacity: [0.5, 1, 0.5] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
-                        <Send className="w-4 h-4" />
+                        <Send className="w-4 h-4" aria-hidden="true" />
                       </motion.div>
                     </span>
                   </a>
@@ -164,18 +164,19 @@ export function ContactSection() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit my ${link.name} profile (opens in new tab)`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
-                    className={`relative block p-4 border rounded-lg overflow-hidden transition-all duration-300 ${link.color} hover:shadow-xl group`}
+                    className={`relative block p-4 border rounded-lg overflow-hidden transition-all duration-300 ${link.color} hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-primary rounded`}
                   >
                     {/* Shimmer Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
 
                     {/* Glow Effect */}
-                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r ${link.color.replace('hover:text-', 'from-').replace(' hover:border-', ' to-')} blur-xl`} />
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r ${link.color.replace('hover:text-', 'from-').replace(' hover:border-', ' to-')} blur-xl`} aria-hidden="true" />
 
                     <div className="relative flex items-center gap-4">
                       <motion.div
@@ -183,7 +184,7 @@ export function ContactSection() {
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.6 }}
                       >
-                        <link.icon className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                        <link.icon className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
                       </motion.div>
                       <div className="flex-1">
                         <p className="font-semibold group-hover:text-primary transition-colors duration-300">{link.name}</p>
@@ -192,6 +193,7 @@ export function ContactSection() {
                       <motion.div
                         className="p-2 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         whileHover={{ scale: 1.2, rotate: 45 }}
+                        aria-hidden="true"
                       >
                         <Send className="w-4 h-4 text-primary" />
                       </motion.div>
@@ -228,36 +230,36 @@ export function ContactSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="group relative overflow-hidden" asChild>
+                <Button size="lg" className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" asChild>
                   <a href={`mailto:${contactInfo.email}`}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
                     <span className="relative flex items-center">
                       <motion.div
                         whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                         transition={{ duration: 0.5 }}
                       >
-                        <Mail className="w-5 h-5 mr-2" />
+                        <Mail className="w-5 h-5 mr-2" aria-hidden="true" />
                       </motion.div>
                       Hire Me
-                      <Send className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 transition-opacity" />
+                      <Send className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                     </span>
                   </a>
                 </Button>
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="group relative overflow-hidden" asChild>
-                  <a href={contactInfo.github} target="_blank" rel="noopener noreferrer">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                <Button size="lg" variant="outline" className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" asChild>
+                  <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" aria-label="View my GitHub profile (opens in new tab)">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
                     <span className="relative flex items-center">
                       <motion.div
                         whileHover={{ rotate: [0, 360] }}
                         transition={{ duration: 0.6 }}
                       >
-                        <Github className="w-5 h-5 mr-2" />
+                        <Github className="w-5 h-5 mr-2" aria-hidden="true" />
                       </motion.div>
                       View My Work
-                      <ExternalLink className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                      <ExternalLink className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" aria-hidden="true" />
                     </span>
                   </a>
                 </Button>

@@ -50,53 +50,61 @@ export function Navigation() {
           href="#hero"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-lg md:text-xl font-bold"
+          className="text-lg md:text-xl font-bold focus:outline-none focus:ring-2 focus:ring-primary rounded"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection("hero");
           }}
+          aria-label="Rohan Khurana - Go to home section"
         >
           <span className="text-primary">Rohan</span>
           <span>Khurana</span>
         </motion.a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Button
-              key={item.id}
-              variant="ghost"
-              size="sm"
-              className={`relative group transition-all duration-300 ${
-                activeSection === item.id
-                  ? 'text-primary bg-primary/10'
-                  : 'hover:text-primary hover:bg-primary/5'
-              }`}
-              onClick={() => scrollToSection(item.id)}
-            >
-              {item.label}
-              {/* Active underline */}
-              {activeSection === item.id && (
-                <motion.div
-                  layoutId="activeNav"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
-              )}
-              {/* Hover arrow */}
-              <motion.span
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+        <nav aria-label="Main navigation" className="hidden md:block">
+          <div className="flex items-center gap-1" role="menubar">
+            {navItems.map((item) => (
+              <Button
+                key={item.id}
+                variant="ghost"
+                size="sm"
+                role="menuitem"
+                aria-current={activeSection === item.id ? 'true' : undefined}
+                className={`relative group transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary rounded ${
+                  activeSection === item.id
+                    ? 'text-primary bg-primary/10'
+                    : 'hover:text-primary hover:bg-primary/5'
+                }`}
+                onClick={() => scrollToSection(item.id)}
               >
-                ↓
-              </motion.span>
-            </Button>
-          ))}
-        </div>
+                {item.label}
+                {/* Active underline */}
+                {activeSection === item.id && (
+                  <motion.div
+                    layoutId="activeNav"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {/* Hover arrow */}
+                <motion.span
+                  className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+                  aria-hidden="true"
+                >
+                  ↓
+                </motion.span>
+              </Button>
+            ))}
+          </div>
+        </nav>
 
         {/* Right Side Actions */}
         <div className="flex items-center gap-2">
           <motion.div whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
-            <ThemeToggle />
+            <div role="radiogroup" aria-label="Theme selection">
+              <ThemeToggle />
+            </div>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -105,34 +113,38 @@ export function Navigation() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden"
-                aria-label="Open menu"
+                className="md:hidden focus:outline-none focus:ring-2 focus:ring-primary rounded"
+                aria-label="Open navigation menu"
               >
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
+                <Menu className="h-6 w-6" aria-hidden="true" />
+                <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <SheetHeader>
                 <SheetTitle>Navigation</SheetTitle>
               </SheetHeader>
-              <div className="mt-8 flex flex-col gap-2">
-                {navItems.map((item) => (
-                  <Button
-                    key={item.id}
-                    variant="ghost"
-                    size="lg"
-                    className={`justify-start transition-all duration-300 ${
-                      activeSection === item.id
-                        ? 'text-primary bg-primary/10'
-                        : 'hover:text-primary hover:bg-primary/5'
-                    }`}
-                    onClick={() => scrollToSection(item.id)}
-                  >
-                    {item.label}
-                  </Button>
-                ))}
-              </div>
+              <nav aria-label="Mobile navigation" className="mt-8">
+                <div className="flex flex-col gap-2" role="menu">
+                  {navItems.map((item) => (
+                    <Button
+                      key={item.id}
+                      variant="ghost"
+                      size="lg"
+                      role="menuitem"
+                      aria-current={activeSection === item.id ? 'true' : undefined}
+                      className={`justify-start transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary rounded ${
+                        activeSection === item.id
+                          ? 'text-primary bg-primary/10'
+                          : 'hover:text-primary hover:bg-primary/5'
+                      }`}
+                      onClick={() => scrollToSection(item.id)}
+                    >
+                      {item.label}
+                    </Button>
+                  ))}
+                </div>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>
