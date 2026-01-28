@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, FolderOpen, Mail } from "lucide-react";
+import { MeshGradientBackground } from "@/components/mesh-gradient-background";
+import { GrainTexture } from "@/components/grain-texture";
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -15,47 +17,9 @@ export function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Animated background gradient */}
-      <motion.div
-        className="absolute inset-0 bg-linear-to-br from-primary/5 via-background to-background -z-10"
-        animate={{
-          backgroundPosition: ["0% 0%", "100% 100%"],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        style={{
-          backgroundSize: "200% 200%",
-        }}
-      />
-
-      {/* Floating orbs */}
-      <motion.div
-        className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl -z-10"
-        animate={{
-          y: [0, -30, 0],
-          x: [0, 20, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"
-        animate={{
-          y: [0, 30, 0],
-          x: [0, -20, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      {/* Premium animated backgrounds */}
+      <MeshGradientBackground />
+      <GrainTexture />
 
       <div className="container mx-auto px-4 py-20 md:py-0">
         <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
