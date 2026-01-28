@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, FolderOpen, Mail, Sparkles, Code2 } from "lucide-react";
-import { MeshGradientBackground } from "@/components/mesh-gradient-background";
+import { AnimatedGradientBg } from "@/components/animated-gradient-bg";
 import { GrainTexture } from "@/components/grain-texture";
 import { useEffect, useState } from "react";
 
@@ -27,7 +27,7 @@ export function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Premium animated backgrounds */}
-      <MeshGradientBackground />
+      <AnimatedGradientBg />
 
       {/* Scroll-reactive parallax layer */}
       <motion.div
