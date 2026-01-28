@@ -79,6 +79,9 @@
   --sidebar-accent-foreground: oklch(0.55 0.18 280);
   --sidebar-border: oklch(0.85 0.01 85);
   --sidebar-ring: oklch(0.55 0.18 280);
+
+  /* Smooth theme transitions */
+  transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .dark {
@@ -113,6 +116,9 @@
   --sidebar-accent-foreground: oklch(0.65 0.2 270);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.65 0.2 270);
+
+  /* Smooth theme transitions */
+  transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 @layer base {
@@ -409,6 +415,11 @@
   }
   .btn-gradient:hover::before {
     left: 100%;
+  }
+
+  /* Smooth color transitions for interactive elements */
+  .transition-colors-smooth {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   }
 }
 
