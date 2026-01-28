@@ -82,13 +82,14 @@ export function ExperienceTimeline() {
                       }}
                       animate={isFirst ? {
                         scale: [1, 1.1, 1],
+                        opacity: [0.8, 1, 0.8],
                         transition: {
                           duration: 2,
                           repeat: Infinity,
-                          repeatDelay: 1
+                          ease: "easeInOut"
                         }
                       } : {}}
-                      className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"
+                      className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-[0_0_20px_rgba(59,130,246,0.5)] dark:shadow-[0_0_30px_rgba(59,130,246,0.3)] border-4 border-background"
                     />
 
                     {/* Content - alternates left/right on desktop */}
@@ -107,12 +108,16 @@ export function ExperienceTimeline() {
                           <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
+                            whileHover={{
+                              y: -4,
+                              transition: { duration: 0.3 }
+                            }}
                             viewport={{ once: true, margin: '-100px' }}
                             transition={{
                               duration: 0.5,
                               delay: index * 0.1 + 0.2
                             }}
-                            className="bg-card border rounded-lg p-4 md:p-6 lg:p-8 shadow-sm hover:shadow-md hover:border-primary/50 transition-all cursor-pointer group"
+                            className="relative p-6 md:p-8 rounded-2xl glass-premium hover:glass-elevated transition-all duration-500 border-l-4 border-primary/50 hover:border-primary cursor-pointer group"
                           >
                             <div className="flex items-start justify-between gap-4">
                               <div className="flex-1">
@@ -144,7 +149,7 @@ export function ExperienceTimeline() {
                           </motion.div>
                         </CollapsibleTrigger>
 
-                        <CollapsibleContent className="mt-4 pt-4 border-t space-y-4">
+                        <CollapsibleContent className="glass-subtle mt-4 rounded-xl p-4 border-t space-y-4">
                           {/* Full Responsibilities */}
                           <div>
                             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">

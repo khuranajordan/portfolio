@@ -42,7 +42,7 @@ export function Navigation() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/80 backdrop-blur-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/10 glass-premium">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
         {/* Logo/Name */}
@@ -120,7 +120,7 @@ export function Navigation() {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="glass-premium border-r border-white/10 w-[300px] sm:w-[400px]">
               <SheetHeader>
                 <SheetTitle>Navigation</SheetTitle>
               </SheetHeader>
