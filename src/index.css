@@ -383,6 +383,33 @@
   .gradient-border:hover::before {
     opacity: 1;
   }
+
+  /* Gradient button utility with shimmer effect */
+  .btn-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--primary-foreground);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px oklch(0.55 0.18 280 / 0.3);
+  }
+  .btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.3), transparent);
+    transition: left 0.5s;
+  }
+  .btn-gradient:hover::before {
+    left: 100%;
+  }
 }
 
 /* Accessibility enhancements */

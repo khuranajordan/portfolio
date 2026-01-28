@@ -132,7 +132,7 @@ export function Hero() {
               <Button
                 size="lg"
                 onClick={scrollToProjects}
-                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group relative overflow-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="btn-gradient text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group relative overflow-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 <span className="relative z-10 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   <FolderOpen className="w-5 h-5 transition-transform group-hover:rotate-12" />
@@ -156,7 +156,7 @@ export function Hero() {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto group focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 relative bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 transition-all duration-300"
               >
                 <span className="flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   <Mail className="w-5 h-5 transition-transform group-hover:scale-110" />
