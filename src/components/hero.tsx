@@ -58,7 +58,7 @@ export function Hero() {
             </p>
 
             {/* Name with gradient effect - Display scale */}
-            <h1 className="text-display font-bold mb-4 md:mb-6 tracking-tight">
+            <h1 className="text-display font-bold mb-8 md:mb-12 tracking-tight">
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -78,7 +78,7 @@ export function Hero() {
             </h1>
 
             {/* Title - Hero scale */}
-            <h2 className="text-hero font-semibold text-primary mb-4">
+            <h2 className="text-hero font-semibold text-primary mb-8 tracking-tight">
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4 mb-8"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4 mb-12 tracking-wide"
           >
             I build exceptional digital experiences with React, TypeScript, and
             modern web technologies. Transforming ideas into polished,

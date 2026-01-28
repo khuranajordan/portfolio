@@ -116,20 +116,59 @@
 }
 
 @layer base {
+  /* Refined body text with font smoothing */
   body {
     @apply bg-background text-foreground;
-  }
-
-  /* Apple-inspired typography system */
-  body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Optimized heading styles with tracking-tight */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1 {
+    @apply text-display font-bold;
+  }
+
+  h2 {
+    @apply text-hero font-semibold;
+  }
+
+  h3 {
+    @apply text-section font-semibold;
+  }
+
+  /* Refined paragraph text with optimized spacing */
   p {
-    line-height: 1.7;
+    @apply leading-relaxed;
     letter-spacing: -0.003em;
+  }
+
+  /* Smooth text selection */
+  ::selection {
+    background-color: oklch(0.55 0.12 250 / 0.3);
+    color: inherit;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Optimize focus states for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid oklch(0.55 0.12 250 / 0.5);
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus outline for mouse users */
+  :focus:not(:focus-visible) {
+    outline: none;
   }
 }
 
@@ -283,4 +322,52 @@
     font-weight: 600;
     letter-spacing: -0.01em;
   }
+
+  /* Section heading utility */
+  .section-heading {
+    @apply text-section font-semibold tracking-tight mb-6;
+  }
+
+  .sub-section-heading {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight mb-4;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  .transition-smooth {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Subtle fade-in animation */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Optimize images for crisp rendering */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Accessibility enhancements */
+@media (pointer: coarse) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Optimize text rendering */
+.text-optimized {
+  text-rendering: optimizeLegibility;
 }
