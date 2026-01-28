@@ -41,12 +41,13 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
         mono: ['Fira Code', 'Monaco', 'monospace'],
       },
       fontSize: {
-        'hero': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-        'section': ['2.5rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'display': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'hero': ['clamp(2.5rem, 6vw, 5rem)', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '600' }],
+        'section': ['clamp(2rem, 4vw, 3rem)', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '600' }],
         'xxs': '0.65rem',
       },
       spacing: {
