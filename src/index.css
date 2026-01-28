@@ -168,6 +168,100 @@
     border: 1px solid oklch(1 0 0 / 0.08);
   }
 
+  /* Premium glass with depth */
+  .glass-premium {
+    background: oklch(1 0 0 / 0.05);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid oklch(1 0 0 / 0.08);
+    box-shadow:
+      0 1px 2px 0 oklch(0 0 0 / 0.05),
+      0 4px 12px 0 oklch(0 0 0 / 0.08),
+      inset 0 0 0 1px oklch(1 0 0 / 0.05);
+  }
+
+  .dark .glass-premium {
+    background: oklch(1 0 0 / 0.03);
+    border: 1px solid oklch(1 0 0 / 0.06);
+    box-shadow:
+      0 1px 2px 0 oklch(0 0 0 / 0.3),
+      0 4px 12px 0 oklch(0 0 0 / 0.4),
+      inset 0 0 0 1px oklch(1 0 0 / 0.03);
+  }
+
+  /* Subtle glass for less prominent elements */
+  .glass-subtle {
+    background: oklch(1 0 0 / 0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid oklch(1 0 0 / 0.05);
+    box-shadow: 0 2px 8px 0 oklch(0 0 0 / 0.06);
+  }
+
+  .dark .glass-subtle {
+    background: oklch(1 0 0 / 0.02);
+    border: 1px solid oklch(1 0 0 / 0.04);
+  }
+
+  /* Elevated card with glow */
+  .glass-elevated {
+    background: oklch(1 0 0 / 0.06);
+    backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid oklch(1 0 0 / 0.1);
+    box-shadow:
+      0 4px 8px 0 oklch(0 0 0 / 0.08),
+      0 12px 32px 0 oklch(0 0 0 / 0.12),
+      inset 0 0 0 1px oklch(1 0 0 / 0.06);
+  }
+
+  .dark .glass-elevated {
+    background: oklch(1 0 0 / 0.04);
+    box-shadow:
+      0 4px 8px 0 oklch(0 0 0 / 0.4),
+      0 12px 32px 0 oklch(0 0 0 / 0.5),
+      inset 0 0 0 1px oklch(1 0 0 / 0.04);
+  }
+
+  /* Ambient glow on hover */
+  .glass-glow {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-glow:hover {
+    border-color: oklch(0.55 0.12 250 / 0.3);
+    box-shadow:
+      0 8px 16px 0 oklch(0 0 0 / 0.1),
+      0 24px 48px 0 oklch(0 0 0 / 0.15),
+      0 0 0 1px oklch(0.55 0.12 250 / 0.1),
+      inset 0 0 0 1px oklch(1 0 0 / 0.08);
+  }
+
+  .dark .glass-glow:hover {
+    border-color: oklch(0.55 0.12 250 / 0.4);
+    box-shadow:
+      0 8px 16px 0 oklch(0 0 0 / 0.5),
+      0 24px 48px 0 oklch(0 0 0 / 0.6),
+      0 0 0 1px oklch(0.55 0.12 250 / 0.2),
+      inset 0 0 0 1px oklch(1 0 0 / 0.06);
+  }
+
+  /* Shadow scale utilities */
+  .shadow-ambient {
+    box-shadow: 0 2px 16px 0 oklch(0 0 0 / 0.08);
+  }
+  .dark .shadow-ambient {
+    box-shadow: 0 2px 16px 0 oklch(0 0 0 / 0.4);
+  }
+
+  .shadow-floating {
+    box-shadow:
+      0 4px 12px 0 oklch(0 0 0 / 0.1),
+      0 0 0 1px oklch(1 0 0 / 0.05);
+  }
+  .dark .shadow-floating {
+    box-shadow:
+      0 4px 12px 0 oklch(0 0 0 / 0.5),
+      0 0 0 1px oklch(1 0 0 / 0.03);
+  }
+
   /* Apple-inspired responsive typography utilities */
   .text-display {
     font-size: clamp(3rem, 8vw, 6rem);
