@@ -45,8 +45,8 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 md:py-32 bg-muted/30">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,78 +65,75 @@ export function ContactSection() {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 max-w-5xl mx-auto mb-12">
           {/* Left Column - Get in Touch Card */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-8"
           >
-            <Card className="p-8 h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <Send className="w-8 h-8 text-primary" />
-                <h3 className="text-2xl font-bold">Get In Touch</h3>
-              </div>
+            <h2 className="text-hero font-semibold tracking-tight">
+              Get in Touch
+            </h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Whether you have a question, want to start a project, or simply want to connect,
+              feel free to reach out. I'm open to discussing new opportunities, creative ideas,
+              or potential collaborations.
+            </p>
 
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Whether you have a question, want to start a project, or simply want to connect,
-                feel free to reach out. I'm open to discussing new opportunities, creative ideas,
-                or potential collaborations.
-              </p>
-
-              {/* Email Display */}
-              <div className="bg-muted/50 rounded-lg p-4 mb-6">
-                <p className="text-sm text-muted-foreground mb-2">Email me at</p>
-                <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="text-lg font-semibold text-primary hover:underline break-all focus:outline-none focus:ring-2 focus:ring-primary rounded"
-                >
-                  {contactInfo.email}
-                </a>
-              </div>
-
-              {/* Location */}
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <MapPin className="w-4 h-4" />
-                <p className="text-sm">{contactInfo.location}</p>
-              </div>
-
-              {/* Primary CTA with Enhanced Effects */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+            {/* Email Display */}
+            <div className="bg-muted/50 rounded-lg p-6">
+              <p className="text-sm text-muted-foreground mb-2">Email me at</p>
+              <a
+                href={`mailto:${contactInfo.email}`}
+                className="text-lg font-semibold text-primary hover:underline break-all focus:outline-none focus:ring-2 focus:ring-primary rounded"
               >
-                <Button
-                  size="lg"
-                  className="w-full mt-6 group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-                  asChild
-                >
-                  <a href={`mailto:${contactInfo.email}`}>
-                    {/* Ripple Effect Background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
+                {contactInfo.email}
+              </a>
+            </div>
 
-                    {/* Button Content */}
-                    <span className="relative flex items-center justify-center">
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                      >
-                        <Mail className="w-5 h-5 mr-2" aria-hidden="true" />
-                      </motion.div>
-                      Send Me an Email
-                      <motion.div
-                        className="ml-2"
-                        animate={{ opacity: [0.5, 1, 0.5] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        <Send className="w-4 h-4" aria-hidden="true" />
-                      </motion.div>
-                    </span>
-                  </a>
-                </Button>
-              </motion.div>
-            </Card>
+            {/* Location */}
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <MapPin className="w-4 h-4" />
+              <p className="text-sm">{contactInfo.location}</p>
+            </div>
+
+            {/* Primary CTA with Enhanced Effects */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button
+                size="lg"
+                className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+                asChild
+              >
+                <a href={`mailto:${contactInfo.email}`}>
+                  {/* Ripple Effect Background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
+
+                  {/* Button Content */}
+                  <span className="relative flex items-center justify-center">
+                    <motion.div
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                    >
+                      <Mail className="w-5 h-5 mr-2" aria-hidden="true" />
+                    </motion.div>
+                    Send Me an Email
+                    <motion.div
+                      className="ml-2"
+                      animate={{ opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <Send className="w-4 h-4" aria-hidden="true" />
+                    </motion.div>
+                  </span>
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
 
           {/* Right Column - Social Links */}
@@ -145,19 +142,17 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="space-y-6"
           >
-            <Card className="p-8 h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <MessageCircle className="w-8 h-8 text-primary" />
-                <h3 className="text-2xl font-bold">Connect With Me</h3>
-              </div>
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Connect With Me
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Find me on social media and platforms where I share my work and knowledge
+            </p>
 
-              <p className="text-muted-foreground mb-6">
-                Find me on social media and platforms where I share my work and knowledge
-              </p>
-
-              {/* Enhanced Social Links Grid */}
-              <div className="space-y-4">
+            {/* Enhanced Social Links Grid */}
+            <div className="space-y-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
                     key={link.name}

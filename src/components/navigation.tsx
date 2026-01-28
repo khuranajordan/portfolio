@@ -71,7 +71,7 @@ export function Navigation() {
                 size="sm"
                 role="menuitem"
                 aria-current={activeSection === item.id ? 'true' : undefined}
-                className={`relative group transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary rounded ${
+                className={`relative group transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary rounded tracking-wide ${
                   activeSection === item.id
                     ? 'text-primary bg-primary/10'
                     : 'hover:text-primary hover:bg-primary/5'

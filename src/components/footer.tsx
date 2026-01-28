@@ -5,8 +5,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t bg-background">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="border-t border-border/50 bg-muted/20 backdrop-blur-sm py-12 md:py-16">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Branding */}
           <div className="space-y-3">
@@ -122,8 +122,7 @@ export function Footer() {
 
         {/* Copyright Bar */}
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© {currentYear} Rohan Khurana. All rights reserved.</p>
-          <p className="mt-2">Built with React, TypeScript, and Tailwind CSS</p>
+          <p className="tracking-wide">© {currentYear} Rohan Khurana. Crafted with React + TypeScript.</p>
         </div>
       </div>
     </footer>
