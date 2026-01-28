@@ -7,7 +7,6 @@ import {
   Linkedin,
   Github,
   Send,
-  MessageCircle,
   MapPin,
   ExternalLink
 } from 'lucide-react';
@@ -203,7 +202,6 @@ export function ContactSection() {
                   💡 Quick response guaranteed within 24 hours
                 </p>
               </div>
-            </Card>
           </motion.div>
         </div>
 
