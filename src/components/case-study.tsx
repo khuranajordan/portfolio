@@ -8,7 +8,7 @@ interface CaseStudyProps {
 
 export function CaseStudy({ project }: CaseStudyProps) {
   return (
-    <Card className="border rounded-xl overflow-hidden">
+    <Card className="glass-subtle border border-white/10 rounded-2xl overflow-hidden">
       {/* Header */}
       <div className="bg-primary text-primary-foreground p-6">
         <Badge variant="secondary" className="mb-2">
@@ -34,7 +34,7 @@ export function CaseStudy({ project }: CaseStudyProps) {
             <h4 className="font-semibold mb-3 text-lg">Challenges</h4>
             <div className="space-y-3">
               {project.challenges.map((challenge, index) => (
-                <div key={index} className="bg-muted/50 p-4 rounded-lg">
+                <div key={index} className="glass-subtle p-4 rounded-xl border border-white/10">
                   <p className="text-sm">{challenge}</p>
                 </div>
               ))}
@@ -96,9 +96,12 @@ export function CaseStudy({ project }: CaseStudyProps) {
           <h4 className="font-semibold mb-3 text-lg">Tech Stack</h4>
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech) => (
-              <Badge key={tech} variant="secondary">
+              <span
+                key={tech}
+                className="glass-subtle px-3 py-1 rounded-full text-sm font-medium border border-white/10 hover:border-primary/30 transition-all duration-300 cursor-default"
+              >
                 {tech}
-              </Badge>
+              </span>
             ))}
           </div>
         </div>
