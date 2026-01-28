@@ -14,9 +14,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
       layout
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ duration: 0.3 }}
-      className="bg-card border rounded-xl p-6 hover:shadow-xl hover:border-primary/50 transition-all duration-300 group h-full flex flex-col relative overflow-hidden"
+      whileHover={{
+        y: -8,
+        scale: 1.02,
+        transition: { duration: 0.3 }
+      }}
+      className="glass-card rounded-3xl p-6 hover:shadow-2xl transition-all duration-500 group h-full flex flex-col relative overflow-hidden"
     >
       {/* Shimmer effect on card */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 pointer-events-none" />

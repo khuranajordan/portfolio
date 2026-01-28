@@ -4,11 +4,29 @@ import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
 import { CaseStudy } from '@/components/case-study';
 import { ProjectCard } from '@/components/project-card';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export function ProjectsSection() {
   // Separate projects by format
   const showcaseProjects = projects.filter(p => p.format === 'showcase');
   const cardProjects = projects.filter(p => p.format === 'card');
+
+  // Stagger animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
 
   return (
     <section id="projects" className="py-20 md:py-32 bg-muted/30">
@@ -34,20 +52,23 @@ export function ProjectsSection() {
               ) : (
                 <div
                   key={project.id}
-                  className="bg-card border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                  className="glass-card rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                 >
                   {project.id === '1' ? (
                 <>
                   {/* Hero Image Section for E-commerce */}
                   <div className="relative h-64 md:h-80 bg-gradient-to-br from-primary/20 via-background to-primary/5 flex items-center justify-center">
                     <div className="text-center p-8">
+                      <Badge variant="default" className="mb-4">
+                        Featured Project
+                      </Badge>
                       <h3 className="text-4xl md:text-5xl font-bold mb-2">
                         {project.title}
                       </h3>
                       <p className="text-lg text-muted-foreground">
                         Flagship E-commerce Platform
                       </p>
-                      <Badge variant="default" className="mt-4">
+                      <Badge variant="outline" className="mt-4">
                         {project.category}
                       </Badge>
                     </div>
@@ -237,14 +258,28 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Card Projects - Grid Layout with ProjectCard */}
+        {/* Card Projects - Bento Grid Layout with ProjectCard */}
         <div>
           <h3 className="text-2xl font-bold mb-8">Other Projects</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cardProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          >
+            {cardProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                variants={item}
+                className={cn(
+                  // Featured project cards span 2 cols on large screens
+                  index < 2 && "lg:col-span-2"
+                )}
+              >
+                <ProjectCard project={project} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
