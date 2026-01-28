@@ -24,21 +24,24 @@ export function ContactSection() {
       name: 'LinkedIn',
       icon: Linkedin,
       url: contactInfo.linkedin,
-      color: 'hover:text-[#0077b5] hover:border-[#0077b5]',
+      gradient: 'from-primary/20 to-primary/10 hover:from-primary/30 hover:to-primary/20',
+      borderColor: 'border-primary/30 hover:border-primary/50',
       description: 'Connect professionally'
     },
     {
       name: 'GitHub',
       icon: Github,
       url: contactInfo.github,
-      color: 'hover:text-white hover:border-gray-400',
+      gradient: 'from-secondary/20 to-secondary/10 hover:from-secondary/30 hover:to-secondary/20',
+      borderColor: 'border-secondary/30 hover:border-secondary/50',
       description: 'View my code'
     },
     {
       name: 'Email',
       icon: Mail,
       url: `mailto:${contactInfo.email}`,
-      color: 'hover:text-primary hover:border-primary',
+      gradient: 'from-accent/20 to-accent/10 hover:from-accent/30 hover:to-accent/20',
+      borderColor: 'border-accent/30 hover:border-accent/50',
       description: 'Send me an email'
     }
   ];
@@ -164,13 +167,10 @@ export function ContactSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
-                    className={`relative block p-4 border rounded-lg overflow-hidden transition-all duration-300 ${link.color} hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-primary rounded`}
+                    className={`relative block p-4 border rounded-lg overflow-hidden transition-all duration-300 ${link.borderColor} bg-gradient-to-br ${link.gradient} hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-primary rounded`}
                   >
                     {/* Shimmer Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
-
-                    {/* Glow Effect */}
-                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r ${link.color.replace('hover:text-', 'from-').replace(' hover:border-', ' to-')} blur-xl`} aria-hidden="true" />
 
                     <div className="relative flex items-center gap-4">
                       <motion.div
@@ -213,7 +213,7 @@ export function ContactSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center"
         >
-          <Card className="max-w-3xl mx-auto p-8 bg-gradient-to-br from-primary/10 to-background">
+          <Card className="max-w-3xl mx-auto p-8 bg-gradient-to-br from-primary/10 via-accent/10 to-background">
             <h3 className="text-2xl font-bold mb-4">
               Ready to Start a Project?
             </h3>
@@ -223,7 +223,7 @@ export function ContactSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" asChild>
+                <Button size="lg" className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90" asChild>
                   <a href={`mailto:${contactInfo.email}`}>
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
                     <span className="relative flex items-center">

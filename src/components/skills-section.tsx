@@ -79,7 +79,7 @@ export function SkillsSection() {
               animate="show"
               className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
             >
-              {filteredSkills.map((skill) => {
+              {filteredSkills.map((skill, index) => {
                 const IconComponent = getIconComponent(skill.icon);
 
                 return (
@@ -92,7 +92,7 @@ export function SkillsSection() {
                       scale: 1.02,
                       transition: { duration: 0.3 }
                     }}
-                    className="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group cursor-default relative overflow-hidden"
+                    className={`glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group cursor-default relative overflow-hidden ${index === 0 || index === 5 ? 'gradient-border' : ''}`}
                   >
                     {/* Shine effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -102,7 +102,7 @@ export function SkillsSection() {
                       <motion.div
                         whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                         transition={{ duration: 0.5 }}
-                        className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300"
+                        className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300"
                       >
                         {IconComponent ? (
                           <IconComponent className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />

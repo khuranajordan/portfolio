@@ -89,7 +89,7 @@ export function ExperienceTimeline() {
                           ease: "easeInOut"
                         }
                       } : {}}
-                      className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-[0_0_20px_rgba(59,130,246,0.5)] dark:shadow-[0_0_30px_rgba(59,130,246,0.3)] border-4 border-background"
+                      className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-primary to-accent shadow-[0_0_20px_rgba(59,130,246,0.5)] dark:shadow-[0_0_30px_rgba(59,130,246,0.3)] border-4 border-background"
                     />
 
                     {/* Content - alternates left/right on desktop */}
@@ -117,7 +117,7 @@ export function ExperienceTimeline() {
                               duration: 0.5,
                               delay: index * 0.1 + 0.2
                             }}
-                            className="relative p-6 md:p-8 rounded-2xl glass-premium hover:glass-elevated transition-all duration-500 border-l-4 border-primary/50 hover:border-primary cursor-pointer group"
+                            className="relative p-6 md:p-8 rounded-2xl glass-premium hover:glass-elevated transition-all duration-500 border-l-4 border-primary/50 hover:border-primary hover:shadow-[0_0_0_1px_var(--primary)] cursor-pointer group"
                           >
                             <div className="flex items-start justify-between gap-4">
                               <div className="flex-1">
