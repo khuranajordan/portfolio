@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, FolderOpen, Mail } from "lucide-react";
+import { ArrowDown, ArrowRight, FolderOpen, Mail, Sparkles, Code2 } from "lucide-react";
 import { MeshGradientBackground } from "@/components/mesh-gradient-background";
 import { GrainTexture } from "@/components/grain-texture";
 import { useEffect, useState } from "react";
@@ -57,8 +57,8 @@ export function Hero() {
               Hi, I'm
             </p>
 
-            {/* Name with gradient effect */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 tracking-tight">
+            {/* Name with gradient effect - Display scale */}
+            <h1 className="text-display font-bold mb-4 md:mb-6 tracking-tight">
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -77,8 +77,8 @@ export function Hero() {
               </motion.span>
             </h1>
 
-            {/* Title */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-primary mb-4">
+            {/* Title - Hero scale */}
+            <h2 className="text-hero font-semibold text-primary mb-4">
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -163,6 +163,67 @@ export function Hero() {
                   Get In Touch
                 </span>
               </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Floating Info Cards - Apple-style asymmetric layout */}
+          {/* Left card - Experience */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="absolute bottom-32 left-4 md:left-8 lg:left-16 hidden md:block"
+          >
+            <motion.div
+              animate={{
+                borderColor: [
+                  "oklch(1 0 0 / 0.1)",
+                  "oklch(0.55 0.12 250 / 0.3)",
+                  "oklch(1 0 0 / 0.1)"
+                ]
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="glass-card rounded-2xl p-4 max-w-xs border-2"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">3+ Years Experience</p>
+                  <p className="text-xs text-muted-foreground">Senior Frontend Developer</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right card - Tech Stack */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="absolute bottom-32 right-4 md:right-8 lg:right-16 hidden lg:block"
+          >
+            <motion.div
+              animate={{
+                borderColor: [
+                  "oklch(1 0 0 / 0.1)",
+                  "oklch(0.55 0.12 250 / 0.3)",
+                  "oklch(1 0 0 / 0.1)"
+                ]
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              className="glass-card rounded-2xl p-4 max-w-xs border-2"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Code2 className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">React + TypeScript</p>
+                  <p className="text-xs text-muted-foreground">Modern Tech Stack</p>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
 
