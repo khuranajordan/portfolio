@@ -47,7 +47,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 1rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -82,12 +82,12 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  --background: oklch(0.18 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.22 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.22 0 0);
+  --popover-foreground: oklch(0.98 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
@@ -105,7 +105,7 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
+  --sidebar: oklch(0.22 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -118,5 +118,75 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Apple-inspired typography system */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p {
+    line-height: 1.7;
+    letter-spacing: -0.003em;
+  }
+}
+
+@layer utilities {
+  /* Mesh gradient background for rich, subtle depth */
+  .mesh-gradient {
+    background:
+      radial-gradient(at 0% 0%, oklch(0.22 0.01 240 / 0.3) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, oklch(0.22 0.015 280 / 0.25) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, oklch(0.22 0.008 220 / 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, oklch(0.22 0.012 260 / 0.3) 0px, transparent 50%);
+  }
+
+  /* Grain texture overlay for subtle noise effect */
+  .grain-texture {
+    position: relative;
+  }
+  .grain-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glassmorphism card for premium, frosted glass effect */
+  .glass-card {
+    background: oklch(1 0 0 / 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid oklch(1 0 0 / 0.1);
+  }
+  .dark .glass-card {
+    background: oklch(1 0 0 / 0.03);
+    border: 1px solid oklch(1 0 0 / 0.08);
+  }
+
+  /* Apple-inspired responsive typography utilities */
+  .text-display {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .text-hero {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .text-section {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 }
