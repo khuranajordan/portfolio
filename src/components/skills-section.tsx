@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { getIconComponent } from '@/lib/icons';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState<Category | 'All'>('All');
@@ -18,6 +19,22 @@ export function SkillsSection() {
   };
 
   const filteredSkills = getFilteredSkills();
+
+  // Stagger animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.9 },
+    show: { opacity: 1, scale: 1 }
+  };
 
   return (
     <section id="skills" className="py-20 md:py-32">
@@ -54,32 +71,35 @@ export function SkillsSection() {
             ))}
           </TabsList>
 
-          {/* Filtered Skills Grid */}
+          {/* Filtered Skills Grid - Bento Layout */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
             >
-              {filteredSkills.map((skill) => {
+              {filteredSkills.map((skill, index) => {
                 const IconComponent = getIconComponent(skill.icon);
 
                 return (
                   <motion.div
                     key={skill.name}
+                    variants={item}
                     layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.2 }}
                     whileHover={{
-                      y: -5,
-                      transition: { duration: 0.2 }
+                      y: -8,
+                      scale: 1.02,
+                      transition: { duration: 0.3 }
                     }}
-                    className="bg-card border rounded-xl p-5 hover:border-primary hover:shadow-xl transition-all duration-300 group cursor-default relative overflow-hidden"
+                    className={cn(
+                      "glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group cursor-default relative overflow-hidden",
+                      // Featured cards span more space (bento grid pattern)
+                      (index === 0 || index === 5) && "md:col-span-2",
+                      // Make some cards span 2 rows for variety
+                      index === 2 && "md:row-span-2"
+                    )}
                   >
                     {/* Shine effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -134,6 +154,15 @@ export function SkillsSection() {
                           <Badge variant="secondary" className="text-xs">
                             {skill.years} {skill.years === 1 ? 'year' : 'years'}
                           </Badge>
+                        )}
+
+                        {/* Featured content for spanning cards */}
+                        {index === 0 && (
+                          <div className="mt-4 pt-4 border-t border-border/50">
+                            <p className="text-sm text-muted-foreground">
+                              Most used technologies across all projects
+                            </p>
+                          </div>
                         )}
                       </div>
                     </div>
