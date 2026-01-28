@@ -3,8 +3,17 @@ import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, FolderOpen, Mail } from "lucide-react";
 import { MeshGradientBackground } from "@/components/mesh-gradient-background";
 import { GrainTexture } from "@/components/grain-texture";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollToProjects = () => {
     const element = document.getElementById("projects");
     if (element) {
@@ -19,6 +28,20 @@ export function Hero() {
     >
       {/* Premium animated backgrounds */}
       <MeshGradientBackground />
+
+      {/* Scroll-reactive parallax layer */}
+      <motion.div
+        className="absolute inset-0 -z-10"
+        style={{
+          background: "radial-gradient(circle at 50% 50%, oklch(0.98 0.01 250 / 0.03) 0%, transparent 50%)",
+        }}
+        animate={{
+          scale: 1 + (scrollY * 0.0001),
+          y: scrollY * 0.1,
+        }}
+        transition={{ type: "spring", stiffness: 100, damping: 30 }}
+      />
+
       <GrainTexture />
 
       <div className="container mx-auto px-4 py-20 md:py-0">
