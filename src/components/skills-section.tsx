@@ -4,7 +4,6 @@ import { Badge } from '@/components/ui/badge';
 import { getIconComponent } from '@/lib/icons';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/lib/utils';
 
 export function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState<Category | 'All'>('All');
@@ -80,7 +79,7 @@ export function SkillsSection() {
               animate="show"
               className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
             >
-              {filteredSkills.map((skill, index) => {
+              {filteredSkills.map((skill) => {
                 const IconComponent = getIconComponent(skill.icon);
 
                 return (
@@ -93,13 +92,7 @@ export function SkillsSection() {
                       scale: 1.02,
                       transition: { duration: 0.3 }
                     }}
-                    className={cn(
-                      "glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group cursor-default relative overflow-hidden",
-                      // Featured cards span more space (bento grid pattern)
-                      (index === 0 || index === 5) && "md:col-span-2",
-                      // Make some cards span 2 rows for variety
-                      index === 2 && "md:row-span-2"
-                    )}
+                    className="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group cursor-default relative overflow-hidden"
                   >
                     {/* Shine effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -154,15 +147,6 @@ export function SkillsSection() {
                           <Badge variant="secondary" className="text-xs">
                             {skill.years} {skill.years === 1 ? 'year' : 'years'}
                           </Badge>
-                        )}
-
-                        {/* Featured content for spanning cards */}
-                        {index === 0 && (
-                          <div className="mt-4 pt-4 border-t border-border/50">
-                            <p className="text-sm text-muted-foreground">
-                              Most used technologies across all projects
-                            </p>
-                          </div>
                         )}
                       </div>
                     </div>

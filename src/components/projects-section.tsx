@@ -5,7 +5,6 @@ import { Github, ExternalLink } from 'lucide-react';
 import { CaseStudy } from '@/components/case-study';
 import { ProjectCard } from '@/components/project-card';
 import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
 
 export function ProjectsSection() {
   // Separate projects by format
@@ -267,14 +266,10 @@ export function ProjectsSection() {
             animate="show"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
-            {cardProjects.map((project, index) => (
+            {cardProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={item}
-                className={cn(
-                  // Featured project cards span 2 cols on large screens
-                  index < 2 && "lg:col-span-2"
-                )}
               >
                 <ProjectCard project={project} />
               </motion.div>
