@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   description: string;
   longDescription: string;
-  category: 'Full Stack' | 'Frontend' | 'Tool' | 'Other';
+  category: 'Full Stack' | 'Frontend' | 'Tool' | 'Other' | 'Real-Time Systems';
   format: 'showcase' | 'card';
   image?: string;
   images?: string[];
@@ -19,6 +19,51 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: '0',
+    title: 'KNKY - Social Networking Platform',
+    description: 'Real-time social platform with live chat, matchmaking, and media sharing',
+    longDescription: 'Built a full-featured social networking platform with real-time features serving thousands of concurrent users. Implemented Socket.IO-based chat system, real-time matchmaking algorithm, and shared media galleries with event-driven UI and automatic reconnection strategies.',
+    category: 'Real-Time Systems',
+    format: 'showcase',
+    startDate: 'Mar 2024',
+    endDate: 'Present',
+    status: 'In Progress',
+    githubUrl: 'https://github.com/rohankhurana/knky',
+    liveUrl: undefined,
+    techStack: [
+      'Next.js',
+      'TypeScript',
+      'Socket.IO',
+      'WebSockets',
+      'AWS EC2',
+      'CloudFlare R2',
+      'Zustand',
+      'Tailwind CSS'
+    ],
+    features: [
+      'Real-time chat with Socket.IO and event-driven UI',
+      'Live matchmaking system with WebSocket connections',
+      'Shared media galleries with real-time updates',
+      'Automatic reconnection strategies for unstable connections',
+      'Optimistic UI updates for instant feedback',
+      'User presence indicators and typing indicators',
+      'Push notifications for new messages and matches'
+    ],
+    achievements: [
+      'Serving 1000s of concurrent users with sub-100ms message latency',
+      'Reduced reconnection time by 60% through connection pooling',
+      'Achieved 99.9% uptime for real-time features',
+      'Scaled to 10,000+ daily active users'
+    ],
+    challenges: [
+      'Implemented heartbeat mechanism to detect stale connections',
+      'Used Socket.IO rooms to efficiently broadcast to user groups',
+      'Optimized bundle size by 40% through code splitting for real-time features',
+      'Built custom reconnection logic with exponential backoff',
+      'Integrated CloudFlare R2 for media storage with CDN delivery'
+    ]
+  },
   {
     id: '1',
     title: 'Logicwind E-commerce Platform',
