@@ -45,49 +45,20 @@ export function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/10 glass-premium">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-        {/* Logo */}
+        {/* Logo/Name */}
         <motion.a
           href="#hero"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center focus:outline-none focus:ring-2 focus:ring-primary rounded"
+          className="text-lg md:text-xl font-bold focus:outline-none focus:ring-2 focus:ring-primary rounded"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection("hero");
           }}
-          aria-label="Rohan Khurana - Senior Frontend Developer - Go to home section"
+          aria-label="Rohan Khurana - Go to home section"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 200 60"
-            className="h-8 md:h-10 w-auto"
-            style={{ color: 'hsl(var(--primary))' }}
-          >
-            <title>Rohan Khurana - Senior Frontend Developer</title>
-            <text
-              x="0"
-              y="42"
-              fontFamily="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif"
-              fontSize="42"
-              fontWeight="700"
-              fill="currentColor"
-              letterSpacing="-2"
-            >
-              RK
-            </text>
-            <text
-              x="65"
-              y="42"
-              fontFamily="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif"
-              fontSize="20"
-              fontWeight="500"
-              fill="currentColor"
-              letterSpacing="0.5"
-              opacity="0.9"
-            >
-              Rohan Khurana
-            </text>
-          </svg>
+          <span className="text-primary">Rohan</span>
+          <span>Khurana</span>
         </motion.a>
 
         {/* Desktop Navigation */}
