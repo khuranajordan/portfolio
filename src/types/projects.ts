@@ -66,9 +66,9 @@ export const projects: Project[] = [
   },
   {
     id: '1',
-    title: 'Logicwind E-commerce Platform',
+    title: 'E-commerce Platform',
     description: 'Comprehensive e-commerce solution with modern frontend architecture.',
-    longDescription: 'Led frontend development of a full-featured e-commerce platform for Logicwind. Implemented responsive design, shopping cart functionality, user authentication, and payment integration.',
+    longDescription: 'Led frontend development of a full-featured e-commerce platform. Implemented responsive design, shopping cart functionality, user authentication, and payment integration.',
     category: 'Full Stack',
     format: 'showcase',
     techStack: ['React', 'TypeScript', 'Redux Toolkit', 'React Query', 'Tailwind CSS', 'Vite'],
