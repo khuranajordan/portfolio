@@ -7,14 +7,10 @@ export interface Skill {
 }
 
 export type Category =
-  | 'Frontend'
-  | 'Backend'
-  | 'Styling'
-  | 'State Management'
-  | 'Build Tools'
-  | 'Testing'
-  | 'Tools'
-  | 'Soft Skills';
+  | 'Real-Time Systems'
+  | 'Performance Engineering'
+  | 'Leadership & Architecture'
+  | 'Frontend Stack';
 
 export interface SkillCategory {
   name: Category;
@@ -24,79 +20,55 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Frontend',
-    description: 'Core frontend technologies and frameworks',
+    name: 'Real-Time Systems',
+    description: 'Core competency in real-time, high-traffic frontend systems',
     skills: [
-      { name: 'React.js', icon: 'ReactJs', category: 'Frontend', proficiency: 5, years: 3 },
-      { name: 'Next.js', icon: 'NextJs', category: 'Frontend', proficiency: 4, years: 2 },
-      { name: 'Vue.js', icon: 'VueJs', category: 'Frontend', proficiency: 3, years: 1 },
-      { name: 'TypeScript', icon: 'Typescript', category: 'Frontend', proficiency: 5, years: 3 },
-      { name: 'JavaScript', icon: 'JavaScript', category: 'Frontend', proficiency: 5, years: 3 },
-      { name: 'HTML5', icon: 'Html5', category: 'Frontend', proficiency: 5, years: 3 },
-      { name: 'CSS3', icon: 'Css3', category: 'Frontend', proficiency: 5, years: 3 },
+      { name: 'Socket.IO', icon: 'SocketIO', category: 'Real-Time Systems', proficiency: 5, years: 2 },
+      { name: 'WebSockets', icon: 'WebSockets', category: 'Real-Time Systems', proficiency: 5, years: 2 },
+      { name: 'Event-Driven UI', icon: 'EventDrivenUI', category: 'Real-Time Systems', proficiency: 5, years: 2 },
+      { name: 'Next.js', icon: 'NextJs', category: 'Real-Time Systems', proficiency: 5, years: 3 },
+      { name: 'React', icon: 'ReactJs', category: 'Real-Time Systems', proficiency: 5, years: 3 },
+      { name: 'Reconnection Strategies', icon: 'RefreshCw', category: 'Real-Time Systems', proficiency: 4, years: 1 },
     ]
   },
   {
-    name: 'Styling',
-    description: 'CSS frameworks and styling solutions',
+    name: 'Performance Engineering',
+    description: 'Optimization techniques and performance monitoring',
     skills: [
-      { name: 'Tailwind CSS', icon: 'TailwindCss', category: 'Styling', proficiency: 5, years: 3 },
-      { name: 'SCSS', icon: 'Sass', category: 'Styling', proficiency: 4, years: 3 },
-      { name: 'CSS Modules', icon: 'Css3', category: 'Styling', proficiency: 4, years: 2 },
+      { name: 'Virtualization', icon: 'Virtualization', category: 'Performance Engineering', proficiency: 4, years: 2 },
+      { name: 'Lazy Loading', icon: 'LazyLoading', category: 'Performance Engineering', proficiency: 5, years: 3 },
+      { name: 'Code Splitting', icon: 'CodeSplitting', category: 'Performance Engineering', proficiency: 5, years: 3 },
+      { name: 'Performance Optimization', icon: 'Performance', category: 'Performance Engineering', proficiency: 5, years: 3 },
+      { name: 'Bundle Analysis', icon: 'BundleAnalysis', category: 'Performance Engineering', proficiency: 4, years: 2 },
+      { name: 'Lighthouse Auditing', icon: 'Lighthouse', category: 'Performance Engineering', proficiency: 4, years: 2 },
     ]
   },
   {
-    name: 'State Management',
-    description: 'Application state management libraries',
+    name: 'Leadership & Architecture',
+    description: 'Team leadership and technical architecture experience',
     skills: [
-      { name: 'Redux Toolkit', icon: 'Redux', category: 'State Management', proficiency: 5, years: 3 },
-      { name: 'React Query', icon: 'ReactQuery', category: 'State Management', proficiency: 4, years: 2 },
-      { name: 'Zustand', icon: 'Zustand', category: 'State Management', proficiency: 3, years: 1 },
+      { name: 'Team Leadership', icon: 'TeamLeadership', category: 'Leadership & Architecture', proficiency: 5, years: 1 },
+      { name: 'Technical Roadmap', icon: 'TechnicalRoadmap', category: 'Leadership & Architecture', proficiency: 4, years: 1 },
+      { name: 'CI/CD', icon: 'CICD', category: 'Leadership & Architecture', proficiency: 5, years: 2 },
+      { name: 'Code Review', icon: 'Eye', category: 'Leadership & Architecture', proficiency: 5, years: 3 },
+      { name: 'Architecture Design', icon: 'Architect', category: 'Leadership & Architecture', proficiency: 4, years: 2 },
+      { name: 'Technical Debt Management', icon: 'Hammer', category: 'Leadership & Architecture', proficiency: 4, years: 1 },
+      { name: 'Monitoring', icon: 'Monitoring', category: 'Leadership & Architecture', proficiency: 4, years: 2 },
     ]
   },
   {
-    name: 'Build Tools',
-    description: 'Development and build tooling',
+    name: 'Frontend Stack',
+    description: 'Core frontend technologies and development tools',
     skills: [
-      { name: 'Vite', icon: 'Vitejs', category: 'Build Tools', proficiency: 5, years: 2 },
-      { name: 'Webpack', icon: 'Webpack', category: 'Build Tools', proficiency: 3, years: 1 },
-      { name: 'npm', icon: 'Npm', category: 'Build Tools', proficiency: 5, years: 3 },
-    ]
-  },
-  {
-    name: 'Testing',
-    description: 'Testing frameworks and libraries',
-    skills: [
-      { name: 'Jest', icon: 'Jest', category: 'Testing', proficiency: 4, years: 3 },
-      { name: 'React Testing Library', icon: 'TestingLibrary', category: 'Testing', proficiency: 4, years: 3 },
-    ]
-  },
-  {
-    name: 'Backend',
-    description: 'Backend development basics',
-    skills: [
-      { name: 'Node.js', icon: 'NodeJs', category: 'Backend', proficiency: 3, years: 2 },
-      { name: 'Express.js', icon: 'Express', category: 'Backend', proficiency: 3, years: 2 },
-    ]
-  },
-  {
-    name: 'Tools',
-    description: 'Development tools and platforms',
-    skills: [
-      { name: 'Git', icon: 'Git', category: 'Tools', proficiency: 5, years: 3 },
-      { name: 'GitHub', icon: 'Github', category: 'Tools', proficiency: 5, years: 3 },
-      { name: 'Figma', icon: 'Figma', category: 'Tools', proficiency: 4, years: 2 },
-      { name: 'VS Code', icon: 'Vscode', category: 'Tools', proficiency: 5, years: 3 },
-    ]
-  },
-  {
-    name: 'Soft Skills',
-    description: 'Professional skills and methodologies',
-    skills: [
-      { name: 'Agile/Scrum', icon: 'Users', category: 'Soft Skills', proficiency: 5 },
-      { name: 'Problem Solving', icon: 'Lightbulb', category: 'Soft Skills', proficiency: 5 },
-      { name: 'Team Collaboration', icon: 'Users', category: 'Soft Skills', proficiency: 5 },
-      { name: 'Code Review', icon: 'Eye', category: 'Soft Skills', proficiency: 4 },
+      { name: 'TypeScript', icon: 'Typescript', category: 'Frontend Stack', proficiency: 5, years: 3 },
+      { name: 'JavaScript', icon: 'JavaScript', category: 'Frontend Stack', proficiency: 5, years: 3 },
+      { name: 'HTML5/CSS3', icon: 'Html5', category: 'Frontend Stack', proficiency: 5, years: 3 },
+      { name: 'Tailwind CSS', icon: 'TailwindCss', category: 'Frontend Stack', proficiency: 5, years: 3 },
+      { name: 'State Management', icon: 'Archive', category: 'Frontend Stack', proficiency: 5, years: 3 },
+      { name: 'Build Tools', icon: 'Vitejs', category: 'Frontend Stack', proficiency: 5, years: 3 },
+      { name: 'Testing', icon: 'Jest', category: 'Frontend Stack', proficiency: 4, years: 2 },
+      { name: 'Git/GitHub', icon: 'Github', category: 'Frontend Stack', proficiency: 5, years: 3 },
+      { name: 'AWS', icon: 'Cloud', category: 'Frontend Stack', proficiency: 4, years: 1 },
     ]
   }
 ];
