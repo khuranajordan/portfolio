@@ -7,12 +7,20 @@ import { ProfessionalJourney } from '@/components/professional-journey';
 export function AboutSection() {
   const education = [
     {
-      degree: "Bachelor of Computer Applications",
-      field: "Computer Science",
-      institution: "Gujarat University",
-      location: "Gujarat, India",
-      year: "2019 - 2022",
-      gpa: "8.5 CGPA"
+      degree: "Full Stack Development",
+      field: "Professional Training",
+      institution: "Masai School",
+      location: "Remote",
+      year: "2022 - 2023",
+      gpa: "Intensive Bootcamp"
+    },
+    {
+      degree: "B.Tech in Computer Science",
+      field: "Computer Science & Engineering",
+      institution: "Bundelkhand Institute of Engineering & Technology",
+      location: "Jhansi, India",
+      year: "2018 - 2022",
+      gpa: "Bachelor's Degree"
     }
   ];
 
@@ -22,17 +30,17 @@ export function AboutSection() {
       title: "Professional Experience",
       items: [
         "3+ years of experience in frontend development",
-        "Currently working as Senior Frontend Developer at Logicwind",
-        "Specialized in React, TypeScript, and modern web technologies"
+        "Currently Team Lead – Frontend Systems at Ink In Caps",
+        "Specializing in real-time systems, Socket.IO, and high-traffic architecture"
       ]
     },
     {
       icon: GraduationCap,
       title: "Educational Background",
       items: [
-        "Bachelor's degree in Computer Applications from Gujarat University",
-        "Strong foundation in computer science principles",
-        "Continuous learning in latest web technologies"
+        "Full Stack Development from Masai School (2022-2023)",
+        "B.Tech in Computer Science from Bundelkhand Institute (2018-2022)",
+        "Strong foundation in computer science principles"
       ]
     },
     {
