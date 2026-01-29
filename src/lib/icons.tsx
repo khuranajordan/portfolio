@@ -58,6 +58,32 @@ export function getIconComponent(iconName: string): React.ComponentType<{ classN
     'Eye': 'Eye',
     'MessageSquare': 'MessageSquare',
     'Briefcase': 'Briefcase',
+
+    // Real-Time Systems
+    'SocketIO': 'Server',
+    'WebSockets': 'Network',
+    'EventDrivenUI': 'Zap',
+    'RefreshCw': 'RefreshCw',
+
+    // Performance Engineering
+    'Virtualization': 'Layers',
+    'LazyLoading': 'Loader',
+    'CodeSplitting': 'Scissors',
+    'Performance': 'Gauge',
+    'BundleAnalysis': 'BarChart',
+    'Lighthouse': 'Lightbulb',
+
+    // Leadership & Architecture
+    'TeamLeadership': 'Users',
+    'TechnicalRoadmap': 'GitBranch',
+    'CICD': 'Workflow',
+    'Monitoring': 'Activity',
+    'Architect': 'Building',
+    'Hammer': 'Hammer',
+
+    // Frontend Stack
+    'Cloud': 'Cloud',
+    'Archive': 'Archive',
   };
 
   const mappedName = iconMap[iconName];
