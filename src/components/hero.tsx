@@ -85,7 +85,7 @@ export function Hero() {
                 transition={{ duration: 0.5 }}
                 className="inline-block"
               >
-                Senior
+                Team Lead
               </motion.span>{" "}
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
@@ -101,7 +101,7 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="inline-block"
               >
-                Developer
+                Systems Engineer
               </motion.span>
             </h2>
           </motion.div>
