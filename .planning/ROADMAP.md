@@ -346,9 +346,9 @@ Current portfolio content does not match actual resume. Critical inaccuracies in
 
 Plans:
 - [x] 14-01: Hero Section Positioning (2026-01-29)
-- [ ] 14-02: Experience Timeline Update (TBD)
-- [ ] 14-03: Skills Reorganization (TBD)
-- [ ] 14-04: Projects and About Update (TBD)
+- [x] 14-02: Experience and Skills Reorganization (2026-01-29)
+- [ ] 14-03: Projects and About Update (TBD)
+- [ ] 14-04: Contact Info Update (TBD)
 - [ ] 14-05: Final Verification and Polish (TBD)
 
 **Details**:

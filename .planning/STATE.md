@@ -11,17 +11,17 @@ See: .planning/PROJECT.md (updated 2025-01-19)
 ## Current Position
 
 Phase: 14 of 14 (Resume Content Accuracy)
-Plan: 1 of 5 (Hero section positioning)
+Plan: 2 of 5 (Experience and skills reorganization)
 Status: In progress
-Last activity: 2026-01-29 — Completed 14-01-PLAN.md (Hero Section Positioning)
+Last activity: 2026-01-29 — Completed 14-02-PLAN.md (Experience and Skills Reorganization)
 
 Progress: ████████████████████░░ 93%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 33
-- Average duration: 5.4 min
+- Total plans completed: 34
+- Average duration: 5.3 min
 - Total execution time: 3.0 hours
 
 **By Phase:**
@@ -39,11 +39,11 @@ Progress: ████████████████████░░ 93%
 | 10 (Polish & Performance) | 1 | 4 | 8 min |
 | 11 (Advanced Design Enhancement) | 4 | 5 | 7.5 min |
 | 12 (Modern Colorful Visual Overhaul) | 1 | 1 | 21 min |
-| 14 (Resume Content Accuracy) | 1 | 1 | 3 min |
+| 14 (Resume Content Accuracy) | 2 | 2 | 2.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 11-04 (8 min), 12-01 (21 min), 14-01 (3 min)
-- Trend: Resume content accuracy phase started
+- Last 5 plans: 11-04 (8 min), 12-01 (21 min), 14-01 (3 min), 14-02 (2 min)
+- Trend: Resume content accuracy phase progressing
 
 *Updated after each plan completion*
 
@@ -232,6 +232,10 @@ Recent decisions affecting current work:
 - Floating cards showcase differentiating expertise: Real-Time Systems (Zap icon) and Team Lead + Architect (Users icon)
 - Leadership metrics featured: 6-member team leadership and 30% technical debt reduction
 - Three-line title pattern maintained for staggered animation (0s, 0.1s, 0.2s delays)
+- Experience timeline corrected to accurate 3-company history (Ink In Caps x2, Blodin, Traczn)
+- Skills reorganized from 8 generic categories to 4 expertise-based (Real-Time Systems, Performance Engineering, Leadership & Architecture, Frontend Stack)
+- Real-Time Systems category as primary competency showcase (Socket.IO, WebSockets, Next.js, React)
+- Leadership & Architecture category to highlight team leadership, CI/CD, monitoring experience
 
 ### Deferred Issues
 
@@ -255,12 +259,15 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-29
-Stopped at: Completed Phase 14 Plan 1 (14-01-PLAN.md - Hero Section Positioning)
+Stopped at: Completed Phase 14 Plan 2 (14-02-PLAN.md - Experience and Skills Reorganization)
 Resume file: None
 
 **Commits this session:**
 - `4bbcf6d` - feat(14-01): update hero title to Team Lead – Frontend Systems Engineer
 - `051b16f` - feat(14-01): rewrite value proposition for real-time systems focus
 - `3c18508` - feat(14-01): update floating info cards with accurate expertise
+- `8967cf6` - feat(14-02): update experience data with accurate 3-company history
+- `3eddf1e` - feat(14-02): reorganize skills into 4 expertise-based categories
+- `40e375b` - feat(14-02): add icon mappings for new skills
 
 
