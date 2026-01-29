@@ -53,7 +53,72 @@ export function ProjectsSection() {
                   key={project.id}
                   className="glass-card rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                 >
-                  {project.id === '1' ? (
+                  {project.id === '0' ? (
+                <>
+                  {/* Hero Image Section for KNKY */}
+                  <div className="relative h-64 md:h-80 bg-gradient-to-br from-primary/30 via-background to-accent/20 flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <Badge variant="default" className="mb-4">
+                        Flagship Project
+                      </Badge>
+                      <h3 className="text-4xl md:text-5xl font-bold mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-lg text-primary font-semibold mb-2">
+                        Real-Time Social Platform
+                      </p>
+                      <p className="text-muted-foreground">
+                        Socket.IO • WebSockets • 1000s of Concurrent Users
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="p-6 md:p-8 border-b space-y-6">
+                    {/* Project meta */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-4 text-sm text-muted-foreground mb-4">
+                      <span>📅 {project.startDate} - Present</span>
+                      <span>•</span>
+                      <span>⚡ Next.js, Socket.IO, WebSockets, AWS</span>
+                    </div>
+
+                    <p className="text-base leading-relaxed">
+                      {project.longDescription}
+                    </p>
+
+                    {/* Quick Stats - Real-Time Focus */}
+                    <div className="grid grid-cols-3 gap-4 py-4 border rounded-lg bg-muted/30">
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-primary">1000s</p>
+                        <p className="text-xs text-muted-foreground">Concurrent Users</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-primary">&lt;100ms</p>
+                        <p className="text-xs text-muted-foreground">Message Latency</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-primary">99.9%</p>
+                        <p className="text-xs text-muted-foreground">Uptime</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tech Stack - Enhanced */}
+                  <div className="px-6 md:px-8 py-4 border-b bg-muted/20">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.techStack.map((tech, index) => (
+                        <Badge
+                          key={`${tech}-${index}`}
+                          variant="outline"
+                          className="hover:bg-primary/10 hover:border-primary transition-colors cursor-default"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : project.id === '1' ? (
                 <>
                   {/* Hero Image Section for E-commerce */}
                   <div className="relative h-64 md:h-80 bg-gradient-to-br from-primary/20 via-background to-primary/5 flex items-center justify-center">
