@@ -13,63 +13,72 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: '1',
-    title: 'Senior Frontend Developer',
-    company: 'Logicwind',
+    title: 'Team Lead – Frontend Systems',
+    company: 'Ink In Caps',
     location: 'Gujarat, India',
-    startDate: 'Jan 2024',
+    startDate: 'Jul 2025',
     endDate: null,
-    description: 'Leading frontend development initiatives and mentoring team members.',
+    description: 'Leading frontend architecture and 6-member team, reducing technical debt by 30% through CI/CD, performance budgets, and monitoring.',
     responsibilities: [
-      'Architecting and implementing scalable frontend solutions',
-      'Mentoring junior developers and conducting code reviews',
-      'Collaborating with design and backend teams on feature development'
+      'Architecting real-time features with Socket.IO and WebSocket connections',
+      'Leading 6-member frontend team with technical roadmap and code reviews',
+      'Implementing CI/CD pipelines and performance budgets (Lighthouse < 3s)',
+      'Reducing technical debt by 30% through refactoring initiatives'
     ],
     achievements: [
-      'Promoted to Senior role within 1 year',
-      'Led development of key frontend features',
-      'Mentored 3 junior developers'
+      'Led frontend architecture for KNKY social networking platform (1000s of concurrent users)',
+      'Built real-time chat and matchmaking with Socket.IO event-driven UI',
+      'Implemented Sentry monitoring and AWS CloudWatch dashboards'
     ]
   },
   {
     id: '2',
-    title: 'Frontend Developer',
-    company: 'Logicwind',
+    title: 'Senior Software Engineer – Frontend',
+    company: 'Ink In Caps',
     location: 'Gujarat, India',
-    startDate: 'Jan 2023',
-    endDate: 'Dec 2023',
-    description: 'Developing and maintaining web applications with React and TypeScript.',
+    startDate: 'Mar 2024',
+    endDate: 'Jul 2025',
+    description: 'Developing real-time, high-traffic frontend systems with Next.js and Socket.IO.',
     responsibilities: [
-      'Building responsive user interfaces with React and TypeScript',
-      'Implementing state management with Redux Toolkit and React Query',
-      'Optimizing application performance and code quality'
+      'Built real-time features for KNKY platform with Socket.IO and WebSockets',
+      'Implemented lazy loading, code splitting, and virtualization for performance',
+      'Integrated AWS services (EC2, Lambda, CloudFlare Workers/R2)',
+      'Collaborated with backend on real-time data synchronization'
+    ],
+    achievements: [
+      'Served 1000s of concurrent users on KNKY social platform',
+      'Optimized bundle size by 40% through code splitting',
+      'Built event-driven UI with automatic reconnection strategies'
     ]
   },
   {
     id: '3',
-    title: 'React Developer',
-    company: 'Logicwind',
+    title: 'Software Engineer',
+    company: 'Blodin Pvt. Ltd.',
     location: 'Gujarat, India',
-    startDate: 'May 2022',
-    endDate: 'Dec 2022',
-    description: 'Focusing on React-based application development and feature implementation.',
+    startDate: 'Jul 2023',
+    endDate: 'Feb 2024',
+    description: 'Developing React applications with focus on performance and user experience.',
     responsibilities: [
-      'Developing reusable React components and hooks',
-      'Integrating RESTful APIs and managing application state',
-      'Working closely with UX designers to implement pixel-perfect designs'
+      'Built responsive React applications with TypeScript and Tailwind CSS',
+      'Implemented state management with Redux, Zustand, and Recoil',
+      'Optimized application performance and implemented lazy loading',
+      'Collaborated with design team on pixel-perfect UI implementations'
     ]
   },
   {
     id: '4',
-    title: 'Junior React Developer',
-    company: 'Logicwind',
-    location: 'Gujarat, India',
-    startDate: 'Jan 2022',
-    endDate: 'Apr 2022',
-    description: 'Starting professional journey in React development.',
+    title: 'Software Engineer',
+    company: 'Tracxn Technologies',
+    location: 'Bangalore, India',
+    startDate: 'Jan 2023',
+    endDate: 'Apr 2023',
+    description: 'Frontend development for data analytics platform.',
     responsibilities: [
-      'Learning and implementing React best practices',
-      'Building UI components from design specifications',
-      'Collaborating with senior developers on feature development'
+      'Developed React components for financial data visualization',
+      'Worked with large datasets and implemented performance optimizations',
+      'Collaborated with backend team on API integration',
+      'Participated in code reviews and agile development processes'
     ]
   }
 ];
