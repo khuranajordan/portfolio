@@ -45,20 +45,24 @@ export function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/10 glass-premium">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-        {/* Logo/Name */}
+        {/* Logo */}
         <motion.a
           href="#hero"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-lg md:text-xl font-bold focus:outline-none focus:ring-2 focus:ring-primary rounded"
+          className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary rounded"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection("hero");
           }}
-          aria-label="Rohan Khurana - Go to home section"
+          aria-label="Rohan Khurana - Senior Frontend Developer - Go to home section"
         >
-          <span className="text-primary">Rohan</span>
-          <span>Khurana</span>
+          <img
+            src="/logo.svg"
+            alt="Rohan Khurana"
+            className="h-8 md:h-10 w-auto text-primary"
+            style={{ color: 'hsl(var(--primary))' }}
+          />
         </motion.a>
 
         {/* Desktop Navigation */}

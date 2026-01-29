@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <title>Rohan Khurana - Senior Frontend Developer Logo</title>
+  <desc>Clean typographic logo featuring RK monogram</desc>
+
+  <!-- RK Monogram with currentColor for theme adaptation -->
+  <text x="10" y="42"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif"
+        font-size="42"
+        font-weight="700"
+        fill="currentColor"
+        letter-spacing="-2">
+    RK
+  </text>
+
+  <!-- Full Name - lighter weight -->
+  <text x="75" y="42"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif"
+        font-size="20"
+        font-weight="500"
+        fill="currentColor"
+        letter-spacing="0.5"
+        opacity="0.9">
+    Rohan Khurana
+  </text>
+</svg>

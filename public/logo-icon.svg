@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>RK - Rohan Khurana Icon</title>
+  <desc>Clean typographic RK icon for favicon and avatar use</desc>
+
+  <!-- RK Monogram centered - uses currentColor -->
+  <text x="50%"
+        y="55%"
+        dominant-baseline="middle"
+        text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif"
+        font-size="32"
+        font-weight="700"
+        fill="currentColor"
+        letter-spacing="-2">
+    RK
+  </text>
+</svg>

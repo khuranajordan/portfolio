@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>RK - Rohan Khurana Icon</title>
+  <desc>Gradient RK monogram icon for favicon and avatar use</desc>
+
+  <defs>
+    <!-- Main gradient for RK letters -->
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="oklch(0.55 0.18 280)" />
+      <stop offset="50%" stop-color="oklch(0.65 0.15 45)" />
+      <stop offset="100%" stop-color="oklch(0.6 0.16 210)" />
+    </linearGradient>
+
+    <!-- Glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle (optional, for better contrast at small sizes) -->
+  <circle cx="32" cy="32" r="30" fill="oklch(0.98 0.01 85)" opacity="0.9"/>
+
+  <!-- RK Letters centered -->
+  <g filter="url(#glow)">
+    <text x="50%"
+          y="55%"
+          dominant-baseline="middle"
+          text-anchor="middle"
+          font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif"
+          font-size="32"
+          font-weight="700"
+          fill="url(#iconGradient)"
+          letter-spacing="-2">
+      RK
+    </text>
+  </g>
+</svg>
