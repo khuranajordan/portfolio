@@ -113,9 +113,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4 mb-12 tracking-wide"
           >
-            I build exceptional digital experiences with React, TypeScript, and
-            modern web technologies. Transforming ideas into polished,
-            performant applications.
+            I build real-time systems at scale, leading frontend architecture and teams to deliver
+            high-performance applications. Expert in Socket.IO, WebSocket architecture, and
+            engineering practices that serve thousands of concurrent users.
           </motion.p>
 
           {/* CTA Buttons */}
