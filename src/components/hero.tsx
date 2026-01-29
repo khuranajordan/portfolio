@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, FolderOpen, Mail, Sparkles, Code2 } from "lucide-react";
+import { ArrowDown, ArrowRight, FolderOpen, Mail, Zap, Users } from "lucide-react";
 import { AnimatedGradientBg } from "@/components/animated-gradient-bg";
 import { GrainTexture } from "@/components/grain-texture";
 import { useEffect, useState } from "react";
@@ -167,7 +167,7 @@ export function Hero() {
           </motion.div>
 
           {/* Floating Info Cards - Apple-style asymmetric layout */}
-          {/* Left card - Experience */}
+          {/* Left card - Real-Time Systems */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -187,17 +187,17 @@ export function Hero() {
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-primary" />
+                  <Zap className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold">3+ Years Experience</p>
-                  <p className="text-xs text-muted-foreground">Senior Frontend Developer</p>
+                  <p className="text-sm font-semibold">Real-Time Systems</p>
+                  <p className="text-xs text-muted-foreground">Socket.IO • WebSockets • High-Traffic</p>
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right card - Tech Stack */}
+          {/* Right card - Team Leadership */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -217,11 +217,11 @@ export function Hero() {
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Code2 className="w-5 h-5 text-primary" />
+                  <Users className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold">React + TypeScript</p>
-                  <p className="text-xs text-muted-foreground">Modern Tech Stack</p>
+                  <p className="text-sm font-semibold">Team Lead + Architect</p>
+                  <p className="text-xs text-muted-foreground">6-Member Team • CI/CD • Reliability</p>
                 </div>
               </div>
             </motion.div>
