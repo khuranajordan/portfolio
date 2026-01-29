@@ -86,13 +86,13 @@ export function AboutSection() {
             <Card className="p-8 h-full">
               <h3 className="text-2xl font-bold mb-4">Hi, I'm Rohan 👋</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                I'm a Senior Frontend Developer with a passion for creating beautiful, functional, and user-centered digital experiences. With 3+ years of experience in web development, I specialize in building responsive and accessible applications using modern technologies.
+                I'm a Team Lead – Frontend Systems Engineer with a passion for building real-time systems at scale. I lead teams architecting high-traffic applications with Socket.IO, WebSockets, and modern frontend infrastructure. Currently serving thousands of concurrent users with sub-100ms latency.
               </p>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                My journey in tech started with a curiosity about how websites work, which led me to pursue a Bachelor's degree in Computer Applications. Since then, I've had the privilege of working on diverse projects and collaborating with talented teams to bring ideas to life.
+                My journey started with intensive training at Masai School, followed by rapid progression from Software Engineer to Team Lead across three companies. I specialize in real-time architecture, performance engineering, and building reliable frontend systems that scale.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I'm always eager to learn new technologies and take on challenges that push me to grow as a developer. When I'm not coding, you can find me exploring new frameworks, contributing to open source, or sharing knowledge with the developer community.
+                I'm passionate about engineering leadership, technical debt reduction, and mentoring teams to deliver exceptional user experiences. When I'm not architecting real-time features or optimizing performance, I'm contributing to open source and sharing knowledge with the developer community.
               </p>
             </Card>
           </motion.div>
