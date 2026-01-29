@@ -15,51 +15,51 @@ interface Milestone {
 export function ProfessionalJourney() {
   const milestones: Milestone[] = [
     {
-      year: "2019",
-      title: "Started Journey",
-      role: "Computer Science Student",
-      description: "Began Bachelor's degree in Computer Applications at Gujarat University",
-      icon: Target,
+      year: "2025",
+      title: "Team Lead – Frontend Systems",
+      role: "Ink In Caps",
+      description: "Leading 6-member team, architecting real-time features, reducing technical debt by 30%",
+      icon: Trophy,
       achievements: [
-        "Strong foundation in programming fundamentals",
-        "Learned HTML, CSS, and JavaScript",
-        "Built first web applications"
-      ]
-    },
-    {
-      year: "2022",
-      title: "Joined Logicwind",
-      role: "Junior Frontend Developer",
-      description: "Started professional career at Logicwind as Junior Developer",
-      icon: Zap,
-      achievements: [
-        "Worked on production React applications",
-        "Gained expertise in TypeScript",
-        "Collaborated with senior developers"
-      ]
-    },
-    {
-      year: "2023",
-      title: "Role Progression",
-      role: "Frontend Developer",
-      description: "Promoted to Frontend Developer with increased responsibilities",
-      icon: CheckCircle2,
-      achievements: [
-        "Led frontend development for e-commerce platform",
-        "Implemented complex state management with Redux",
-        "Improved application performance by 40%"
+        "Leading 6-member frontend team",
+        "Architecting real-time features with Socket.IO",
+        "Reduced technical debt by 30%"
       ]
     },
     {
       year: "2024",
-      title: "Senior Developer",
-      role: "Senior Frontend Developer",
-      description: "Currently working as Senior Frontend Developer at Logicwind",
-      icon: Trophy,
+      title: "Senior Software Engineer",
+      role: "Ink In Caps",
+      description: "Built KNKY real-time social platform, served 1000s of concurrent users with Socket.IO",
+      icon: CheckCircle2,
       achievements: [
-        "Mentoring junior developers",
-        "Leading technical decisions",
-        "Delivering high-quality, scalable solutions"
+        "Built KNKY real-time social platform",
+        "Served 1000s concurrent users with <100ms latency",
+        "Implemented Socket.IO chat and matchmaking"
+      ]
+    },
+    {
+      year: "2023",
+      title: "Software Engineer",
+      role: "Blodin Pvt. Ltd.",
+      description: "Developed React applications with state management and performance optimization",
+      icon: Zap,
+      achievements: [
+        "Developed React applications",
+        "Implemented state management solutions",
+        "Optimized application performance"
+      ]
+    },
+    {
+      year: "2022",
+      title: "Frontend Development",
+      role: "Masai School",
+      description: "Intensive full-stack training with React, TypeScript, and modern web technologies",
+      icon: Target,
+      achievements: [
+        "Intensive full-stack bootcamp",
+        "Mastered React and TypeScript",
+        "Built modern web applications"
       ]
     }
   ];
@@ -79,7 +79,7 @@ export function ProfessionalJourney() {
             Professional Journey
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            My path from curious student to Senior Frontend Developer
+            My path from Masai School graduate to Team Lead – Frontend Systems Engineer
           </p>
         </motion.div>
 
