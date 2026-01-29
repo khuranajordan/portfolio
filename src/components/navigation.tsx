@@ -57,7 +57,7 @@ export function Navigation() {
           }}
           aria-label="Rohan Khurana - Go to home section"
         >
-          <span className="text-primary">Rohan</span>
+          <span className="text-primary mr-1">Rohan</span>
           <span>Khurana</span>
         </motion.a>
 
