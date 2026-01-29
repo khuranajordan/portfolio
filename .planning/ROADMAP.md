@@ -348,8 +348,8 @@ Plans:
 - [x] 14-01: Hero Section Positioning (2026-01-29)
 - [x] 14-02: Experience and Skills Reorganization (2026-01-29)
 - [x] 14-03: KNKY Flagship Project (2026-01-29)
-- [ ] 14-04: About Section and Education Updates (TBD)
-- [ ] 14-05: Contact Info Update (TBD)
+- [x] 14-04: About Section and Education Updates (2026-01-29)
+- [ ] 14-05: Final Verification and Cross-Consistency Check (TBD)
 
 **Details**:
 Current portfolio has generic placeholder content that doesn't reflect actual expertise. This phase will align portfolio with resume to accurately represent:
