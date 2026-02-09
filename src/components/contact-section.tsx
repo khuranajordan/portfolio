@@ -1,49 +1,52 @@
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { motion } from 'framer-motion';
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
 import {
-  Mail,
-  Linkedin,
+  ExternalLink,
   Github,
-  Send,
+  Linkedin,
+  Mail,
   MapPin,
-  ExternalLink
-} from 'lucide-react';
+  Send,
+} from "lucide-react";
 
 export function ContactSection() {
   const contactInfo = {
-    email: 'rohan.patel@example.com',
-    linkedin: 'https://linkedin.com/in/rohanpatel',
-    github: 'https://github.com/rohan',
-    location: 'Gujarat, India'
+    email: "rohankhurana20@gmail.com",
+    linkedin: "https://linkedin.com/in/rohan-khurana-india",
+    github: "https://github.com/khuranajordan",
+    location: "Delhi, India",
   };
 
   const socialLinks = [
     {
-      name: 'LinkedIn',
+      name: "LinkedIn",
       icon: Linkedin,
       url: contactInfo.linkedin,
-      gradient: 'from-primary/20 to-primary/10 hover:from-primary/30 hover:to-primary/20',
-      borderColor: 'border-primary/30 hover:border-primary/50',
-      description: 'Connect professionally'
+      gradient:
+        "from-primary/20 to-primary/10 hover:from-primary/30 hover:to-primary/20",
+      borderColor: "border-primary/30 hover:border-primary/50",
+      description: "Connect professionally",
     },
     {
-      name: 'GitHub',
+      name: "GitHub",
       icon: Github,
       url: contactInfo.github,
-      gradient: 'from-secondary/20 to-secondary/10 hover:from-secondary/30 hover:to-secondary/20',
-      borderColor: 'border-secondary/30 hover:border-secondary/50',
-      description: 'View my code'
+      gradient:
+        "from-secondary/20 to-secondary/10 hover:from-secondary/30 hover:to-secondary/20",
+      borderColor: "border-secondary/30 hover:border-secondary/50",
+      description: "View my code",
     },
     {
-      name: 'Email',
+      name: "Email",
       icon: Mail,
       url: `mailto:${contactInfo.email}`,
-      gradient: 'from-accent/20 to-accent/10 hover:from-accent/30 hover:to-accent/20',
-      borderColor: 'border-accent/30 hover:border-accent/50',
-      description: 'Send me an email'
-    }
+      gradient:
+        "from-accent/20 to-accent/10 hover:from-accent/30 hover:to-accent/20",
+      borderColor: "border-accent/30 hover:border-accent/50",
+      description: "Send me an email",
+    },
   ];
 
   return (
@@ -57,12 +60,15 @@ export function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <Badge variant="outline" className="mb-4">Contact</Badge>
+          <Badge variant="outline" className="mb-4">
+            Contact
+          </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Let's Work Together
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            I'm always interested in hearing about new opportunities and projects
+            I'm always interested in hearing about new opportunities and
+            projects
           </p>
         </motion.div>
 
@@ -80,9 +86,9 @@ export function ContactSection() {
               Get in Touch
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Whether you have a question, want to start a project, or simply want to connect,
-              feel free to reach out. I'm open to discussing new opportunities, creative ideas,
-              or potential collaborations.
+              Whether you have a question, want to start a project, or simply
+              want to connect, feel free to reach out. I'm open to discussing
+              new opportunities, creative ideas, or potential collaborations.
             </p>
 
             {/* Email Display */}
@@ -103,10 +109,7 @@ export function ContactSection() {
             </div>
 
             {/* Primary CTA with Enhanced Effects */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button
                 size="lg"
                 className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
@@ -114,13 +117,20 @@ export function ContactSection() {
               >
                 <a href={`mailto:${contactInfo.email}`}>
                   {/* Ripple Effect Background */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
+                    aria-hidden="true"
+                  />
 
                   {/* Button Content */}
                   <span className="relative flex items-center justify-center">
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
                     >
                       <Mail className="w-5 h-5 mr-2" aria-hidden="true" />
                     </motion.div>
@@ -150,58 +160,69 @@ export function ContactSection() {
               Connect With Me
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Find me on social media and platforms where I share my work and knowledge
+              Find me on social media and platforms where I share my work and
+              knowledge
             </p>
 
             {/* Enhanced Social Links Grid */}
             <div className="space-y-4">
-                {socialLinks.map((link, index) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit my ${link.name} profile (opens in new tab)`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                    whileHover={{ scale: 1.02 }}
-                    className={`relative block p-4 border rounded-lg overflow-hidden transition-all duration-300 ${link.borderColor} bg-gradient-to-br ${link.gradient} hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-primary rounded`}
-                  >
-                    {/* Shimmer Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
+              {socialLinks.map((link, index) => (
+                <motion.a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit my ${link.name} profile (opens in new tab)`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  whileHover={{ scale: 1.02 }}
+                  className={`relative block p-4 border rounded-lg overflow-hidden transition-all duration-300 ${link.borderColor} bg-gradient-to-br ${link.gradient} hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-primary rounded`}
+                >
+                  {/* Shimmer Effect */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
+                    aria-hidden="true"
+                  />
 
-                    <div className="relative flex items-center gap-4">
-                      <motion.div
-                        className="p-2 bg-background rounded-lg"
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        <link.icon className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-                      </motion.div>
-                      <div className="flex-1">
-                        <p className="font-semibold group-hover:text-primary transition-colors duration-300">{link.name}</p>
-                        <p className="text-xs text-muted-foreground">{link.description}</p>
-                      </div>
-                      <motion.div
-                        className="p-2 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        whileHover={{ scale: 1.2, rotate: 45 }}
+                  <div className="relative flex items-center gap-4">
+                    <motion.div
+                      className="p-2 bg-background rounded-lg"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <link.icon
+                        className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
                         aria-hidden="true"
-                      >
-                        <Send className="w-4 h-4 text-primary" />
-                      </motion.div>
+                      />
+                    </motion.div>
+                    <div className="flex-1">
+                      <p className="font-semibold group-hover:text-primary transition-colors duration-300">
+                        {link.name}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {link.description}
+                      </p>
                     </div>
-                  </motion.a>
-                ))}
-              </div>
+                    <motion.div
+                      className="p-2 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      whileHover={{ scale: 1.2, rotate: 45 }}
+                      aria-hidden="true"
+                    >
+                      <Send className="w-4 h-4 text-primary" />
+                    </motion.div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
 
-              {/* Additional Info */}
-              <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
-                <p className="text-sm text-center text-muted-foreground">
-                  💡 Quick response guaranteed within 24 hours
-                </p>
-              </div>
+            {/* Additional Info */}
+            <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
+              <p className="text-sm text-center text-muted-foreground">
+                💡 Quick response guaranteed within 24 hours
+              </p>
+            </div>
           </motion.div>
         </div>
 
@@ -222,10 +243,20 @@ export function ContactSection() {
               Let's create something amazing together!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90" asChild>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+                  asChild
+                >
                   <a href={`mailto:${contactInfo.email}`}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
+                      aria-hidden="true"
+                    />
                     <span className="relative flex items-center">
                       <motion.div
                         whileHover={{ rotate: [0, -10, 10, -10, 0] }}
@@ -234,16 +265,35 @@ export function ContactSection() {
                         <Mail className="w-5 h-5 mr-2" aria-hidden="true" />
                       </motion.div>
                       Hire Me
-                      <Send className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                      <Send
+                        className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 transition-opacity"
+                        aria-hidden="true"
+                      />
                     </span>
                   </a>
                 </Button>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" asChild>
-                  <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" aria-label="View my GitHub profile (opens in new tab)">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" aria-hidden="true" />
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+                  asChild
+                >
+                  <a
+                    href={contactInfo.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View my GitHub profile (opens in new tab)"
+                  >
+                    <div
+                      className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
+                      aria-hidden="true"
+                    />
                     <span className="relative flex items-center">
                       <motion.div
                         whileHover={{ rotate: [0, 360] }}
@@ -252,7 +302,10 @@ export function ContactSection() {
                         <Github className="w-5 h-5 mr-2" aria-hidden="true" />
                       </motion.div>
                       View My Work
-                      <ExternalLink className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" aria-hidden="true" />
+                      <ExternalLink
+                        className="w-4 h-4 ml-2 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all"
+                        aria-hidden="true"
+                      />
                     </span>
                   </a>
                 </Button>
