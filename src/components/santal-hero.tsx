@@ -72,10 +72,10 @@ export function SantalHero() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 font-light leading-relaxed max-w-2xl">
-              Building high-traffic, real-time web applications with{" "}
+              I build real-time web applications with{" "}
               <span className="text-[#121316] dark:text-white font-semibold">Next.js, React, TypeScript</span>, and{" "}
-              <span className="text-[#121316] dark:text-white font-semibold">WebSockets</span>. Experienced in team
-              leadership, sub-second state synchronization, and scaling frontend performance.
+              <span className="text-[#121316] dark:text-white font-semibold">WebSockets</span>. Over 4+ years in production,
+              I have led frontend teams, kept packet latency under 100ms, and scaled platforms to 10,000+ daily active users.
             </p>
 
             {/* Quick Actions */}
@@ -84,7 +84,7 @@ export function SantalHero() {
                 onClick={scrollToPhilosophy}
                 className="px-6 py-3 bg-[#121316] dark:bg-white text-white dark:text-[#121316] text-xs font-mono uppercase tracking-widest hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
               >
-                <span>View Engineering Philosophy</span>
+                <span>See Engineering Approach</span>
                 <ArrowDown className="w-3.5 h-3.5" />
               </button>
 
@@ -177,7 +177,7 @@ export function SantalHero() {
           <div className="w-6 h-6 border border-black/20 dark:border-white/20 rounded-full flex items-center justify-center group-hover:border-black dark:group-hover:border-white transition-colors">
             <ArrowDown className="w-3.5 h-3.5 animate-bounce text-neutral-700 dark:text-neutral-300" />
           </div>
-          <span>Scroll to Discover Engineering Philosophy</span>
+          <span>Scroll to Explore Architecture</span>
         </button>
 
         <span className="hidden sm:inline">

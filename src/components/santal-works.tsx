@@ -31,16 +31,16 @@ export function SantalWorks() {
       period: "Mar 2024 – Present",
       company: "Ink In Caps",
       overview:
-        "Spearheaded core real-time frontend development serving thousands of concurrent users. Built the Socket.IO-based chat system, live matchmaking engine, and media galleries with sub-second message delivery and fault-tolerant event handling.",
+        "Built the real-time chat, live matchmaking, and media feeds for the KNKY web app, handling thousands of concurrent users with sub-second message delivery and automatic reconnection.",
       challenges: [
-        "Eliminating message drop-offs and latency spikes during sudden mobile network switches.",
-        "Rendering virtualized chat streams with thousands of messages on low-memory devices without frame drops.",
-        "Managing complex distributed state across WebSockets, chat rooms, and optimistic client UI updates.",
+        "Preventing dropped messages when mobile users switched between Wi-Fi and cellular networks.",
+        "Rendering long chat histories on budget mobile devices without running out of memory.",
+        "Syncing optimistic UI state with server events across active chat rooms.",
       ],
       architectureWins: [
-        "Implemented exponential backoff reconnection strategies and heartbeat detection, reducing reconnection latency by 60%.",
-        "Built custom virtualized chat lists, reducing browser memory footprint by 45% on low-end mobile devices.",
-        "Integrated Cloudflare R2 and AWS EC2 for instant CDN delivery of user media assets.",
+        "Wrote custom heartbeat checks and backoff retries, cutting reconnection times by 60%.",
+        "Created virtualized chat lists that cut memory usage by 45% on low-end Android devices.",
+        "Hooked up Cloudflare R2 and AWS EC2 to serve uploaded photos and videos over global edge caches.",
       ],
       metrics: [
         { label: "Delivery Latency", value: "< 100ms" },
@@ -70,16 +70,16 @@ export function SantalWorks() {
       period: "Jul 2025 – Present",
       company: "Ink In Caps, Mumbai",
       overview:
-        "Scaled and led a 6-member frontend engineering team. Enforced clean coding standards, component architecture, and automated release pipelines across high-traffic platforms.",
+        "Led a team of 6 frontend developers at Ink In Caps. Standardized our component libraries, introduced automated CI/CD checks, and cut technical debt by 30% through regular code reviews.",
       challenges: [
-        "Accumulated technical debt and inconsistent release cycles slowing down feature releases.",
-        "Lack of standardized observability across client-side errors in production.",
+        "Legacy code and irregular releases delayed new feature rollouts.",
+        "No central error monitoring to spot bugs before users reported them.",
       ],
       architectureWins: [
-        "Reduced overall technical debt by 30% through modular component refactoring and clean code reviews.",
-        "Enforced strict CI/CD performance budgets with Lighthouse scores < 3s.",
-        "Deployed Sentry error tracking and AWS CloudWatch dashboards, cutting incident resolution time by 50%.",
-        "Mentored junior and mid-level engineers through structured 1:1 coaching and pair programming.",
+        "Cut technical debt by 30% by refactoring shared UI modules and holding weekly peer reviews.",
+        "Added CI/CD performance budgets that blocked merges if First Contentful Paint exceeded 3 seconds.",
+        "Set up Sentry alerting and CloudWatch dashboards, cutting incident resolution times in half.",
+        "Coached junior and mid-level developers weekly to help them take ownership of entire features.",
       ],
       metrics: [
         { label: "Team Size", value: "6 Engineers" },
@@ -106,15 +106,15 @@ export function SantalWorks() {
       period: "Jan 2023 – Apr 2023",
       company: "Tracxn Technologies, Bangalore",
       overview:
-        "Architected performance optimizations for high-traffic enterprise intelligence dashboards, reducing client bundle size and drastically improving initial First Contentful Paint times.",
+        "Optimized frontend load times for Tracxn's market intelligence platform, reducing initial bundle size and cutting First Contentful Paint by 20%.",
       challenges: [
-        "Heavy monolithic JS bundles causing sluggish initial load on slower networks.",
-        "Inconsistent component implementations increasing maintenance overhead.",
+        "Monolithic JavaScript bundles slowed down initial page loads on slower enterprise networks.",
+        "Repeated, uncoordinated component implementations made maintenance difficult.",
       ],
       architectureWins: [
-        "Boosted overall frontend performance by 20% by implementing dynamic route code splitting with React.lazy and Suspense.",
-        "Built modular UI components adhering to strict design systems, reducing customer support tickets by 10%.",
-        "Refactored state management to eliminate redundant re-renders across enterprise search listings.",
+        "Implemented route-level dynamic imports with React.lazy and Suspense, cutting initial load times by 20%.",
+        "Replaced ad-hoc components with shared design system elements, reducing UI-related support tickets by 10%.",
+        "Cleaned up table and filter state to eliminate unnecessary re-renders across search result lists.",
       ],
       metrics: [
         { label: "Performance Boost", value: "+20%" },
@@ -133,15 +133,15 @@ export function SantalWorks() {
       period: "Jul 2023 – Feb 2024",
       company: "Blodin Pvt. Ltd., Remote",
       overview:
-        "Solely engineered the user-facing responsive web application from blank canvas to production launch, including real-time listing feeds, Redux state hydration, and payment flows.",
+        "Built and shipped the complete web application for Blodin from the ground up, delivering live listing feeds, Redux state management, and user checkout on schedule.",
       challenges: [
-        "Tight go-to-market schedule requiring rapid feature development without compromising component hygiene.",
-        "Synchronizing live price updates across user dashboards without full page reloads.",
+        "A tight launch timeline required building features quickly while keeping code clean.",
+        "Updating live prices across user screens without requiring full page reloads.",
       ],
       architectureWins: [
-        "Constructed a responsive, pixel-perfect frontend interface using React and Tailwind CSS.",
-        "Integrated Node.js / Express.js backend services and Firebase authentication with zero downtime.",
-        "Implemented normalized Redux and Zustand state slices for instant local UI responsiveness.",
+        "Delivered a fully responsive user interface using React and Tailwind CSS.",
+        "Connected Node.js backend endpoints and Firebase authentication with zero production downtime.",
+        "Organized Redux and Zustand state slices so interface clicks and filters responded instantly.",
       ],
       metrics: [
         { label: "Time to Market", value: "100% on Schedule" },
@@ -169,7 +169,7 @@ export function SantalWorks() {
               <span>SECTION 02 // SELECTED WORK</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold font-sans text-neutral-900 dark:text-white uppercase tracking-tight">
-              Featured Projects.
+              Production Work.
             </h2>
           </div>
           <p className="text-xs font-mono text-neutral-500 dark:text-neutral-400 max-w-sm uppercase leading-relaxed">

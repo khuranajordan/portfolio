@@ -3,73 +3,73 @@ import { MapPin } from "lucide-react";
 export function SantalJourney() {
   const experiences = [
     {
-      period: "Jul 2025 – Present",
-      role: "Team Lead – Frontend Systems",
+      period: "Jul 2025 - Present",
+      role: "Team Lead • Frontend Systems",
       company: "Ink In Caps",
       location: "Mumbai, India",
       type: "Full-Time Leadership",
       summary:
-        "Leading and scaling a 6-member frontend engineering team, driving technical roadmaps, and enforcing production reliability.",
+        "Leading a 6-engineer frontend team at Ink In Caps, setting architectural standards, and maintaining production reliability across high-traffic platforms.",
       milestones: [
-        "Enforced scalable frontend architecture for high-traffic platforms, reducing technical debt by 30%.",
-        "Owned system reliability via automated CI/CD pipelines, Sentry monitoring, and performance budgets.",
-        "Collaborated with backend & DevOps teams to optimize API contracts and zero-downtime releases.",
-        "Mentored junior and mid-level developers through structured 1:1 coaching, code reviews, and architectural guidance.",
+        "Refactored monolithic UI code into modular components, cutting technical debt by 30%.",
+        "Set up CI/CD performance gates and Sentry alerting, cutting incident response times in half.",
+        "Partnered with backend and DevOps engineers to streamline API contracts and ship zero-downtime releases.",
+        "Held weekly 1:1 coaching and code reviews to help junior and mid-level developers grow into feature leads.",
       ],
     },
     {
-      period: "Mar 2024 – Jul 2025",
-      role: "Senior Software Developer – Frontend",
+      period: "Mar 2024 - Jul 2025",
+      role: "Senior Software Developer • Frontend",
       company: "Ink In Caps",
       location: "Mumbai, India",
       type: "Full-Time",
       summary:
-        "Developed real-time frontend systems (chat, matchmaking, shared media) with Next.js, React, and Socket.IO.",
+        "Built low-latency chat, real-time matchmaking, and media feeds using Next.js, React, and Socket.IO.",
       milestones: [
-        "Built fault-tolerant WebSocket reconnection & retry logic ensuring delivery under volatile mobile networks.",
-        "Constructed virtualized chat rendering and lazy-loaded media pipelines, drastically improving low-end device performance.",
-        "Optimized bundle size by 40% and maintained 90%+ unit test coverage across critical production modules.",
+        "Wrote custom heartbeat checks and backoff retries so WebSockets reconnect reliably over unstable mobile networks.",
+        "Built virtualized chat feeds and lazy-loaded media pipelines, keeping frame rates smooth on budget mobile devices.",
+        "Reduced JavaScript bundle size by 40% and maintained 90%+ unit test coverage on critical code paths.",
       ],
     },
     {
-      period: "Jul 2023 – Feb 2024",
+      period: "Jul 2023 - Feb 2024",
       role: "Software Developer",
       company: "Blodin Pvt. Ltd.",
       location: "Remote",
       type: "Full-Time",
       summary:
-        "Built and shipped the complete user-facing frontend codebase from initial specification to production.",
+        "Built and shipped the complete web app from wireframes to production on schedule.",
       milestones: [
-        "Delivered price tracking engines and listing platforms with Redux and Zustand state management.",
-        "Integrated Node.js / Express backend endpoints and Firebase services for instant time-to-market.",
+        "Shipped price-tracking tools and product listings using Redux and Zustand state management.",
+        "Integrated Node.js backend endpoints and Firebase authentication with zero downtime.",
       ],
     },
     {
-      period: "Jan 2023 – Apr 2023",
+      period: "Jan 2023 - Apr 2023",
       role: "Software Developer",
       company: "Tracxn Technologies Ltd.",
       location: "Bangalore, India",
       type: "Full-Time",
       summary:
-        "Improved frontend performance by 20% by implementing dynamic code splitting and modular components.",
+        "Sped up dashboard load times by 20% using route-level code splitting with React.lazy and Suspense.",
       milestones: [
-        "Integrated React.lazy and Suspense for route-based chunk optimization.",
-        "Constructed reusable UI components that lowered customer support tickets by 10%.",
-        "Optimized SEO performance with server-rendered React and Next.js architectures.",
+        "Configured React.lazy and Suspense boundaries to load heavy dashboard routes only on demand.",
+        "Built shared design system components that reduced UI bugs and customer support requests by 10%.",
+        "Improved search engine indexing using server-rendered React and Next.js.",
       ],
     },
   ];
 
   const education = [
     {
-      degree: "Bachelor of Technology — Electrical Engineering",
+      degree: "Bachelor of Technology • Electrical Engineering",
       institution: "Bundelkhand Institute of Engineering and Technology (BIET)",
-      period: "2018 – 2022",
+      period: "2018 - 2022",
     },
     {
       degree: "Full Stack Web Development",
       institution: "Masai School",
-      period: "Feb 2022 – Nov 2022",
+      period: "Feb 2022 - Nov 2022",
     },
   ];
 

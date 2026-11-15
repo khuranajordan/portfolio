@@ -7,7 +7,7 @@ export function SantalSpec() {
       code: "SPEC-01",
       category: "Protocols & Real-Time Sync",
       icon: Terminal,
-      focus: "Event-driven sub-second bidirectional state pipelines",
+      focus: "Bi-directional state sync and WebSocket connections",
       items: [
         { name: "Socket.IO", detail: "Custom rooms, packet serialization, fallback polling" },
         { name: "Native WebSockets", detail: "Binary frames, persistent full-duplex TCP streams" },
@@ -19,7 +19,7 @@ export function SantalSpec() {
       code: "SPEC-02",
       category: "Core Frameworks & Runtimes",
       icon: Cpu,
-      focus: "High-concurrency modern typed JavaScript runtimes",
+      focus: "Type-safe frontends and edge runtimes",
       items: [
         { name: "TypeScript (Strict)", detail: "End-to-end typed contracts, zero any-casts" },
         { name: "Next.js", detail: "App Router, Server Components, hybrid SSR/SSG" },
@@ -31,7 +31,7 @@ export function SantalSpec() {
       code: "SPEC-03",
       category: "Performance & Memory Profiling",
       icon: Database,
-      focus: "Low-end device optimization and millisecond budgets",
+      focus: "DOM virtualization and client memory profiling",
       items: [
         { name: "DOM Virtualization", detail: "Virtualized lists handling 10k+ rows with zero lag" },
         { name: "Code Splitting", detail: "Route-level dynamic chunks via Suspense & React.lazy" },
@@ -43,7 +43,7 @@ export function SantalSpec() {
       code: "SPEC-04",
       category: "Cloud, Infrastructure & CI/CD",
       icon: Cloud,
-      focus: "Production deployment, automated testing, and CDN edges",
+      focus: "Deployment pipelines, monitoring, and edge caching",
       items: [
         { name: "Cloudflare Workers & R2", detail: "Edge compute storage, zero-egress asset caching" },
         { name: "AWS EC2 & Lambda", detail: "Scalable cloud instances and serverless functions" },
@@ -71,7 +71,7 @@ export function SantalSpec() {
             </h2>
           </div>
           <p className="text-xs font-mono text-neutral-500 dark:text-neutral-400 max-w-sm uppercase leading-relaxed">
-            Technologies and engineering standards applied across modern web applications.
+            Core tools, protocols, and workflows I use to build production systems.
           </p>
         </div>
 

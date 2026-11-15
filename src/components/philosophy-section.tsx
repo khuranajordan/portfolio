@@ -38,27 +38,27 @@ export function PhilosophySection() {
     {
       index: "01",
       title: "Resilience",
-      tagline: "Software That Refuses to Fail",
+      tagline: "Handling Network Drops Gracefully",
       description:
-        "Building fault-tolerant WebSocket pipelines, heartbeat recovery mechanisms, and self-healing connection pooling. Ensuring real-time event delivery even under unstable mobile networks and packet loss.",
+        "Mobile connections drop frequently. I build automated heartbeat checks, exponential backoff retries, and clean connection pooling so chat rooms and live matching recover without losing messages.",
       icon: ShieldAlert,
       metrics: ["Sub-100ms message delivery", "60% faster reconnects", "Zero dropped socket events"],
     },
     {
       index: "02",
       title: "Precision",
-      tagline: "Resolved to the Millisecond",
+      tagline: "Smooth Rendering on Budget Devices",
       description:
-        "Frontend engineering with zero fluff: virtualized list pipelines, lazy-loaded media streaming, aggressive memory profiling for low-end devices, and strict performance budgets enforced through CI/CD.",
+        "Heavy DOM trees cause stutter on entry-level phones. I profile heap snapshots, virtualize long message lists, and stream media on demand to keep interfaces smooth at 60 frames per second.",
       icon: Cpu,
       metrics: ["Lighthouse budget < 3s", "90%+ unit test coverage", "40% bundle size optimization"],
     },
     {
       index: "03",
       title: "Scale",
-      tagline: "Quiet Reliability Under Load",
+      tagline: "Stable Under Concurrent Traffic",
       description:
-        "Engineering discipline that coordinates thousands of concurrent users across distributed event-driven rooms without memory leaks or UI degradation. Scaled from 0 to 10,000+ daily active users.",
+        "Running interactive live rooms with 10,000+ daily active users requires clean memory management. I structure event handlers and state slices to prevent memory leaks during extended user sessions.",
       icon: Network,
       metrics: ["10k+ daily active users", "Distributed room broadcasting", "Sub-second UI state sync"],
     },
