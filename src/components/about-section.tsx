@@ -29,7 +29,7 @@ export function AboutSection() {
       icon: Briefcase,
       title: "Professional Experience",
       items: [
-        "3+ years of experience in frontend development",
+        "4+ years of experience in frontend development",
         "Currently Team Lead – Frontend Systems at Ink In Caps",
         "Specializing in real-time systems, Socket.IO, and high-traffic architecture",
       ],

@@ -1,59 +1,37 @@
-import { lazy, Suspense } from 'react';
-import { Navigation } from '@/components/navigation';
-import { Footer } from '@/components/footer';
-import { Hero } from '@/components/hero';
-
-// Lazy load heavy sections below the fold
-const AboutSection = lazy(() => import('@/components/about-section').then(m => ({ default: m.AboutSection })));
-const ExperienceTimeline = lazy(() => import('@/components/experience-timeline').then(m => ({ default: m.ExperienceTimeline })));
-const SkillsSection = lazy(() => import('@/components/skills-section').then(m => ({ default: m.SkillsSection })));
-const ProjectsSection = lazy(() => import('@/components/projects-section').then(m => ({ default: m.ProjectsSection })));
-const ContactSection = lazy(() => import('@/components/contact-section').then(m => ({ default: m.ContactSection })));
-
-// Loading fallback component
-function SectionLoader() {
-  return (
-    <div className="flex items-center justify-center py-20">
-      <div className="flex gap-2">
-        <div className="w-3 h-3 bg-primary rounded-full animate-bounce [animation-delay:-0.3s]" />
-        <div className="w-3 h-3 bg-primary rounded-full animate-bounce [animation-delay:-0.15s]" />
-        <div className="w-3 h-3 bg-primary rounded-full animate-bounce" />
-      </div>
-    </div>
-  );
-}
+import { SantalHeader } from "@/components/santal-header";
+import { SantalHero } from "@/components/santal-hero";
+import { PhilosophySection } from "@/components/philosophy-section";
+import { SantalWorks } from "@/components/santal-works";
+import { SantalSpec } from "@/components/santal-spec";
+import { SantalJourney } from "@/components/santal-journey";
+import { SantalFooter } from "@/components/santal-footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <Navigation />
+    <div className="min-h-screen bg-[#faf9f6] text-[#121316] flex flex-col selection:bg-black selection:text-white">
+      {/* Top Architectural Sticky Header */}
+      <SantalHeader />
 
+      {/* Main Single-Page Content */}
       <main className="flex-1">
-        <Hero />
+        {/* 00: Architectural Hero */}
+        <SantalHero />
 
-        {/* Lazy loaded sections with Suspense */}
-        <Suspense fallback={<SectionLoader />}>
-          <AboutSection />
-        </Suspense>
+        {/* 01: The 3D Philosophy Monoliths (Three.js WebGL Engine) */}
+        <PhilosophySection />
 
-        <Suspense fallback={<SectionLoader />}>
-          <ExperienceTimeline />
-        </Suspense>
+        {/* 02: Architectural Works & Systems Case Studies */}
+        <SantalWorks />
 
-        <Suspense fallback={<SectionLoader />}>
-          <SkillsSection />
-        </Suspense>
+        {/* 03: Technical Specification Sheet */}
+        <SantalSpec />
 
-        <Suspense fallback={<SectionLoader />}>
-          <ProjectsSection />
-        </Suspense>
-
-        <Suspense fallback={<SectionLoader />}>
-          <ContactSection />
-        </Suspense>
+        {/* 04: Chronological Journey & Leadership Milestones */}
+        <SantalJourney />
       </main>
 
-      <Footer />
+      {/* 05: Enquiries Ledger & Digital Infrastructure */}
+      <SantalFooter />
     </div>
   );
 }
