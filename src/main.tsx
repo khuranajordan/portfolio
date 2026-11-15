@@ -1,18 +1,10 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from '@/components/theme-provider';
 import './index.css';
 import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="light"
-      enableSystem={false}
-      disableTransitionOnChange={false}
-    >
-      <App />
-    </ThemeProvider>
+    <App />
   </StrictMode>,
 );
