@@ -1,4 +1,4 @@
-import { ArrowDown, ShieldCheck, Zap, Activity, Users, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ShieldCheck, Activity, Users, ArrowUpRight, Award } from "lucide-react";
 
 export function SantalHero() {
   const scrollToPhilosophy = () => {
@@ -11,15 +11,15 @@ export function SantalHero() {
 
   const metrics = [
     {
-      value: "< 100ms",
-      label: "Message Latency",
-      detail: "Real-Time WebSocket & Socket.IO",
-      icon: Zap,
+      value: "4+ Years",
+      label: "Production Track Record",
+      detail: "Junior to Senior & Team Lead",
+      icon: Award,
     },
     {
-      value: "10,000+",
-      label: "Concurrent Users",
-      detail: "Event-Driven UI Synchronization",
+      value: "6 Engineers",
+      label: "Team Leadership",
+      detail: "Code Reviews & Engineering Standards",
       icon: Users,
     },
     {
@@ -72,10 +72,9 @@ export function SantalHero() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 font-light leading-relaxed max-w-2xl">
-              I build real-time web applications with{" "}
-              <span className="text-[#121316] dark:text-white font-semibold">Next.js, React, TypeScript</span>, and{" "}
-              <span className="text-[#121316] dark:text-white font-semibold">WebSockets</span>. Over 4+ years in production,
-              I have led frontend teams, kept packet latency under 100ms, and scaled platforms to 10,000+ daily active users.
+              I build scalable, high-performance web applications with{" "}
+              <span className="text-[#121316] dark:text-white font-semibold">Next.js, React, and TypeScript</span>. Over 4+ years in production,
+              I have led frontend teams, established modern design systems and CI/CD pipelines, and scaled applications to 10,000+ daily active users.
             </p>
 
             {/* Quick Actions */}

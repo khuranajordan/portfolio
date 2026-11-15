@@ -26,26 +26,27 @@ export function SantalWorks() {
       id: "knky",
       index: "01",
       title: "KNKY Platform",
-      subtitle: "High-Traffic Real-Time Social & Matchmaking Web Application",
+      subtitle: "Full-Featured Social Web Platform & Edge Media Architecture",
       role: "Lead Frontend Developer",
-      period: "Mar 2024 – Present",
+      period: "Mar 2024 - Present",
       company: "Ink In Caps",
       overview:
-        "Built the real-time chat, live matchmaking, and media feeds for the KNKY web app, handling thousands of concurrent users with sub-second message delivery and automatic reconnection.",
+        "Architected the frontend for KNKY, a high-traffic social web application serving 10,000+ daily active users. Engineered virtualized feeds, edge media distribution, real-time matchmaking, and resilient state synchronization.",
       challenges: [
-        "Preventing dropped messages when mobile users switched between Wi-Fi and cellular networks.",
-        "Rendering long chat histories on budget mobile devices without running out of memory.",
-        "Syncing optimistic UI state with server events across active chat rooms.",
+        "Rendering long, media-heavy social feeds on budget mobile devices without running out of memory.",
+        "Keeping UI state synchronized across active chat rooms, matchmaking queues, and profile updates.",
+        "Ensuring zero dropped messages and instant recovery when mobile users switch network connections.",
       ],
       architectureWins: [
-        "Wrote custom heartbeat checks and backoff retries, cutting reconnection times by 60%.",
-        "Created virtualized chat lists that cut memory usage by 45% on low-end Android devices.",
+        "Created virtualized feed and chat lists that cut client memory usage by 45% on low-end Android devices.",
         "Hooked up Cloudflare R2 and AWS EC2 to serve uploaded photos and videos over global edge caches.",
+        "Wrote custom heartbeat checks and backoff retries, cutting reconnection times by 60%.",
+        "Implemented optimistic UI updates with Zustand and Socket.IO for instant user feedback.",
       ],
       metrics: [
-        { label: "Delivery Latency", value: "< 100ms" },
         { label: "Active Scale", value: "10,000+ DAU" },
-        { label: "Reconnection Speed", value: "+60% Faster" },
+        { label: "Delivery Latency", value: "< 100ms" },
+        { label: "Memory Savings", value: "45% Lower" },
         { label: "Uptime Reliability", value: "99.9%" },
       ],
       stack: [
@@ -173,7 +174,7 @@ export function SantalWorks() {
             </h2>
           </div>
           <p className="text-xs font-mono text-neutral-500 dark:text-neutral-400 max-w-sm uppercase leading-relaxed">
-            Real-world systems highlighting real-time web features, team leadership, and performance engineering.
+            Real-world systems highlighting frontend architecture, engineering leadership, performance optimization, and product delivery.
           </p>
         </div>
 

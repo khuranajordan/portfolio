@@ -24,11 +24,11 @@ export function SantalJourney() {
       location: "Mumbai, India",
       type: "Full-Time",
       summary:
-        "Built low-latency chat, real-time matchmaking, and media feeds using Next.js, React, and Socket.IO.",
+        "Engineered the core web application for KNKY, handling high-volume social feeds, real-time matchmaking, and edge media distribution.",
       milestones: [
-        "Wrote custom heartbeat checks and backoff retries so WebSockets reconnect reliably over unstable mobile networks.",
-        "Built virtualized chat feeds and lazy-loaded media pipelines, keeping frame rates smooth on budget mobile devices.",
-        "Reduced JavaScript bundle size by 40% and maintained 90%+ unit test coverage on critical code paths.",
+        "Built virtualized feeds and media streaming pipelines, keeping interactions smooth at 60 FPS on budget mobile devices.",
+        "Engineered resilient bi-directional sync and automatic reconnection logic over volatile mobile networks.",
+        "Reduced initial JavaScript bundle size by 40% and maintained 90%+ unit test coverage across core application flows.",
       ],
     },
     {

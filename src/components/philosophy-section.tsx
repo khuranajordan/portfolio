@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { PhilosophyCubes } from "./philosophy-cubes";
-import { ShieldAlert, Cpu, Network } from "lucide-react";
+import { Layers, Zap, Users } from "lucide-react";
 
 export function PhilosophySection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,30 +37,30 @@ export function PhilosophySection() {
   const phases = [
     {
       index: "01",
-      title: "Resilience",
-      tagline: "Handling Network Drops Gracefully",
+      title: "Architecture",
+      tagline: "Type-Safe and Modular by Design",
       description:
-        "Mobile connections drop frequently. I build automated heartbeat checks, exponential backoff retries, and clean connection pooling so chat rooms and live matching recover without losing messages.",
-      icon: ShieldAlert,
-      metrics: ["Sub-100ms message delivery", "60% faster reconnects", "Zero dropped socket events"],
+        "Clean code starts with strict contracts. I structure frontend applications with strict TypeScript, isolated state boundaries, and reusable design systems so features scale smoothly across growing teams.",
+      icon: Layers,
+      metrics: ["Strict TypeScript across all modules", "Predictable state architecture", "Reusable component library"],
     },
     {
       index: "02",
-      title: "Precision",
-      tagline: "Smooth Rendering on Budget Devices",
+      title: "Performance",
+      tagline: "Smooth 60 FPS on Every Device",
       description:
-        "Heavy DOM trees cause stutter on entry-level phones. I profile heap snapshots, virtualize long message lists, and stream media on demand to keep interfaces smooth at 60 frames per second.",
-      icon: Cpu,
-      metrics: ["Lighthouse budget < 3s", "90%+ unit test coverage", "40% bundle size optimization"],
+        "Heavy DOM trees cause stutter on budget devices. I profile heap snapshots, virtualize large data grids, and optimize bundle chunking to keep interactions snappy and responsive.",
+      icon: Zap,
+      metrics: ["First Contentful Paint < 2.5s", "DOM virtualization for 10k+ rows", "40% bundle size reduction"],
     },
     {
       index: "03",
-      title: "Scale",
-      tagline: "Stable Under Concurrent Traffic",
+      title: "Leadership",
+      tagline: "Velocity Without Sacrificing Quality",
       description:
-        "Running interactive live rooms with 10,000+ daily active users requires clean memory management. I structure event handlers and state slices to prevent memory leaks during extended user sessions.",
-      icon: Network,
-      metrics: ["10k+ daily active users", "Distributed room broadcasting", "Sub-second UI state sync"],
+        "Shipping fast requires solid guardrails. I lead engineering teams through structured code reviews, automated CI/CD performance budgets, and proactive Sentry monitoring to eliminate regressions.",
+      icon: Users,
+      metrics: ["6 engineers led and mentored", "30% technical debt reduction", "90%+ test coverage enforced"],
     },
   ];
 

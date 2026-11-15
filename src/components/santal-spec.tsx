@@ -1,54 +1,53 @@
-import { Terminal, Database, Cpu, Cloud } from "lucide-react";
-import { SocketTelemetry } from "./socket-telemetry";
+import { Layout, Zap, ShieldCheck, Cloud } from "lucide-react";
 
 export function SantalSpec() {
   const specs = [
     {
       code: "SPEC-01",
-      category: "Protocols & Real-Time Sync",
-      icon: Terminal,
-      focus: "Bi-directional state sync and WebSocket connections",
+      category: "Frontend Architecture & Frameworks",
+      icon: Layout,
+      focus: "Type-safe component hierarchies and modern React runtimes",
       items: [
-        { name: "Socket.IO", detail: "Custom rooms, packet serialization, fallback polling" },
-        { name: "Native WebSockets", detail: "Binary frames, persistent full-duplex TCP streams" },
-        { name: "Event-Driven UI", detail: "Optimistic updates, state hydration, queue draining" },
-        { name: "Resilient Reconnect", detail: "Exponential backoff, heartbeat keepalive detection" },
+        { name: "Next.js & React 19", detail: "App Router, Server Components, streaming SSR, and Suspense" },
+        { name: "Strict TypeScript", detail: "End-to-end typed contracts, strict compiler flags, zero any-casts" },
+        { name: "State Architecture", detail: "Zustand, TanStack Query, Redux Toolkit, and optimistic UI updates" },
+        { name: "Design Systems", detail: "Tailwind CSS, Radix UI, accessible patterns, and design tokens" },
       ],
     },
     {
       code: "SPEC-02",
-      category: "Core Frameworks & Runtimes",
-      icon: Cpu,
-      focus: "Type-safe frontends and edge runtimes",
+      category: "Performance & Memory Profiling",
+      icon: Zap,
+      focus: "Client-side optimization and Core Web Vitals enforcement",
       items: [
-        { name: "TypeScript (Strict)", detail: "End-to-end typed contracts, zero any-casts" },
-        { name: "Next.js", detail: "App Router, Server Components, hybrid SSR/SSG" },
-        { name: "React 19", detail: "Hooks, concurrent rendering, Suspense streaming" },
-        { name: "Node.js / Hono.js", detail: "High-throughput microservices, edge workers" },
+        { name: "DOM Virtualization", detail: "Virtualized lists and tables handling 10k+ rows with zero lag" },
+        { name: "Code Splitting", detail: "Route-level dynamic imports via React.lazy and Suspense boundaries" },
+        { name: "Memory Profiling", detail: "Heap snapshot tracing, memory leak elimination, and GC hygiene" },
+        { name: "Web Vitals Budgets", detail: "Lighthouse FCP < 2.5s, INP < 100ms, and bundle size budgets" },
       ],
     },
     {
       code: "SPEC-03",
-      category: "Performance & Memory Profiling",
-      icon: Database,
-      focus: "DOM virtualization and client memory profiling",
+      category: "Engineering Leadership & Quality",
+      icon: ShieldCheck,
+      focus: "Team standards, automated testing, and CI/CD pipelines",
       items: [
-        { name: "DOM Virtualization", detail: "Virtualized lists handling 10k+ rows with zero lag" },
-        { name: "Code Splitting", detail: "Route-level dynamic chunks via Suspense & React.lazy" },
-        { name: "Memory Profiling", detail: "Heap snapshot tracing, memory leak elimination" },
-        { name: "Performance Budgets", detail: "Lighthouse FCP < 3s, Core Web Vitals enforcement" },
+        { name: "Team Leadership", detail: "Mentoring 6 developers, conducting code reviews, and roadmap planning" },
+        { name: "Test Automation", detail: "Jest, React Testing Library, and unit test suites covering 90%+" },
+        { name: "CI/CD Pipelines", detail: "Automated linting, bundle validation, and zero-downtime deployment" },
+        { name: "Observability", detail: "Sentry telemetry, AWS CloudWatch dashboards, and error alerting" },
       ],
     },
     {
       code: "SPEC-04",
-      category: "Cloud, Infrastructure & CI/CD",
+      category: "Cloud, Edge & Data Sync",
       icon: Cloud,
-      focus: "Deployment pipelines, monitoring, and edge caching",
+      focus: "Edge infrastructure, cloud storage, and bi-directional sync",
       items: [
-        { name: "Cloudflare Workers & R2", detail: "Edge compute storage, zero-egress asset caching" },
-        { name: "AWS EC2 & Lambda", detail: "Scalable cloud instances and serverless functions" },
-        { name: "CI/CD Pipelines", detail: "Automated linting, bundle validation, zero-downtime deploy" },
-        { name: "Sentry & CloudWatch", detail: "Real-time client telemetry, anomaly alerting" },
+        { name: "Cloudflare Workers & R2", detail: "Edge compute storage, zero-egress asset caching, and global CDN" },
+        { name: "AWS EC2 & Lambda", detail: "Scalable cloud infrastructure and serverless utility functions" },
+        { name: "Real-Time Sync", detail: "WebSockets, Socket.IO, resilient reconnection, and event streaming" },
+        { name: "API Integration", detail: "RESTful services, GraphQL queries, and structured caching" },
       ],
     },
   ];
@@ -71,12 +70,9 @@ export function SantalSpec() {
             </h2>
           </div>
           <p className="text-xs font-mono text-neutral-500 dark:text-neutral-400 max-w-sm uppercase leading-relaxed">
-            Core tools, protocols, and workflows I use to build production systems.
+            Core tools, architecture patterns, and workflows I use to build production systems.
           </p>
         </div>
-
-        {/* Live Real-Time Telemetry Terminal */}
-        <SocketTelemetry />
 
         {/* Spec Ledger Table */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-black/[0.08] dark:border-white/[0.08] divide-y md:divide-y-0 md:divide-x divide-black/[0.08] dark:divide-white/[0.08] bg-white dark:bg-[#15171e] shadow-xs">
