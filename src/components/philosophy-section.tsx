@@ -80,19 +80,21 @@ export function PhilosophySection() {
     <section
       id="philosophy"
       ref={containerRef}
-      className="relative h-[280vh] border-b border-black/[0.08] bg-[#faf9f6]"
+      className="relative h-[280vh] border-b border-black/[0.08] dark:border-white/[0.08] bg-[#faf9f6] dark:bg-[#0c0d0f] transition-colors duration-300"
     >
       {/* Sticky Viewport Container */}
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-between overflow-hidden bg-[#faf9f6]">
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-between overflow-hidden bg-[#faf9f6] dark:bg-[#0c0d0f] transition-colors duration-300">
         {/* Section Top Header Bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 md:pt-24 z-20">
-          <div className="flex items-center justify-between pb-4 border-b border-black/[0.08] text-xs font-mono text-neutral-500 uppercase tracking-widest">
+          <div className="flex items-center justify-between pb-4 border-b border-black/[0.08] dark:border-white/[0.08] text-xs font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-widest">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-none bg-black"></span>
+              <span className="w-2 h-2 rounded-none bg-black dark:bg-white"></span>
               <span>SECTION 01 // ENGINEERING PHILOSOPHY</span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-neutral-700 font-semibold">STATE: {current.title.toUpperCase()}</span>
+              <span className="text-neutral-700 dark:text-neutral-200 font-semibold">
+                STATE: {current.title.toUpperCase()}
+              </span>
               <span>PROGRESS // {Math.round(scrollProgress * 100)}%</span>
             </div>
           </div>
@@ -102,38 +104,38 @@ export function PhilosophySection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-6 z-10">
           {/* Left Column: 3D Kinetic Geometric Monoliths */}
           <div className="lg:col-span-7 h-[340px] sm:h-[450px] lg:h-[550px] w-full relative flex items-center justify-center">
-            {/* Subtle light background ambient circle */}
-            <div className="absolute w-80 h-80 rounded-full bg-neutral-200/50 blur-3xl pointer-events-none"></div>
+            {/* Ambient Lighting Halo */}
+            <div className="absolute w-80 h-80 rounded-full bg-neutral-200/50 dark:bg-sky-500/10 blur-3xl pointer-events-none transition-colors duration-500"></div>
             <PhilosophyCubes progress={scrollProgress} />
           </div>
 
           {/* Right Column: Editorial Architecture Copy */}
           <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
             <div className="space-y-2">
-              <div className="flex items-center gap-3 text-xs font-mono text-neutral-500 uppercase tracking-widest">
-                <Icon className="w-4 h-4 text-black" />
+              <div className="flex items-center gap-3 text-xs font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-widest">
+                <Icon className="w-4 h-4 text-black dark:text-sky-400" />
                 <span>PHASE {current.index} / 03</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-sans text-neutral-900 uppercase tracking-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-sans text-neutral-900 dark:text-white uppercase tracking-tight">
                 {current.title}
               </h2>
-              <p className="text-sm font-mono text-neutral-500 uppercase tracking-wider font-semibold">
+              <p className="text-sm font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-wider font-semibold">
                 {current.tagline}
               </p>
             </div>
 
-            <p className="text-base sm:text-lg text-neutral-700 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-neutral-700 dark:text-neutral-300 font-light leading-relaxed">
               {current.description}
             </p>
 
             {/* Metrics Checklist */}
-            <div className="pt-2 border-t border-black/[0.08] space-y-2">
+            <div className="pt-2 border-t border-black/[0.08] dark:border-white/[0.08] space-y-2">
               {current.metrics.map((m, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 text-xs font-mono text-neutral-600"
+                  className="flex items-center gap-3 text-xs font-mono text-neutral-600 dark:text-neutral-300"
                 >
-                  <span className="w-1.5 h-1.5 bg-black/70"></span>
+                  <span className="w-1.5 h-1.5 bg-black/70 dark:bg-white/70"></span>
                   <span>{m}</span>
                 </div>
               ))}
@@ -145,10 +147,10 @@ export function PhilosophySection() {
                 <button
                   key={idx}
                   onClick={() => scrollToPhase(idx)}
-                  className={`px-3 py-1.5 text-[11px] font-mono uppercase tracking-wider border transition-all ${
+                  className={`px-3 py-1.5 text-[11px] font-mono uppercase tracking-wider border transition-all cursor-pointer ${
                     activePhase === idx
-                      ? "border-black text-white bg-black font-semibold shadow-xs"
-                      : "border-black/10 text-neutral-500 hover:text-black hover:border-black/30 bg-white"
+                      ? "border-black dark:border-white text-white dark:text-black bg-black dark:bg-white font-semibold shadow-xs"
+                      : "border-black/10 dark:border-white/10 text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:border-black/30 dark:hover:border-white/30 bg-white dark:bg-[#15171e]"
                   }`}
                 >
                   {p.index} // {p.title}
@@ -160,7 +162,7 @@ export function PhilosophySection() {
 
         {/* Bottom Section Status Rule */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-8 z-20">
-          <div className="flex items-center justify-between pt-4 border-t border-black/[0.08] text-[11px] font-mono text-neutral-400 uppercase tracking-widest">
+          <div className="flex items-center justify-between pt-4 border-t border-black/[0.08] dark:border-white/[0.08] text-[11px] font-mono text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
             <span>KINETIC MONOLITH ENGINE // THREE.JS WEBGL</span>
             <span className="hidden sm:inline">SCROLL TO EXPAND & RECONFIGURE</span>
           </div>

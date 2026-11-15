@@ -53,43 +53,46 @@ export function SantalSpec() {
   ];
 
   return (
-    <section id="spec" className="py-24 md:py-32 border-b border-black/[0.08] bg-[#faf9f6]">
+    <section
+      id="spec"
+      className="py-24 md:py-32 border-b border-black/[0.08] dark:border-white/[0.08] bg-[#faf9f6] dark:bg-[#0c0d0f] transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-8 mb-12 border-b border-black/[0.08] gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-8 mb-12 border-b border-black/[0.08] dark:border-white/[0.08] gap-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-neutral-500 uppercase tracking-widest mb-3">
-              <span className="w-1.5 h-1.5 bg-black"></span>
+            <div className="flex items-center gap-2 text-xs font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">
+              <span className="w-1.5 h-1.5 bg-black dark:bg-white"></span>
               <span>SECTION 03 // TECHNICAL SPECIFICATION</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold font-sans text-neutral-900 uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-bold font-sans text-neutral-900 dark:text-white uppercase tracking-tight">
               Tech Stack & Tooling.
             </h2>
           </div>
-          <p className="text-xs font-mono text-neutral-500 max-w-sm uppercase leading-relaxed">
+          <p className="text-xs font-mono text-neutral-500 dark:text-neutral-400 max-w-sm uppercase leading-relaxed">
             Technologies and engineering standards applied across modern web applications.
           </p>
         </div>
 
         {/* Spec Ledger Table */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-black/[0.08] divide-y md:divide-y-0 md:divide-x divide-black/[0.08] bg-white shadow-xs">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-black/[0.08] dark:border-white/[0.08] divide-y md:divide-y-0 md:divide-x divide-black/[0.08] dark:divide-white/[0.08] bg-white dark:bg-[#15171e] shadow-xs">
           {specs.map((spec, i) => {
             const Icon = spec.icon;
             return (
               <div
                 key={i}
-                className="p-6 sm:p-10 flex flex-col justify-between hover:bg-neutral-50/50 transition-colors duration-300"
+                className="p-6 sm:p-10 flex flex-col justify-between hover:bg-neutral-50/50 dark:hover:bg-neutral-900/40 transition-colors duration-300"
               >
                 <div>
-                  <div className="flex items-center justify-between pb-4 mb-6 border-b border-black/[0.06]">
-                    <span className="text-xs font-mono text-neutral-400">{spec.code}</span>
-                    <Icon className="w-4 h-4 text-neutral-500" />
+                  <div className="flex items-center justify-between pb-4 mb-6 border-b border-black/[0.06] dark:border-white/[0.06]">
+                    <span className="text-xs font-mono text-neutral-400 dark:text-neutral-500">{spec.code}</span>
+                    <Icon className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold font-sans text-neutral-900 uppercase tracking-tight mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold font-sans text-neutral-900 dark:text-white uppercase tracking-tight mb-2">
                     {spec.category}
                   </h3>
-                  <p className="text-xs font-mono text-neutral-500 uppercase tracking-wide mb-8">
+                  <p className="text-xs font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-8">
                     {spec.focus}
                   </p>
 
@@ -97,17 +100,17 @@ export function SantalSpec() {
                     {spec.items.map((item, idx) => (
                       <div
                         key={idx}
-                        className="p-3 bg-neutral-50 border border-black/[0.06] flex flex-col gap-1"
+                        className="p-3 bg-neutral-50 dark:bg-neutral-900/60 border border-black/[0.06] dark:border-white/[0.08] flex flex-col gap-1"
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-semibold font-sans text-neutral-900 tracking-wide">
+                          <span className="text-sm font-semibold font-sans text-neutral-900 dark:text-neutral-100 tracking-wide">
                             {item.name}
                           </span>
-                          <span className="text-[10px] font-mono text-emerald-600 font-semibold uppercase">
+                          <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold uppercase">
                             Verified
                           </span>
                         </div>
-                        <span className="text-xs text-neutral-600 font-mono">
+                        <span className="text-xs text-neutral-600 dark:text-neutral-400 font-mono">
                           {item.detail}
                         </span>
                       </div>
@@ -115,7 +118,7 @@ export function SantalSpec() {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-8 border-t border-black/[0.06] flex items-center justify-between text-[11px] font-mono text-neutral-500 uppercase">
+                <div className="pt-6 mt-8 border-t border-black/[0.06] dark:border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-neutral-500 dark:text-neutral-400 uppercase">
                   <span>Standard: Production Grade</span>
                   <span>Clean Code & Maintainability</span>
                 </div>

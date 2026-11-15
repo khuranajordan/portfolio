@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { useTheme } from "@/context/theme-context";
 
 interface PhilosophyCubesProps {
   progress: number; // 0.0 to 1.0
@@ -10,6 +11,10 @@ export function PhilosophyCubes({ progress }: PhilosophyCubesProps) {
   const progressRef = useRef(progress);
   progressRef.current = progress;
 
+  const { theme } = useTheme();
+  const themeRef = useRef(theme);
+  themeRef.current = theme;
+
   useEffect(() => {
     const container = mountRef.current;
     if (!container) return;
@@ -18,9 +23,10 @@ export function PhilosophyCubes({ progress }: PhilosophyCubesProps) {
     const width = container.clientWidth;
     const height = container.clientHeight;
 
-    // Scene, Camera, Renderer with light architectural background
+    // Scene, Camera, Renderer
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0xfaf9f6, 0.035);
+    const initialIsDark = themeRef.current === "dark";
+    scene.fog = new THREE.FogExp2(initialIsDark ? 0x0c0d0f : 0xfaf9f6, 0.035);
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
     camera.position.set(0, 0, 8.5);
@@ -36,19 +42,28 @@ export function PhilosophyCubes({ progress }: PhilosophyCubesProps) {
     renderer.toneMappingExposure = 1.0;
     container.appendChild(renderer.domElement);
 
-    // Architectural Lighting for light stone aesthetic
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+    // Architectural Lighting
+    const ambientLight = new THREE.AmbientLight(
+      initialIsDark ? 0x1e293b : 0xffffff,
+      initialIsDark ? 0.6 : 0.85
+    );
     scene.add(ambientLight);
 
-    const keyLight = new THREE.DirectionalLight(0xfffbf5, 2.0);
+    const keyLight = new THREE.DirectionalLight(
+      initialIsDark ? 0xa5b4fc : 0xfffbf5,
+      initialIsDark ? 2.2 : 2.0
+    );
     keyLight.position.set(6, 10, 8);
     scene.add(keyLight);
 
-    const shadowLight = new THREE.DirectionalLight(0xd4d4d8, 1.2);
+    const shadowLight = new THREE.DirectionalLight(
+      initialIsDark ? 0x334155 : 0xd4d4d8,
+      1.2
+    );
     shadowLight.position.set(-6, -4, 4);
     scene.add(shadowLight);
 
-    const rimLight = new THREE.DirectionalLight(0x38bdf8, 1.0); // Subtle soft accent
+    const rimLight = new THREE.DirectionalLight(0x38bdf8, initialIsDark ? 3.5 : 1.0);
     rimLight.position.set(0, -8, -6);
     scene.add(rimLight);
 
@@ -56,17 +71,17 @@ export function PhilosophyCubes({ progress }: PhilosophyCubesProps) {
     const group = new THREE.Group();
     scene.add(group);
 
-    // Materials: Architectural Matte Alabaster / Chalk Stone with crisp dark edges
+    // Materials: Adapts dynamically between Warm Alabaster and Obsidian Titanium
     const cubeMaterial = new THREE.MeshStandardMaterial({
-      color: 0xeeece8,
-      roughness: 0.35,
-      metalness: 0.15,
+      color: initialIsDark ? 0x181a22 : 0xeeece8,
+      roughness: initialIsDark ? 0.25 : 0.35,
+      metalness: initialIsDark ? 0.5 : 0.15,
     });
 
     const edgeMaterial = new THREE.LineBasicMaterial({
-      color: 0x27272a,
+      color: initialIsDark ? 0x60a5fa : 0x27272a,
       transparent: true,
-      opacity: 0.45,
+      opacity: initialIsDark ? 0.8 : 0.45,
     });
 
     // Create a 2x2x2 cluster of precision beveled blocks
@@ -84,7 +99,7 @@ export function PhilosophyCubes({ progress }: PhilosophyCubesProps) {
       offsets.forEach((y, j) => {
         offsets.forEach((z, k) => {
           const geom = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
-          const mesh = new THREE.Mesh(geom, cubeMaterial.clone());
+          const mesh = new THREE.Mesh(geom, cubeMaterial);
 
           // Add wireframe edge outline for that architectural drafting feel
           const edges = new THREE.EdgesGeometry(geom);
@@ -137,6 +152,11 @@ export function PhilosophyCubes({ progress }: PhilosophyCubesProps) {
     };
     window.addEventListener("resize", handleResize);
 
+    // Target colors for smooth theme transitions
+    const targetFogColor = new THREE.Color();
+    const targetCubeColor = new THREE.Color();
+    const targetEdgeColor = new THREE.Color();
+
     // Animation Loop
     let animationFrameId: number;
     let clock = new THREE.Clock();
@@ -145,6 +165,26 @@ export function PhilosophyCubes({ progress }: PhilosophyCubesProps) {
       animationFrameId = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
       const p = progressRef.current; // 0.0 to 1.0
+      const isDark = themeRef.current === "dark";
+
+      // Smoothly interpolate theme colors & lighting
+      targetFogColor.setHex(isDark ? 0x0c0d0f : 0xfaf9f6);
+      targetCubeColor.setHex(isDark ? 0x181a22 : 0xeeece8);
+      targetEdgeColor.setHex(isDark ? 0x60a5fa : 0x27272a);
+
+      if (scene.fog) {
+        scene.fog.color.lerp(targetFogColor, 0.05);
+      }
+      cubeMaterial.color.lerp(targetCubeColor, 0.05);
+      edgeMaterial.color.lerp(targetEdgeColor, 0.05);
+
+      cubeMaterial.roughness = THREE.MathUtils.lerp(cubeMaterial.roughness, isDark ? 0.25 : 0.35, 0.05);
+      cubeMaterial.metalness = THREE.MathUtils.lerp(cubeMaterial.metalness, isDark ? 0.55 : 0.15, 0.05);
+      edgeMaterial.opacity = THREE.MathUtils.lerp(edgeMaterial.opacity, isDark ? 0.85 : 0.45, 0.05);
+
+      ambientLight.intensity = THREE.MathUtils.lerp(ambientLight.intensity, isDark ? 0.6 : 0.85, 0.05);
+      keyLight.intensity = THREE.MathUtils.lerp(keyLight.intensity, isDark ? 2.4 : 2.0, 0.05);
+      rimLight.intensity = THREE.MathUtils.lerp(rimLight.intensity, isDark ? 3.5 : 1.0, 0.05);
 
       // Base continuous rotation
       group.rotation.y += 0.003;
