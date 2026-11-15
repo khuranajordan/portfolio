@@ -32,6 +32,7 @@ export function SocketTelemetry() {
   const reconnectTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const fallbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isVisibleRef = useRef<boolean>(true);
+  const isConnectingRef = useRef<boolean>(false);
 
   // Synchronized refs to avoid re-triggering effects and render loops
   const statusRef = useRef<"CONNECTING" | "LIVE" | "RECONNECTING" | "PAUSED">(status);
@@ -105,22 +106,19 @@ export function SocketTelemetry() {
     }
   }, [triggerFallbackResponse]);
 
-  // Cleanly establish persistent WebSocket connection without cascading loops
+  // Stable ref for interval ticker so sendPing doesn't need to be an effect dependency
+  const sendPingRef = useRef(sendPing);
+  sendPingRef.current = sendPing;
+
+  // Single-instance WebSocket connector (strictly prevents multiple sockets)
   const connectSocket = useCallback(() => {
-    // 1. Teardown any existing socket first
-    if (wsRef.current) {
-      wsRef.current.onopen = null;
-      wsRef.current.onmessage = null;
-      wsRef.current.onerror = null;
-      wsRef.current.onclose = null;
-      try {
-        wsRef.current.close();
-      } catch {
-        // ignore
-      }
-      wsRef.current = null;
+    // If already connected or in process of connecting, strictly do nothing
+    if (isConnectingRef.current) return;
+    if (wsRef.current && (wsRef.current.readyState === WebSocket.OPEN || wsRef.current.readyState === WebSocket.CONNECTING)) {
+      return;
     }
 
+    isConnectingRef.current = true;
     setStatus("CONNECTING");
 
     try {
@@ -128,6 +126,7 @@ export function SocketTelemetry() {
       wsRef.current = socket;
 
       socket.onopen = () => {
+        isConnectingRef.current = false;
         setStatus("LIVE");
       };
 
@@ -140,24 +139,25 @@ export function SocketTelemetry() {
       };
 
       socket.onerror = () => {
-        // Graceful fallback to loopback mode if 3rd-party WSS blocked by firewall
+        isConnectingRef.current = false;
         if (statusRef.current !== "PAUSED") {
           setStatus("LIVE");
         }
       };
 
       socket.onclose = () => {
-        // If not deliberately paused or in manual reconnect, set LIVE
+        isConnectingRef.current = false;
         if (statusRef.current !== "PAUSED" && statusRef.current !== "RECONNECTING") {
           setStatus("LIVE");
         }
       };
     } catch {
+      isConnectingRef.current = false;
       setStatus("LIVE");
     }
   }, [handlePingSuccess]);
 
-  // Mount/Unmount lifecycle - runs ONCE
+  // Mount/Unmount lifecycle - runs STRICTLY ONCE
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -175,12 +175,13 @@ export function SocketTelemetry() {
     };
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
+    // Initial connection
     connectSocket();
 
-    // Heartbeat ticker
+    // Regular heartbeat ticker (calls stable ref)
     intervalRef.current = setInterval(() => {
       if (isVisibleRef.current && statusRef.current !== "PAUSED") {
-        sendPing();
+        sendPingRef.current();
       }
     }, 2800);
 
@@ -190,6 +191,7 @@ export function SocketTelemetry() {
       if (intervalRef.current) clearInterval(intervalRef.current);
       if (reconnectTimeoutRef.current) clearTimeout(reconnectTimeoutRef.current);
       if (fallbackTimeoutRef.current) clearTimeout(fallbackTimeoutRef.current);
+
       if (wsRef.current) {
         wsRef.current.onopen = null;
         wsRef.current.onmessage = null;
@@ -203,10 +205,11 @@ export function SocketTelemetry() {
         wsRef.current = null;
       }
     };
-  }, [connectSocket, sendPing]);
+  }, [connectSocket]); // connectSocket has stable useCallback([])
 
-  // Safe manual reconnect simulation: cleanly detaches old socket and opens fresh connection
+  // Safe manual reconnect simulation: cleanly closes existing socket and opens ONE fresh connection
   const handleSimulateReconnect = () => {
+    if (status === "RECONNECTING") return;
     setStatus("RECONNECTING");
 
     if (reconnectTimeoutRef.current) {
@@ -226,20 +229,21 @@ export function SocketTelemetry() {
       }
       wsRef.current = null;
     }
+    isConnectingRef.current = false;
 
-    // Smooth simulated exponential backoff reconnect after 800ms
+    // Simulated backoff before reconnecting once
     reconnectTimeoutRef.current = setTimeout(() => {
       connectSocket();
       setTimeout(() => {
-        sendPing();
-      }, 300);
+        sendPingRef.current();
+      }, 400);
     }, 800);
   };
 
   const togglePause = () => {
     if (status === "PAUSED") {
       setStatus("LIVE");
-      setTimeout(() => sendPing(), 100);
+      setTimeout(() => sendPingRef.current(), 100);
     } else {
       setStatus("PAUSED");
     }
