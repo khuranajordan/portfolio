@@ -1,4 +1,5 @@
 import { Terminal, Database, Cpu, Cloud } from "lucide-react";
+import { SocketTelemetry } from "./socket-telemetry";
 
 export function SantalSpec() {
   const specs = [
@@ -73,6 +74,9 @@ export function SantalSpec() {
             Technologies and engineering standards applied across modern web applications.
           </p>
         </div>
+
+        {/* Live Real-Time Telemetry Terminal */}
+        <SocketTelemetry />
 
         {/* Spec Ledger Table */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-black/[0.08] dark:border-white/[0.08] divide-y md:divide-y-0 md:divide-x divide-black/[0.08] dark:divide-white/[0.08] bg-white dark:bg-[#15171e] shadow-xs">

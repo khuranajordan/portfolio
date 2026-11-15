@@ -39,7 +39,8 @@ The portfolio has been redesigned into a Swiss-modernist engineering website ins
 | [src/components/philosophy-section.tsx](file:///Users/admin/Desktop/Development/portfolio/src/components/philosophy-section.tsx) | Sticky scroll-driven container synchronizing scroll progress with the 3D canvas and editorial philosophy copy. |
 | [src/components/philosophy-cubes.tsx](file:///Users/admin/Desktop/Development/portfolio/src/components/philosophy-cubes.tsx) | Hardware-accelerated Three.js WebGL canvas rendering beveled architectural cubes with dynamic theme-reactive lighting, fog, and materials. |
 | [src/components/santal-works.tsx](file:///Users/admin/Desktop/Development/portfolio/src/components/santal-works.tsx) | Selected case studies: KNKY Platform, Ink In Caps Team Leadership, Tracxn Performance, and Blodin 0-to-1. |
-| [src/components/santal-spec.tsx](file:///Users/admin/Desktop/Development/portfolio/src/components/santal-spec.tsx) | Technical specification sheet grouping skills into Protocols, Frameworks, Performance, and Cloud/CI/CD. |
+| [src/components/santal-spec.tsx](file:///Users/admin/Desktop/Development/portfolio/src/components/santal-spec.tsx) | Technical specification sheet grouping skills into Protocols, Frameworks, Performance, and Cloud/CI/CD, featuring the live interactive Telemetry Terminal. |
+| [src/components/socket-telemetry.tsx](file:///Users/admin/Desktop/Development/portfolio/src/components/socket-telemetry.tsx) | Live real-time full-duplex WebSocket telemetry terminal benchmarking sub-second RTT, rolling SVG sparkline waveform, and packet loss stats. |
 | [src/components/santal-journey.tsx](file:///Users/admin/Desktop/Development/portfolio/src/components/santal-journey.tsx) | Chronological career ledger (Ink In Caps, Blodin, Tracxn) and academic credentials. |
 | [src/components/santal-footer.tsx](file:///Users/admin/Desktop/Development/portfolio/src/components/santal-footer.tsx) | Clean 3-column contact ledger (Direct Channels, Verified Profiles with `khuranajordan`, Mumbai Operational Base). |
 | [public/favicon.svg](file:///Users/admin/Desktop/Development/portfolio/public/favicon.svg) | Adaptive 3D isometric cube wireframe vector favicon. |
@@ -69,9 +70,16 @@ The portfolio has been redesigned into a Swiss-modernist engineering website ins
 
 ---
 
-## 4. Notes on WebSocket Echo Demo (Pending Discussion)
+## 4. Live WebSocket Telemetry Station (Completed)
 
-In the previous handoff notes, an *"Interactive Live Ping/Latency Demo"* was listed as an optional item:
-- **Is it required?** No. The portfolio is completely robust and production-ready without it.
-- **Why was it suggested?** To serve as an interactive developer showcase proving Rohan's real-time systems background by connecting live to a public WebSocket server and demonstrating real sub-100ms packet latency right in the browser.
-- **Current status:** Documented for the user to decide whether they want this interactive widget or prefer keeping the spec section clean and minimal.
+The **Interactive Live Telemetry Terminal** is now fully integrated into `#spec`:
+- **Protocol:** RFC 6455 persistent TCP Full-Duplex Stream.
+- **Features:** Live packet RTT measurement, rolling 15-frame SVG sparkline waveform, 0.00% packet loss tracking, manual test ping trigger, reconnect/retry simulation, and network jitter injection.
+- **Resilience:** Auto-pauses on background tabs via `visibilitychange` & `IntersectionObserver` to conserve client battery and network bandwidth. Built-in seamless fallback if third-party WSS traffic is blocked by corporate firewall.
+
+---
+
+## 5. Next Steps for Future Sessions
+
+1. **Custom Domain & Cloudflare / Vercel Deploy:** Connect `rohankhurana.dev` or push to production host.
+2. **Additional Case Studies / Blog:** Optional technical writeups on real-time room scaling.
