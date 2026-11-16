@@ -1,4 +1,5 @@
 import { ArrowDown, ShieldCheck, Activity, Users, ArrowUpRight, Award } from "lucide-react";
+import { BitmojiCard } from "./bitmoji-card";
 
 export function SantalHero() {
   const scrollToPhilosophy = () => {
@@ -97,43 +98,9 @@ export function SantalHero() {
             </div>
           </div>
 
-          {/* Right: Personal Bitmoji Spotlight Card */}
+          {/* Right: Personal Bitmoji Spotlight Card with Scroll Reactions */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
-            <div className="w-full max-w-sm bg-white dark:bg-[#15171e] border border-black/[0.08] dark:border-white/[0.08] p-6 shadow-sm flex flex-col items-center text-center relative group hover:border-black/20 dark:hover:border-white/25 transition-all duration-300">
-              {/* Bitmoji Portrait Container */}
-              <div className="relative w-44 h-44 sm:w-48 sm:h-48 rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-black/5 dark:border-white/10 mb-5 shadow-inner">
-                <img
-                  src="/bitmoji.png"
-                  alt="Rohan Khurana Bitmoji Avatar"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-2 right-2 px-2 py-0.5 bg-black/75 dark:bg-black/90 backdrop-blur-xs text-white text-[9px] font-mono uppercase tracking-wider rounded-md">
-                  Rohan.dev
-                </div>
-              </div>
-
-              {/* Identity & Status */}
-              <div className="space-y-1 mb-4">
-                <h2 className="text-xl font-bold text-neutral-900 dark:text-white tracking-tight font-sans">
-                  Rohan Khurana
-                </h2>
-                <p className="text-xs font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
-                  Software Developer & Team Lead
-                </p>
-                <p className="text-[11px] font-mono text-neutral-400 dark:text-neutral-500">
-                  Ink In Caps • Mumbai, India
-                </p>
-              </div>
-
-              {/* Status Indicator */}
-              <div className="w-full pt-3 border-t border-black/[0.06] dark:border-white/[0.06] flex items-center justify-between text-[11px] font-mono">
-                <span className="text-neutral-500 dark:text-neutral-400">Status</span>
-                <span className="text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  Open to Opportunities
-                </span>
-              </div>
-            </div>
+            <BitmojiCard />
           </div>
         </div>
 
