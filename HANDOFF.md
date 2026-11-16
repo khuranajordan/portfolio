@@ -29,7 +29,7 @@ The portfolio has been redesigned into a Swiss-modernist engineering website ins
   - `01 // ARCHITECTURE` - Type-Safe and Modular by Design (strict TypeScript contracts, reusable component systems, isolated state boundaries).
   - `02 // PERFORMANCE` - Smooth 60 FPS on Every Device (sub-2.5s FCP, DOM virtualization for 10k+ rows, heap memory profiling).
   - `03 // LEADERSHIP` - Velocity Without Sacrificing Quality (6 engineers led and mentored, 30% technical debt reduction, 90%+ test coverage).
-- **Personal 3D Bitmoji Avatar:** Custom 3D avatar matching Rohan's likeness (black glasses, beard, navy blazer, white shirt) integrated into the Hero spotlight card, Header identity pill, and Apple Touch Icon.
+- **Personal 3D Bitmoji Avatar with Apple Parallax Zoom:** Custom 3D avatar matching Rohan's likeness (black glasses, beard, navy blazer, white shirt) featuring Apple-grade optical dolly zoom (smoothly enlarging 1.0x → 1.28x) and counter-parallax depth on scroll, integrated into the Hero spotlight card, Header identity pill, and Apple Touch Icon.
 - **Dynamic 3D Monolith Favicon:** Responsive SVG favicon rendering the 3D isometric cube wireframe, auto-adjusting for light/dark browser tab bars.
 - **Title & Professional Positioning:** Quoted strictly as **Senior Software Developer** / **Software Developer & Team Lead** with **4+ years of production experience** (never "systems architect", never 3+).
 

@@ -1,6 +1,10 @@
+import { useRef } from "react";
 import { ArrowDown, ShieldCheck, Activity, Users, ArrowUpRight, Award } from "lucide-react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export function SantalHero() {
+  const heroRef = useRef<HTMLElement>(null);
+
   const scrollToPhilosophy = () => {
     document.getElementById("philosophy")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -8,6 +12,25 @@ export function SantalHero() {
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  // Apple-grade scroll tracking while hero card is in viewport (0 to 450px)
+  const { scrollY } = useScroll();
+  const rawProgress = useTransform(scrollY, [0, 450], [0, 1], { clamp: true });
+
+  // Apple physics-based spring smoothing (weighted inertia without jitter)
+  const smoothProgress = useSpring(rawProgress, {
+    stiffness: 100,
+    damping: 24,
+    mass: 0.5,
+  });
+
+  // Parallax translation for the card container (differential speed)
+  const cardY = useTransform(smoothProgress, [0, 1], [0, -42]);
+  const cardScale = useTransform(smoothProgress, [0, 1], [1.0, 1.04]);
+
+  // Apple optical dolly zoom: avatar enlarges smoothly as you scroll down
+  const avatarScale = useTransform(smoothProgress, [0, 1], [1.0, 1.28]);
+  const avatarY = useTransform(smoothProgress, [0, 1], [0, 12]); // Counter-parallax for cinematic focal depth
 
   const metrics = [
     {
@@ -39,6 +62,7 @@ export function SantalHero() {
   return (
     <section
       id="hero"
+      ref={heroRef}
       className="relative min-h-screen pt-28 md:pt-36 pb-20 flex flex-col justify-between border-b border-black/[0.08] dark:border-white/[0.08] bg-[#faf9f6] dark:bg-[#0c0d0f] overflow-hidden transition-colors duration-300"
     >
       {/* Subtle Background Architectural Grid Lines */}
@@ -97,15 +121,26 @@ export function SantalHero() {
             </div>
           </div>
 
-          {/* Right: Personal Bitmoji Spotlight Card */}
+          {/* Right: Personal Bitmoji Spotlight Card with Apple Parallax & Optical Dolly Zoom */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
-            <div className="w-full max-w-sm bg-white dark:bg-[#15171e] border border-black/[0.08] dark:border-white/[0.08] p-6 shadow-sm flex flex-col items-center text-center relative group hover:border-black/20 dark:hover:border-white/25 transition-all duration-300">
+            <motion.div
+              style={{
+                y: cardY,
+                scale: cardScale,
+              }}
+              className="w-full max-w-sm bg-white dark:bg-[#15171e] border border-black/[0.08] dark:border-white/[0.08] p-6 shadow-sm flex flex-col items-center text-center relative group hover:border-black/20 dark:hover:border-white/25 transition-colors duration-300 will-change-transform"
+            >
               {/* Bitmoji Portrait Container */}
               <div className="relative w-44 h-44 sm:w-48 sm:h-48 rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-black/5 dark:border-white/10 mb-5 shadow-inner">
-                <img
+                <motion.img
                   src="/bitmoji.png"
                   alt="Rohan Khurana Bitmoji Avatar"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{
+                    scale: avatarScale,
+                    y: avatarY,
+                    transformOrigin: "center 38%",
+                  }}
+                  className="w-full h-full object-cover will-change-transform"
                 />
                 <div className="absolute top-2 right-2 px-2 py-0.5 bg-black/75 dark:bg-black/90 backdrop-blur-xs text-white text-[9px] font-mono uppercase tracking-wider rounded-md">
                   Rohan.dev
@@ -133,7 +168,7 @@ export function SantalHero() {
                   Open to Opportunities
                 </span>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
